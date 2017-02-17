@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+  <head>
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta charset="utf-8">
+    <meta content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+
+    <!-- Use title if it's in the page YAML frontmatter -->
+    <title><%= current_page.data.title || "Middleman" %></title>
+
+    <link href='//fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'>
+
+    <%= stylesheet_link_tag "flexboxgrid.min", :site %>
+    <%= javascript_include_tag  :all %>
+  </head>
+
+  <body class="<%= page_classes %><%= current_page.data.menu_hover ? ' menu-hover' : '' %>">
+
+    <nav class="nav-collapse navbar clearfix">
+      <div class="logo">
+        <a href=".">Logo</a>
+      </div>
+
+<div class="navigation-links">
+        <i class="fa fa-bars" aria-hidden="true"></i>
+        <ul>
+          <li><%= link_to 'Our Work', '../our-work.html' %></li>
+          <li><%= link_to 'The Veda Way', '../the-veda-way.html' %></li>
+          <li><%= link_to 'Our Team', '../the-veda-team.html' %></li>
+          <li><%= link_to 'Contact', '../contact-us.html' %></li>
+        </ul>
+    </nav>
+  </div>
+
+    <%= yield %>
+
+    <footer>
+      <div class="row">
+        <div class="col-lg col-md col-sm col-xs">
+          <%= image_tag "rect.svg" %>
+        </div>
+        <div class="col-lg col-md col-sm col-xs">
+          <ul>
+            <li class="list-item-plain">Our Work</li>
+            <li class="list-item-plain">The Veda Way</li>
+            <li class="list-item-plain">Our Team</li>
+            <li class="list-item-plain">Contact</li>
+          </ul>
+        </div>
+        <div class="col-lg col-md col-sm col-xs">
+          <h4>Email Us (FB)</h4>
+          <div>
+            <p>Seattle</p>
+            <h4>206.409.3253</h4>
+            <p>2211 Elliott Ave. Suite 200 Seattle, WA 98121</p>
+          </div>
+        </div>
+        <div class="col-lg col-md col-sm col-xs">
+          <div>
+            <p>Seattle</p>
+            <h4>206.409.3253</h4>
+            <p>2211 Elliott Ave. Suite 200 Seattle, WA 98121</p>
+          </div>
+        </div>
+      </div>
+      <div class="row start-lg start-md start-sm start-xs">
+        <div class="col-xs-offset-1">
+          Certified Professional Facilitator
+        </div>
+        <div class="col-xs">
+          ©2017 Veda Environmental. All Rights Reserved.
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

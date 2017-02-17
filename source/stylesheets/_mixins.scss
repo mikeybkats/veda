@@ -1,0 +1,23 @@
+@mixin circle($height) {
+  border-radius: $height / 2 + px;
+  overflow: hidden;
+  border: solid 1px red;
+  box-shadow: 5px 5px 5px black;
+}
+
+@mixin icon($url, $width, $height) {
+  overflow: hidden;
+  display: inline-block;
+  width: $width + px;
+  height: 0;
+  padding-top: $height + px;
+  background: url($url) center center no-repeat;
+}
+
+@mixin clearfix() {
+  &::after {
+    display: block;
+    content: "";
+    clear: both;
+  }
+}
