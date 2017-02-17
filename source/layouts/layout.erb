@@ -16,21 +16,28 @@
 
   <body class="<%= page_classes %><%= current_page.data.menu_hover ? ' menu-hover' : '' %>">
 
-    <nav class="nav-collapse navbar clearfix">
-      <div class="logo">
+    <nav class="nav-collapse navbar ">
+      <i class="fa fa-bars hamburger" aria-hidden="true"></i>
+      <div class="logo-mobile">
         <a href=".">Logo</a>
       </div>
 
-<div class="navigation-links">
-        <i class="fa fa-bars" aria-hidden="true"></i>
-        <ul>
-          <li><%= link_to 'Our Work', '../our-work.html' %></li>
-          <li><%= link_to 'The Veda Way', '../the-veda-way.html' %></li>
-          <li><%= link_to 'Our Team', '../the-veda-team.html' %></li>
-          <li><%= link_to 'Contact', '../contact-us.html' %></li>
-        </ul>
+      <div class="nav-inner clearfix">
+        <div class="logo">
+          <a href=".">Logo</a>
+        </div>
+
+
+        <div class="navigation-links">
+          <ul>
+            <li><%= link_to 'Our Work', '../our-work.html' %></li>
+            <li><%= link_to 'The Veda Way', '../the-veda-way.html' %></li>
+            <li><%= link_to 'Our Team', '../the-veda-team.html' %></li>
+            <li><%= link_to 'Contact', '../contact-us.html' %></li>
+          </ul>
+        </div>
+      </div>
     </nav>
-  </div>
 
     <%= yield %>
 
@@ -73,4 +80,4 @@
       </div>
     </footer>
   </body>
-</html>
+  </html>
