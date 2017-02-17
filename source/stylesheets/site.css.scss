@@ -12,12 +12,57 @@ $z-index-3: 300;
 $z-index-4: 400;
 $z-index-5: 500;
 
+.doc {
+  margin: 3em 0;
+  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 1.1em;
+  font-weight: 300;
+
+  a {
+    border: 1px solid white;
+    border-radius: 3px;
+    padding: 0.75em 0.7em;
+    color: white;
+    text-decoration: none;
+    transition: color 0.1s linear;
+    &:hover {
+      background: rgba(0,0,0,0.2);
+      color: white;
+      transition: all 0.15s linear;
+    }
+  }
+}
+
+.welcome {
+  -webkit-animation-name: welcome;
+  -webkit-animation-duration: .9s;
+}
+
+@-webkit-keyframes welcome {
+  from {
+    -webkit-transform: scale(0);
+    opacity: 0;
+  }
+  50% {
+    -webkit-transform: scale(0);
+    opacity: 0;
+  }
+  82.5% {
+    -webkit-transform: scale(1.03);
+    -webkit-animation-timing-function: ease-out;
+    opacity: 1;
+  }
+  to {
+    -webkit-transform: scale(1);
+  }
+}
+
 ////////////////////////// Navbar /////////////////////
 
 .hamburger {
   display: none;
   float: right;
-  position: absolute;
+  position: fixed;
   font-size: 3em;
   top: 10px;
   right: 15px;
@@ -149,7 +194,7 @@ $z-index-5: 500;
 
 ////////////////////////// Base /////////////////////
 body {
-  background: $green;
+  background: $darkGray;
   text-align: center;
   font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 1em;
@@ -164,11 +209,19 @@ body {
   height: 100%;
 }
 
-h1 {
+blockquote {
+  font-size: 3em;
+  font-style: italic;
+}
 
+h1 {
+  font-size: 3em;
 }
 h2 {
-
+  font-size: 2em;
+}
+h3 {
+  font-size: 1.5em;
 }
 a {
 
@@ -179,17 +232,7 @@ a {
   margin-top: 6em;
 }
 
-h1 {
-  color: #333;
-  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 1.8em;
-  font-weight: 400;
-  margin: 0;
-}
-
-
 ////////////////////////// Hero /////////////////////
-
 
 .hero {
   height: 100vh;
@@ -217,55 +260,68 @@ h1 {
   }
 }
 
-.doc {
-  margin: 3em 0;
-  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 1.1em;
-  font-weight: 300;
-
-  a {
-    border: 1px solid white;
-    border-radius: 3px;
-    padding: 0.75em 0.7em;
-    color: white;
-    text-decoration: none;
-    transition: color 0.1s linear;
-    &:hover {
-      background: rgba(0,0,0,0.2);
-      color: white;
-      transition: all 0.15s linear;
-    }
-  }
-}
-
-.welcome {
-  -webkit-animation-name: welcome;
-  -webkit-animation-duration: .9s;
-}
-
-@-webkit-keyframes welcome {
-  from {
-    -webkit-transform: scale(0);
-    opacity: 0;
-  }
-  50% {
-    -webkit-transform: scale(0);
-    opacity: 0;
-  }
-  82.5% {
-    -webkit-transform: scale(1.03);
-    -webkit-animation-timing-function: ease-out;
-    opacity: 1;
-  }
-  to {
-    -webkit-transform: scale(1);
-  }
-}
-
-// custom styles below here
-.content-section {
+////////////////////////// Featured Case Study /////////////////////
+.featured-case-study {
   height: 100vh;
+  background-color: $cream;
+  justify-content: center;
+  display: flex;
+  align-items: center;
 }
+
+
+////////////////////////// How We Work /////////////////////
+.how-we-work {
+  min-height: 100vh;
+  background-color: $darkGray;
+  color: $cream;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+////////////////////////// Clients /////////////////////
+.client-list {
+  min-height: 100vh;
+  background-color: $cream;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+.client-grid{
+  .row div {
+  }
+  .row div:first-child {
+  background-color: none;
+  }
+}
+
+.client-grid {
+  .row div {
+  }
+  .row div:last-child {
+  background-color: none;
+  }
+}
+
+////////////////////////// Footer /////////////////////
+footer {
+  min-height: 35vh;
+  background-color: $darkGray;
+  color: $cream;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
+
+
+////////////////////////// Slider Indicator /////////////////////
 
 .circle-large {
   border: solid 1px black;
@@ -274,7 +330,7 @@ h1 {
   width: 300px;
 }
 
-.circle-xsm {
+.indicator {
   border: solid 1px black;
   border-radius: 50%;
   height: 10px;
@@ -284,8 +340,14 @@ h1 {
 
 .slider-list {
   display: flex;
+  li {
+    list-style-type: none;
+  }
 }
 
-.list-item-plain {
-  list-style-type: none;
+.slider-image {
+  background: url("http://gabrielhummel.com/wp-content/uploads/2009/10/angrycat_1.jpg") center center no-repeat;
+  height: 250px;
+  width: 250px;
+  @include circle(250);
 }

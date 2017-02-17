@@ -1,8 +1,8 @@
 @mixin circle($height) {
   border-radius: $height / 2 + px;
   overflow: hidden;
-  border: solid 1px red;
-  box-shadow: 5px 5px 5px black;
+  border: solid 1px black;
+  // box-shadow: 5px 5px 5px black;
 }
 
 @mixin icon($url, $width, $height) {

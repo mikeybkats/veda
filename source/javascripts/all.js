@@ -16,4 +16,10 @@ $(document).ready(function(){
       $('.hamburger').addClass('active');
     }
   });
+  $('.navigation-links ul li').on('click', function(){
+    $('.nav-inner').animate({
+      left: "-310px"
+    });
+    $('.hamburger').removeClass('active');
+  });
 });
