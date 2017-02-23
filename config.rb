@@ -1,3 +1,13 @@
+require 'font-awesome-sass'
+class AddCms < Middleman::Extension
+  def initialize(app, options_hash={}, &block)
+    super
+  end
+  def after_build(builder)
+    builder.thor.run 'cp -r /Applications/MAMP/couch /Applications/MAMP/htdocs'
+  end
+end
+::Middleman::Extensions.register(:add_cms, AddCms)
 ###
 # Page options, layouts, aliases and proxies
 ###
@@ -17,12 +27,15 @@ page '/*.txt', layout: false
 #  which_fake_page: "Rendering a fake page with a local variable" }
 
 # General configuration
-
+activate :directory_indexes
+# activate :php
+activate :autoprefixer
+activate :sprockets
+set :index_file, "index.php"
+# activate :add_cms
 # Reload the browser automatically whenever files change
 configure :development do
   activate :livereload
-  activate :sprockets
-  activate :autoprefixer
 end
 
 ###
