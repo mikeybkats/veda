@@ -7,9 +7,9 @@ menu_hover: true
   <div class="hero-background"></div>
   <div class="container fill-height hero-text">
     <div class="row fill-height middle-xs">
-      <div class="col-md-8 hero-text">
+      <div class="col-md-12 hero-text">
         <h1>Connecting the dots between science, policy &amp; people.</h1>
-        <a href="" class="hero-link"><span>See what we've been up to</span><i class="icon-right-arrow"></i></a>
+        <a href="" class="hero-link"><span>See what we've been up to</span><i class="icon-right-arrow"><%= image_tag "arrow-see-more.svg" %></i></a>
       </div>
     </div>
   </div>
@@ -37,11 +37,16 @@ menu_hover: true
 
 <div class="how-we-work">
   <div class="container">
-    <div class="row center-sm">
-      <div class="col-md-6">
+    <div class="row center-sm middle-sm">
+      <div class="col-md-8">
         <h2 class="title">How We Work</h2>
         <p>Over the years we’ve done this sort of thing enough to see a method to our madness. We’ve indentified four steps to solving the kinds of problems we solve.</p>
-        <a href="" class="btn btn-primary">The Veda Way</a>
+        <%= image_tag "how-we-work.svg" %>
+        <div class="row center-sm">
+          <div class="col-md-2">
+            <a href="" class="btn btn-primary">The Veda Way</a>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -52,7 +57,7 @@ menu_hover: true
     <div class="container">
       <div class="row center-sm">
         <div class="col-lg client-grid">
-          <h1 class="title">Some of our Happy clients</h1>
+          <h1 class="title"><cms:editable name='clients_title' type='richtext'>Some of our Happy clients</cms:editable></h1>
           <a href="" class="client-list-link">See See Full Client List</a>
           <div class="row between-md">
             <div class="col-md-2"><%= image_tag "department-of-ecology.png" %></div>
@@ -75,19 +80,16 @@ menu_hover: true
         </div>
       </div>
     </div>
-    <div class="container">
-      <div class="row center-sm vida-quote">
-        <div class="col-md-12">
-          <blockquote>Veda was extremely helpful in translating the complex science of the project into comprehensible language.</blockquote>
-          <div class="author">Pete Granger, Program Leader Marine Advisory Services, University of Washington Sea Grant</div>
+    <div class="container blockquote-container">
+      <div class="row center-md middle-md">
+        <div class="row center-sm veda-quote">
+          <div class="col-md-10">
+            <blockquote>One of the most informative public meetings I have ever attended... They did an excellent job.</blockquote>
+          </div>
+        </div>
+        <div class="row center-sm">
+          <div class="col-md-8 author">- Robert Lee, Workshop Participant, Port Angeles</div>
         </div>
       </div>
     </div>
 </div>
-
-<!-- <div style="background-color: red; width: 200px; height: 200px;" class="circle-square">
-</div>
-<img src="http://gabrielhummel.com/wp-content/uploads/2009/10/angrycat_1.jpg" class="cat"> -->
-
-
-<!-- <%= link_to "Read Documentation Online", "https://middlemanapp.com", target: "_blank" %> -->

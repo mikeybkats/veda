@@ -12,53 +12,138 @@ $z-index-3: 300;
 $z-index-4: 400;
 $z-index-5: 500;
 
-.doc {
-  margin: 3em 0;
-  font-size: 1.1em;
-  font-weight: 300;
 
-  a {
-    border: 1px solid white;
-    border-radius: 3px;
-    padding: 0.75em 0.7em;
-    text-decoration: none;
-    transition: color 0.1s linear;
-    &:hover {
-      background: rgba(0,0,0,0.2);
-      // color: white;
-      transition: all 0.15s linear;
-    }
-    &:visited {
-      color: $cream;
-    }
+////////////////////////// Base /////////////////////
+body {
+  background: white;
+  text-align: center;
+  font-family: 'Fira Sans', 'Helvetica Neue', sans-serif, Helvetica, Arial;
+  font-size: .85em;
+}
+
+.container {
+  // width: 1280px;
+  margin: 0 auto;
+}
+
+.fill-height {
+  height: 100%;
+}
+
+blockquote {
+  font-size: 3em;
+  font-weight: 200;
+  font-style: italic;
+  text-align: center;
+  color: $salmon;
+  max-width: 900px;
+  quotes: "	\201C" "	\201D";
+}
+blockquote:before {
+  content: open-quote;
+}
+blockquote:after {
+  content: close-quote;
+}
+
+.author {
+  color: $salmon;
+  font-weight: 200;
+  font-style: italic;
+  text-align: left;
+  margin-bottom: 0px;
+}
+
+h1 {
+  text-align: left;
+  font-size: 3em;
+}
+h2 {
+  font-weight: 200;
+  text-align: left;
+  font-size: 2em;
+}
+h3 {
+  text-align: left;
+  font-size: 1.5em;
+}
+p {
+  text-align: left;
+}
+a {
+  font-weight: 200;
+  font-style: italic;
+  text-decoration: none;
+  color: $green;
+  font-size: 16px;
+  font-style: normal;
+}
+ul {
+  list-style: none;
+}
+.logo img {
+  height: 18.75em;
+  margin-top: 6em;
+}
+
+.title {
+  text-align: center;
+}
+
+.row {
+  max-width: 1280px;
+  margin: 0px;
+}
+
+@media (min-width:800px) {
+  body{
+    width: 1280px;
+    margin: 0 auto;
   }
 }
 
-
-
-.welcome {
-  -webkit-animation-name: welcome;
-  -webkit-animation-duration: .9s;
+////////////////////////// Helpers /////////////////////
+.clearfix {
+  @include clearfix;
 }
 
-@-webkit-keyframes welcome {
-  from {
-    -webkit-transform: scale(0);
-    opacity: 0;
-  }
-  50% {
-    -webkit-transform: scale(0);
-    opacity: 0;
-  }
-  82.5% {
-    -webkit-transform: scale(1.03);
-    -webkit-animation-timing-function: ease-out;
-    opacity: 1;
-  }
-  to {
-    -webkit-transform: scale(1);
-  }
+////////////////////////// Icons /////////////////////
+.gear-icon {
+  @include icon('/assets/gear.png', 50, 50);
 }
+
+.circle-square {
+  @include circle(200);
+
+}
+.cat {
+  @include circle(250);
+}
+
+////////////////////////// buttons /////////////////////
+.btn {
+  display: block;
+  width: 120px;
+  height: 30px;
+  padding: 8px 0 0 0;
+  text-decoration: none;
+}
+
+.btn-work {
+  display: block;
+  width: 152px;
+  height: 30px;
+  padding: 8px 18px 0 18px;
+  text-decoration: none;
+}
+
+.btn-primary {
+  color: white;
+  background-color: $green;
+  font-style: italic;
+}
+
+
 
 ////////////////////////// Navbar /////////////////////
 
@@ -72,6 +157,8 @@ $z-index-5: 500;
 }
 
 .navbar {
+  margin: 0 auto;
+  max-width: 1280px;
   background: $darkGray;
   clear: both;
   &,a, a:visited {
@@ -93,24 +180,53 @@ $z-index-5: 500;
     display: none;
   }
   .logo img {
-    height: 4.75em;
-    margin-top: 0em;
+    width: 190px;
+    max-height: 100px;
+    margin-top: 0px;
+    margin-left: 45px;
   }
 }
 
+.nav-inner {
+  // min-width: 100%;
+  // display: flex;
+  // align-items: center;
+}
+
 .navigation-links {
+  margin-top: 0px;
+  margin-right: 0px;
   float: right;
+  height: 28px;
+  // min-width: 420px;
   ul {
     list-style: none;
     li {
-      padding: 0 5px 0 5px;
       a {
+        font-size: 14px;
         font-style: normal;
-        font-weight: 400;
+        font-weight: 300;
         color: $cream;
         text-transform: uppercase;
         text-decoration: none;
       }
+    }
+    li:nth-child(1){
+      margin: 0px 16px 0px 0px;
+    }
+    li:nth-child(2){
+      margin: 0px 16px 0px 16px;
+    }
+    li:nth-child(3){
+      margin: 0px 16px 0px 16px;
+    }
+    li:nth-child(4){
+      border-left: 2px solid $mediumGray;
+      a {
+        font-style: italic;
+        text-transform: none;
+      }
+      padding: 0px 16px 0px 16px;
     }
   }
 }
@@ -130,6 +246,8 @@ $z-index-5: 500;
     z-index: $z-index-5;
   }
   .mobile-menu {
+    align-items: flex-start;
+    align-content: flex-start;
     background: black;
     position: fixed;
     padding: 0px;
@@ -161,17 +279,34 @@ $z-index-5: 500;
     top: 10px;
   }
 
-
   .navigation-links {
     float: none;
     ul {
       list-style: none;
+
       li {
         float: none;
         padding: 0 5px 0 5px;
         a {
           text-decoration: none;
         }
+      }
+      li:nth-child(1){
+        margin: 0px 0px 0px 0px;
+      }
+      li:nth-child(2){
+        margin: 0px 0px 0px 0px;
+      }
+      li:nth-child(3){
+        margin: 0px 0px 0px 0px;
+      }
+      li:nth-child(4){
+        border-left: 0px solid $mediumGray;
+        a {
+          font-style: italic;
+          text-transform: none;
+        }
+        padding: 0px 0px 0px 0px;
       }
     }
   }
@@ -206,100 +341,6 @@ $z-index-5: 500;
 }
 
 
-////////////////////////// Helpers /////////////////////
-.clearfix {
-  @include clearfix;
-}
-
-////////////////////////// Icons /////////////////////
-.gear-icon {
-  @include icon('/assets/gear.png', 50, 50);
-}
-
-.circle-square {
-  @include circle(200);
-
-}
-.cat {
-  @include circle(250);
-}
-
-////////////////////////// buttons /////////////////////
-.btn {
-  display: block;
-  width: 120px;
-  height: 30px;
-  padding: 8px 0 0 0;
-  text-decoration: none;
-}
-
-.btn-primary {
-  color: white;
-  background-color: $green;
-  font-style: italic;
-}
-
-////////////////////////// Base /////////////////////
-body {
-  background: $darkGray;
-  text-align: center;
-  font-family: 'Fira Sans', 'Helvetica Neue', sans-serif, Helvetica, Arial;
-  font-size: 1em;
-}
-
-.container {
-  // width: 1280px;
-  margin: 0 auto;
-}
-
-.fill-height {
-  height: 100%;
-}
-
-blockquote {
-  font-size: 3em;
-  font-weight: 200;
-  font-style: italic;
-  text-align: left;
-  color: $salmon;
-}
-.author {
-  color: $salmon;
-  font-weight: 200;
-  font-style: italic;
-  text-align: left;
-}
-
-h1 {
-  text-align: left;
-  font-size: 3em;
-}
-h2 {
-  font-weight: 200;
-  text-align: left;
-  font-size: 2em;
-}
-h3 {
-  text-align: left;
-  font-size: 1.5em;
-}
-p {
-  text-align: left;
-}
-a {
-  font-style: normal;
-}
-ul {
-  list-style: none;
-}
-.logo img {
-  height: 18.75em;
-  margin-top: 6em;
-}
-
-.title {
-  text-align: center;
-}
 
 ////////////////////////// Hero /////////////////////
 
@@ -329,7 +370,8 @@ ul {
     z-index: $z-index-2;
     h1 {
       font-weight: 500;
-      font-size: 4em;
+      font-size: 92.64px;
+      line-height: 92.64px;
       color: $cream;
     }
   }
@@ -337,6 +379,19 @@ ul {
     color: $green;
     text-decoration: none;
     float: left;
+    display: flex;
+    align-items: center;
+    span {
+      font-size: 24px;
+      margin-right: 24px;
+    }
+    .icon-right-arrow {
+      height: 24px;
+      img {
+      width: 14px;
+      height: 25px;
+      }
+    }
   }
 }
 
@@ -362,7 +417,7 @@ p.description {
 }
 
 .slider-list {
-  font-size: 1em;
+  font-size: .85em;
   font-weight: 300;
   color: $mediumGray;
 }
@@ -377,10 +432,35 @@ p.description {
   justify-content: center;
   align-items: center;
   align-content: center;
+  .container {
+    margin: 20px 0 20px 0;
+  }
+  h2 {
+    font-size: 60px;
+    color: $green;
+    margin-top: 0px;
+  }
+  p {
+    max-width: 560px;
+    text-align: center;
+  }
+  a {
+    margin-bottom: 30px;
+    margin-top: 30px;
+  }
+  img {
+    width: 585px;
+  }
 }
 
 ////////////////////////// Clients /////////////////////
 .client-list {
+  title {
+    margin-top: 125px;
+  }
+  .blockquote-container {
+    margin-bottom: 160px;
+  }
   min-height: 100vh;
   background-color: $cream;
   display: flex;
@@ -388,27 +468,32 @@ p.description {
   justify-content: center;
   align-items: center;
   align-content: center;
+  h1 {
+    font-weight: 300;
+    font-size: 46px;
+    color: $darkGray;
+  }
   img {
-    opacity: .75;
+    padding: 25px 0px 25px 0px;
+    opacity: 1;
     mix-blend-mode: multiply;
   }
-}
+  .client-list-link {
+    margin: 0px 0px 50px 0px;
+    font-style: italic;
+  }
 
-a {
-  font-weight: 200;
-  font-style: italic;
-  text-decoration: none;
-  color: $green;
-  font-size: 1em;
 }
 
 div .client-grid > div:nth-child(3) {
-    margin-left: 50px;
-    margin-right: 50px;
+    // margin-left: 50px;
+    // margin-right: 50px;
     // background-color: red;
 }
 
 .client-grid {
+  margin-left: 100px;
+  margin-right: 100px;
   // max-width: 1280px;
   .row div {
   }
@@ -419,9 +504,78 @@ div .client-grid > div:nth-child(3) {
 
 
 ////////////////////////// Our Work /////////////////////
-.our-work {
-  min-height: 100vh;
-  background-color: $cream;
+.our-work-container {
+  background: $cream;
+}
+
+.page-title {
+  h1 {
+    text-align: center;
+  }
+}
+
+.case-study {
+  margin: 75px 0px;
+  .thumb {
+    background: url("../images/anders-jilden-108186.jpg") center center no-repeat;
+    height: 315px;
+    width: 315px;
+    @include circle(315);
+  }
+  div {
+    h3 {
+      text-align: center;
+    }
+  }
+  a {
+    margin: 0px auto;
+    text-align: center;
+  }
+}
+
+.morework-row {
+  max-width: 937px;
+  margin: 0 auto;
+  .left {
+    padding-left: 0px;
+  }
+}
+
+.morework-row-border {
+  border-bottom: 1px solid $extraLightGray;
+  border-top: 1px solid $extraLightGray;
+}
+
+.facilitation-col {
+  border-left: 1px solid $extraLightGray;
+  margin: 0 auto;
+}
+
+.veda-quote {
+  padding: 80px 0px 125px 0px;
+}
+
+.work-nav {
+  padding: none;
+  ul {
+    li {
+      font-weight: 300;
+      font-size: 17px;
+      color: $mediumGray;
+      // background-color: black;
+      a {
+        color: $mediumGray;
+      }
+    }
+    li.active {
+      font-weight: 400;
+      background-color: $extraLightGray;
+      a {
+        color: $darkGray;
+
+      }
+    }
+  }
 }
 
 ////////////////////////// the-veda-way /////////////////////
@@ -474,20 +628,22 @@ footer {
       margin-top: 20px;
     }
   }
+  .footer-content-row{
+    margin-bottom: 100px;
+  }
   div {
     ul {
       display: flex;
       padding: 0px;
     }
     p {
-      font-size: 1em;
       font-weight: 100;
       text-transform: uppercase;
       margin: 0px;
-      font-size: 1em;
+      font-size: .85em;
     }
     p.footer-address {
-      font-size: 1em;
+      font-size: .85em;
       margin: 0px;
       line-height: 18px;
     }
@@ -496,7 +652,7 @@ footer {
       font-weight: 300;
       font-style: italic;
       color: $green;
-      margin: 0px;
+      margin: 0px 0px 20px 0px;
     }
     h4.footer-phone {
       font-size: 2em;
@@ -515,9 +671,10 @@ footer {
   margin-right: 40px;
   div {
     ul {
-      margin-left: 45px;
+      margin-left: 25px;
       margin-right: 45px;
       display: block;
+      padding-right: 25px;
     }
   }
 }
@@ -526,30 +683,36 @@ footer {
   margin: 0px;
   .social-icon {
     min-width: 32px;
-    margin-left: 5px;
-    margin-righ: 5px;
+    margin-left: 6px;
+    margin-right: 6px;
   }
 }
 
 .footer-logo {
   background-color: $darkGray;
-  max-width: 120px;
+  // max-width: 120px;
   margin: 30px;
+  margin-right: 55px;
+  img {
+    width: 115px;
+  }
 }
 
 .footer-badge {
   min-width: 142px;
-  padding-left: 0px;
+  padding-left: 55px;
 }
 
 
 .copyright {
-  font-size: 1em;
+  font-size: .85em;
   display: block;
   font-style: italic;
   font-weight: 200;
   color: $mediumGray;
   text-decoration: none;
+  align-items: center;
+  display: flex;
 }
 
 ////////////////////////// Slider Indicator /////////////////////

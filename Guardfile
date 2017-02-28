@@ -49,7 +49,7 @@ guard 'livereload' do
   end
 
   # file needing a full reload of the page anyway
-  watch(%r{source/**/.*})
+  watch(%r{source/*/.*})
 end
 
 guard 'middleman', 'no-clean': true do
