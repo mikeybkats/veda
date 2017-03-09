@@ -5,6 +5,12 @@
   // box-shadow: 5px 5px 5px black;
 }
 
+@mixin croppedCircle() {
+  overflow: hidden;
+  -webkit-clip-path: circle(50.1% at 80% 50%);
+  clip-path: circle(50.1% at 80% 50%);
+}
+
 @mixin square($height) {
   height: $height + px;
   width: $height + px;
