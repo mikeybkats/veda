@@ -5,6 +5,12 @@
   // box-shadow: 5px 5px 5px black;
 }
 
+@mixin square($height) {
+  height: $height + px;
+  width: $height + px;
+  overflow: hidden;
+}
+
 @mixin icon($url, $width, $height) {
   overflow: hidden;
   display: inline-block;

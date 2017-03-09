@@ -56,7 +56,21 @@ blockquote:after {
 
 h1 {
   text-align: left;
-  font-size: 3em;
+  font-size: 46px;
+}
+h1.title {
+  text-align: center;
+  font-weight: 300;
+  font-size: 60px;
+  color: $darkGray;
+  margin: 15px 0px;
+}
+h1.title-left {
+  text-align: left;
+  font-weight: 300;
+  font-size: 52px;
+  line-height: 0px;
+  color: $darkGray;
 }
 h2 {
   font-weight: 200;
@@ -67,8 +81,16 @@ h3 {
   text-align: left;
   font-size: 1.5em;
 }
+h4 {
+  text-align: left;
+  font-size: 18px;
+  font-weight: 400;
+  color: $darkGray;
+  margin: 0px;
+}
 p {
   text-align: left;
+  font-weight: 200;
 }
 a {
   font-weight: 200;
@@ -91,15 +113,19 @@ ul {
 }
 
 .row {
-  max-width: 1280px;
+  // max-width: 1280px;
   margin: 0px;
 }
 
 @media (min-width:800px) {
   body{
-    width: 1280px;
+    // width: 1280px;
     margin: 0 auto;
   }
+}
+
+.hidden {
+  display: none;
 }
 
 ////////////////////////// Helpers /////////////////////
@@ -137,6 +163,14 @@ ul {
   text-decoration: none;
 }
 
+.btn-veda-way {
+  display: block;
+  width: 244px;
+  height: 30px;
+  padding: 8px 18px 0 18px;
+  text-decoration: none;
+}
+
 .btn-primary {
   color: white;
   background-color: $green;
@@ -158,7 +192,7 @@ ul {
 
 .navbar {
   margin: 0 auto;
-  max-width: 1280px;
+  // max-width: 1280px;
   background: $darkGray;
   clear: both;
   &,a, a:visited {
@@ -534,7 +568,7 @@ div .client-grid > div:nth-child(3) {
 }
 
 .morework-row {
-  max-width: 937px;
+  width: 937px;
   margin: 0 auto;
   .left {
     padding-left: 0px;
@@ -546,9 +580,17 @@ div .client-grid > div:nth-child(3) {
   border-top: 1px solid $extraLightGray;
 }
 
-.facilitation-col {
+.content-col {
   border-left: 1px solid $extraLightGray;
   margin: 0 auto;
+  min-height: 450px;
+}
+
+.thumbnail-row {
+  img {
+    background: url("../images/anders-jilden-108186.jpg") center center no-repeat;
+    @include square(95);
+  }
 }
 
 .veda-quote {
@@ -556,23 +598,24 @@ div .client-grid > div:nth-child(3) {
 }
 
 .work-nav {
-  padding: none;
+  padding: 0px;
   ul {
+    padding-left: 0px;
     li {
       font-weight: 300;
       font-size: 17px;
+      text-align: left;
       color: $mediumGray;
-      // background-color: black;
       a {
         color: $mediumGray;
       }
     }
     li.active {
-      font-weight: 400;
+      text-align: left;
       background-color: $extraLightGray;
       a {
+        font-weight: 400;
         color: $darkGray;
-
       }
     }
   }
@@ -580,8 +623,122 @@ div .client-grid > div:nth-child(3) {
 
 ////////////////////////// the-veda-way /////////////////////
 .the-veda-way {
+  .services-section {
+    margin: 55px 0px;
+    padding: 55px 0px 110px 0px;
+    .row {
+    min-width: 100%;
+    }
+  }
+  .row.process {
+    margin: 75px 0px;
+  }
+  .process .col-md-5 {
+    max-width: 420px;
+  }
   min-height: 100vh;
   background-color: $cream;
+  .number {
+    max-width: 160px;
+  }
+  .number img {
+    max-height: 150px;
+    min-width: 120px;
+    margin: 0px 0px;
+    padding: 0px 10px;
+  }
+  .featured-image img {
+    width: 400px;
+    margin: 0px 10px;
+  }
+  .bottom-border {
+    border-bottom: 1px solid $mediumGray;
+  }
+  p {
+    font-size: 21px;
+    font-style: italic;
+    font-weight: 100;
+    color: $mediumGray;
+  }
+  .title{
+    margin-top: 110px;
+  }
+  .process-description {
+    padding: 0px 40px;
+    h3 {
+      font-size: 28px;
+      margin: 0px;
+      line-height: 0px;
+      color: $darkGray;
+    }
+    p {
+      font-size: 17px;
+      font-style: normal;
+      font-weight: 400;
+      color: $darkGray;
+    }
+    ul {
+      text-align: left;
+      padding-left: 20px;
+      li {
+        color: $mediumGray;
+        list-style: disc;
+        font-size: 14px;
+        font-style: italic;
+        font-weight: 100;
+      }
+    }
+  }
+  .services-section{
+    max-width: 1000px;
+    .service {
+      margin: 25px 0px;
+      padding: 35px 0px;
+    }
+    h4 {
+    }
+    p {
+      margin: 0px;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 300;
+      color: $mediumGray;
+    }
+    a {
+      display: block;
+      text-align: left;
+      font-style: italic;
+      font-size: 16px;
+      font-weight: 300;
+    }
+    .col-md-2 img {
+      max-width: 92px;
+    }
+    .col-md-8 a {
+      font-style: italic;
+      text-align: left;
+      display: block;
+    }
+  }
+  .author {
+    text-align: center;
+    color: RGBA(231, 115, 108, 1);
+    font-weight: 200;
+    font-size: 16px;
+    font-style: italic;
+    text-align: left;
+    margin-bottom: 0px;
+  }
+  .on-a-mission {
+    max-width: 1000px;
+    padding: 100px 0px 125px 0px;
+    margin: 0px 0px;
+    img {
+    }
+    .on-a-mission-description {
+
+    }
+  }
 }
 
 ////////////////////////// contact-us /////////////////////
@@ -668,7 +825,7 @@ footer {
   min-height: 215px;
   border-left: 1px solid $mediumGray;
   border-right: 1px solid $mediumGray;
-  margin-right: 40px;
+  margin-right: 0px;
   div {
     ul {
       margin-left: 25px;
@@ -692,7 +849,7 @@ footer {
   background-color: $darkGray;
   // max-width: 120px;
   margin: 30px;
-  margin-right: 55px;
+  margin-right: 35px;
   img {
     width: 115px;
   }

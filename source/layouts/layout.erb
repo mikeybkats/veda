@@ -1,4 +1,5 @@
 <!doctype html>
+<?php require_once($_SERVER['DOCUMENT_ROOT'] . "/couch/cms.php"); ?>
 <html>
   <head>
     <meta content="IE=edge" http-equiv="X-UA-Compatible">
@@ -14,7 +15,7 @@
   </head>
 
   <body class="<%= page_classes %><%= current_page.data.menu_hover ? ' menu-hover' : '' %>">
-<?php require_once($_SERVER['DOCUMENT_ROOT'] . "/couch/cms.php"); ?>
+
     <nav class="navbar">
       <i class="fa fa-bars hamburger" aria-hidden="true"></i>
 
@@ -43,7 +44,7 @@
     <footer>
       <div class="container">
         <div class="row footer-content-row end-md around-md middle-md">
-          <div class="col-md-6 col-sm">
+          <div class="col-md-6 col-md">
             <div class="row end-md middle-md">
               <div class="footer-logo col-md-4">
                 <%= image_tag "logo-footer.svg" %>
@@ -61,7 +62,7 @@
             </div>
           </div>
 
-          <div class="col-md-6 col-sm">
+          <div class="col-md-6 col-md">
                 <div class="row middle-md">
                   <div class="col-md">
                     <h4 class="footer-email">hello@vedaenv.com</h4>
@@ -104,3 +105,4 @@
 
   </body>
   </html>
+<?php COUCH::invoke(); ?>
