@@ -2,3 +2,5 @@
 //= require jquery
 
 //= require './hamburger.js'
+//= require './work-menu.js'
+//= require './nav-highlight.js'

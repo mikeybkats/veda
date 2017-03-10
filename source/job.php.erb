@@ -1,0 +1,25 @@
+<cms:template title="Job" clonable="1">
+  <cms:editable
+    name="job_title"
+    type="text"
+    ></cms:editable>
+
+  <cms:editable
+    name="client"
+    type="text"
+
+    ></cms:editable>
+
+  <cms:editable
+    name="year"
+    type="text"
+    ></cms:editable>
+
+  <cms:editable
+    name="business_status"
+    type="checkbox"
+    opt_values='Public | Private | Non Profit'
+    ></cms:editable>
+
+  <cms:editable type='relation' name='categories_jobs' masterpage="categories/index.php" />
+</cms:template>

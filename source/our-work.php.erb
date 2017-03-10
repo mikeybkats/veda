@@ -1,17 +1,17 @@
 ---
 title: Our Work
 ---
-<div class="our-work-container">
-  <div class="page-title row center-md middle-md">
+<div class="row center-md our-work-container">
+  <div class="row center-md middle-md">
     <div class="col-md-10">
       <div class="row center-sm">
-        <div class="col-md-5">
-          <h1>Work, work, work.</h1>
+        <div class="col-md-8">
+          <h1 class="title page-title">Work, work, work.</h1>
         </div>
       </div>
       <div class="row center-sm">
-        <div class="col-md-8">
-          <p>Veda has been helping shape policy, communication and education in our environment for over two decades. The results speak for themselves.</p>
+        <div class="col-md-11">
+          <p class="title-description">Veda has been helping shape policy, communication and education in our environment for over two decades. The results speak for themselves.</p>
         </div>
       </div>
     </div>
@@ -21,12 +21,30 @@ title: Our Work
     <div class="col-md-4">
       <div class="row center-md">
         <div class="col-md-12">
-          <img src="" alt="" class="thumb" />
+          <img src="" alt="" class="thumb1" />
         </div>
       </div>
       <div class="row center-md">
-        <div class="col-md-10">
-          <h3>thumbnail caption text</h3>
+        <div class="col-md-12">
+          <h3>Diminishing the Damage of Derelict Crab Pots</h3>
+        </div>
+      </div>
+      <div class="row center-md">
+        <div class="col-md-8">
+          <a href="../case-study-1/" class="btn-work btn-primary">see the case study</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="row center-md">
+        <div class="col-md-12">
+          <img src="" alt="" class="thumb2" />
+        </div>
+      </div>
+      <div class="row center-md">
+        <div class="col-md-12">
+          <h3>Oil Spill Preparedness: Is Everyone Ready?</h3>
         </div>
       </div>
       <div class="row center-md">
@@ -39,30 +57,12 @@ title: Our Work
     <div class="col-md-4">
       <div class="row center-md">
         <div class="col-md-12">
-          <img src="" alt="" class="thumb" />
+          <img src="" alt="" class="thumb3" />
         </div>
       </div>
-      <div class="row center-md">
-        <div class="col-md-10">
-          <h3>thumbnail caption text</h3>
-        </div>
-      </div>
-      <div class="row center-md">
-        <div class="col-md-8">
-          <a href="" class="btn-work btn-primary">see the case study</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-md-4">
       <div class="row center-md">
         <div class="col-md-12">
-          <img src="" alt="" class="thumb" />
-        </div>
-      </div>
-      <div class="row center-md">
-        <div class="col-md-10">
-          <h3>thumbnail caption text</h3>
+          <h3>Early Action on Super Fund Clean up</h3>
         </div>
       </div>
       <div class="row center-md">
@@ -82,98 +82,74 @@ title: Our Work
         </div>
       </div>
       <div class="row morework-row morework-row-border top-xs">
-        <div class="work-nav col-md-4">
-          <ul>
-            <li>View All</li>
-            <li class="active"><a>Facilitation</a></li>
-            <li><a href="">Public Outreach</a></li>
-            <li><a href="">Strategic Planning</a></li>
-            <li><a href="">Stakeholder Endgagement</a></li>
-            <li><a href="">Science Comm. &amp; Education </a></li>
-            <li><a href="">Workshop Planning</a></li>
-            <li><a href="">Public</a></li>
-            <li><a href="">Private</a></li>
-            <li><a href="">Non-Profit</a></li>
+        <div class="work-nav col-md-3">
+          <ul class="work-categories-menu">
+            <li class="all active" ><a href="" id="all">View All</a></li>
+
+            <cms:pages masterpage='categories/index.php'>
+              <li><a href="" id="<cms:show k_page_name />"><cms:show k_page_title /></a></li>
+            </cms:pages>
+
+            <cms:pages masterpage='job/index.php'>
+              <cms:each business_status as='cat'>
+                <li><a href="" id=""><cms:show cat /></a></li>
+              </cms:each>
+            </cms:pages>
+
           </ul>
         </div>
-        <div class="facilitation-col col-md-8">
+
+        <div class="content-col col-md-9">
           <div class="row">
-            <h3>Facilitation</h3>
-          </div>
-          <div class="row">
-            <div class="col-md-2"><img src="" alt=""></div>
-            <div class="col-md-2"><img src="" alt=""></div>
-            <div class="col-md-2"><img src="" alt=""></div>
-            <div class="col-md-2"><img src="" alt=""></div>
-            <div class="col-md-2"><img src="" alt=""></div>
-            <div class="col-md-2"><img src="" alt=""></div>
+            <h3 id="categorySelectionTitle"></h3>
           </div>
 
-          <div class="row">
-            <div class="col-md-12">
-              <h3>more work title</h3>
-              <p>client</p>
-              <p>year</p>
-              <p>veda provided:<a href="">link</a></p>
-            </div>
+          <div class="category-image-sets">
+            <cms:pages masterpage='categories/index.php'>
+              <div class="row thumbnail-row hidden" data-category-name="<cms:show k_page_name />">
+                <cms:show_repeatable 'category_images' count='6'>
+                  <div class="col-md-2"><img src="<cms:show category_image />" id=""/></div>
+                </cms:show_repeatable>
+              </div>
+            </cms:pages>
           </div>
 
-          <div class="row">
-            <div class="col-md-12">
-              <h3>more work title</h3>
-              <p>client</p>
-              <p>year</p>
-              <p>veda provided:<a href="">link</a></p>
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="col-md-12">
-              <h3>more work title</h3>
-              <p>client</p>
-              <p>year</p>
-              <p>veda provided:<a href="">link</a></p>
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="col-md-12">
-              <h3>more work title</h3>
-              <p>client</p>
-              <p>year</p>
-              <p>veda provided:<a href="">link</a></p>
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="col-md-12">
-              <h3>more work title</h3>
-              <p>client</p>
-              <p>year</p>
-              <p>veda provided:<a href="">link</a></p>
-            </div>
-          </div>
-
-        </div>
-      </div>
-      <div class="row morework-row">
-        <div class="col-md left">
-          <p class="">*Projects carried out by Hilary and Sarah prior to founding Veda Environmental</p>
-        </div>
-      </div>
+    <cms:pages masterpage='job/index.php'>
+    <div class="row job " data-tag="<cms:related_pages 'categories_jobs' limit='5'><cms:show k_page_name /> </cms:related_pages>">
+      <div class="col-md-12">
+        <h3><cms:show job_title /></h3>
+        <p><span class="bold">CLIENT:</span> <cms:show client /></p>
+        <p><span class="bold">YEAR: </span><cms:show year /></p>
+        <p><span class="bold">VEDA PROVIDED: </span>
+          <cms:related_pages 'categories_jobs' limit='5'>
+          <a href=""><cms:show k_page_title />, </a>
+        </cms:related_pages>
+      </p>
     </div>
   </div>
+</cms:pages>
 
-  <div class="row center-sm veda-quote">
+</div>
+</div>
 
-    <div class="col-md-8">
-        <blockquote>Veda was extremely helpful in translating the complex science of the project into comprehensible language.</blockquote>
-    </div>
-
-    <div class="row center-sm">
-      <div class="col-md-8 author"><p class="author title">- Pete Granger, Program Leader Marine Advisory Services, University of Washington Sea Grant</p></div>
-    </div>
-
+<div class="row morework-row">
+  <div class="col-md left">
+    <p class="">*Projects carried out by Hilary and Sarah prior to founding Veda Environmental</p>
   </div>
+</div>
+</div>
+</div>
+
+<div class="row center-sm veda-quote blockquote-container">
+
+  <div class="col-md-10">
+    <blockquote>Veda was extremely helpful in translating the complex science of the project into comprehensible language.</blockquote>
+  </div>
+
+  <div class="row center-sm">
+    <div class="col-md-8 author"><p class="author title">- Ron Shultz, Director of Policy & Inter Governmental Relations, Washington Conservation Commission</p></div>
+  </div>
+
+</div>
 
 </div>
