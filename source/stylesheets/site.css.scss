@@ -32,7 +32,7 @@ body {
 
 blockquote {
   font-size: 3em;
-  font-weight: 200;
+  font-weight: 300;
   font-style: italic;
   text-align: center;
   color: $salmon;
@@ -48,7 +48,7 @@ blockquote:after {
 
 .author {
   color: $salmon;
-  font-weight: 200;
+  font-weight: 300;
   font-style: italic;
   text-align: left;
   margin-bottom: 0px;
@@ -63,7 +63,7 @@ h1.title {
   font-weight: 300;
   font-size: 60px;
   color: $darkGray;
-  margin: 15px 0px;
+
 }
 h1.title-left {
   text-align: left;
@@ -73,7 +73,7 @@ h1.title-left {
   color: $darkGray;
 }
 h2 {
-  font-weight: 200;
+  font-weight: 300;
   text-align: left;
   font-size: 48px;
 }
@@ -84,16 +84,16 @@ h3 {
 h4 {
   text-align: left;
   font-size: 18px;
-  font-weight: 400;
+  font-weight: 300;
   color: $darkGray;
   margin: 0px;
 }
 p {
   text-align: left;
-  font-weight: 200;
+  font-weight: 300;
 }
 a {
-  font-weight: 200;
+  font-weight: 300;
   font-style: italic;
   text-decoration: none;
   color: $green;
@@ -110,6 +110,12 @@ ul {
 
 .title {
   text-align: center;
+}
+.title-description {
+    font-size: 21px;
+    font-style: italic;
+    font-weight: 300;
+    color: RGBA(122, 120, 115, 1);
 }
 
 .row {
@@ -143,7 +149,7 @@ ul {
 }
 
 .circle-square {
-  @include circle(200);
+  @include circle(300);
 
 }
 .cat {
@@ -448,7 +454,7 @@ ul {
 }
 
 h2.featured-project-title {
-  font-weight: 200;
+  font-weight: 300;
   color: $darkGray;
 
 }
@@ -462,7 +468,7 @@ p.description {
 
 .slider-list {
   font-size: 14px;
-  font-weight: 400;
+  font-weight: 500;
   color: $mediumGray;
 }
 
@@ -571,11 +577,11 @@ div .client-grid > div:nth-child(3) {
     }
     p {
       line-height: 5px;
-      font-weight: 200px;
+      font-weight: 300px;
       color: $darkGray;
     }
     .bold {
-      font-weight: 400;
+      font-weight: 500;
     }
   }
   .content-col:last-child{
@@ -616,7 +622,7 @@ div .client-grid > div:nth-child(3) {
       text-align: center;
       color: $darkGray;
       font-size: 25px;
-      font-weight: 200;
+      font-weight: 300;
     }
   }
   a {
@@ -672,7 +678,7 @@ div .client-grid > div:nth-child(3) {
       text-align: left;
       background-color: $extraLightGray;
       a {
-        font-weight: 400;
+        font-weight: 500;
         color: $darkGray;
       }
     }
@@ -742,7 +748,7 @@ div .client-grid > div:nth-child(3) {
     padding: 0px 10px;
   }
   .featured-image img {
-    width: 400px;
+    width: 500px;
     margin: 0px 10px;
   }
   .bottom-border {
@@ -751,7 +757,7 @@ div .client-grid > div:nth-child(3) {
   p {
     font-size: 21px;
     font-style: italic;
-    font-weight: 100;
+    font-weight: 300;
     color: $mediumGray;
   }
   .title{
@@ -768,7 +774,7 @@ div .client-grid > div:nth-child(3) {
     p {
       font-size: 17px;
       font-style: normal;
-      font-weight: 400;
+      font-weight: 500;
       color: $darkGray;
     }
     ul {
@@ -779,14 +785,14 @@ div .client-grid > div:nth-child(3) {
         list-style: disc;
         font-size: 14px;
         font-style: italic;
-        font-weight: 100;
+        font-weight: 300;
       }
     }
   }
   .author {
     text-align: center;
     color: RGBA(231, 115, 108, 1);
-    font-weight: 200;
+    font-weight: 300;
     font-size: 16px;
     font-style: italic;
     text-align: left;
@@ -821,59 +827,44 @@ div .client-grid > div:nth-child(3) {
 .the-veda-team {
   min-height: 100vh;
   background-color: $cream;
-  .title {
-    margin-top: 110px;
-  }
-  p {
-    font-size: 21px;
-    font-style: italic;
-    font-weight: 100;
-    color: RGBA(122, 120, 115, 1);
-  }
-  .bio-col {
-    margin: 50px 0px;
-    .name {
-
-    }
-    .team-title {
-
-    }
-    li, .description {
-      color: $darkGray;
-      font-size: 16px;
-      font-style: normal;
-      font-weight: 200;
-    }
-    .testimonial {
-      color: $cream;
-      font-size: 16px;
-      font-style: normal;
-      font-weight: 200;
-    }
-    .author {
-      color: $darkGray;
-      font-size: 16px;
-      font-style: normal;
-      font-weight: 200;
-    }
-    ul {
-      text-align: left;
-      li {
+  .bio-col{
+    .team-member{
+      .name{
 
       }
+      .team-title{
+
+      }
+      ul{
+        list-style: none;
+        li{
+
+        }
+      }
     }
-    .blue-block {
+    .blue-block{
       background-color: $blue;
       border-radius: 5px;
     }
-    .green-block {
+    .green-block{
       background-color: $green;
       border-radius: 5px;
     }
-  }
-  .fun-fact {
-    width: 100%;
-    background-color: $orange;
+    .phone-number{
+      color: $darkGray;
+      font-size: 21px;
+      font-style: normal;
+      font-weight: 500;
+    }
+    .email{
+      color: $green;
+      font-size: 21px;
+      font-style: normal;
+      font-weight: 500;
+    }
+    .testimonial{
+      
+    }
   }
 }
 
@@ -897,7 +888,7 @@ footer {
       display: block;
       text-transform: uppercase;
       font-style: normal;
-      font-weight: 200;
+      font-weight: 300;
       line-height: 30px;
       color: $mediumGray;
       text-decoration: none;
@@ -937,7 +928,7 @@ footer {
     h4.footer-phone {
       font-size: 2em;
       font-style: italic;
-      font-weight: 200;
+      font-weight: 300;
       color: $cream;
       margin: 0px;
     }
@@ -988,7 +979,7 @@ footer {
   font-size: .85em;
   display: block;
   font-style: italic;
-  font-weight: 200;
+  font-weight: 300;
   color: $mediumGray;
   text-decoration: none;
   align-items: center;
