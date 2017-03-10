@@ -79,7 +79,7 @@ h2 {
 }
 h3 {
   text-align: left;
-  font-size: 1.5em;
+  font-size: 21px;
 }
 h4 {
   text-align: left;
@@ -185,6 +185,16 @@ ul {
   color: white;
   background-color: $green;
   font-style: italic;
+}
+
+.btn-white {
+  background-color: $cream;
+  color: $mediumGray;
+  display: block;
+  width: 170px;
+  height: 30px;
+  padding: 8px 18px 0 18px;
+  text-decoration: none;
 }
 
 
@@ -506,6 +516,9 @@ p.description {
 ////////////////////////// Case Study Page /////////////////////
 .case-study-page {
   background-color: $cream;
+  .featured-image{
+    margin-top: 35px;
+  }
   .featured-image img {
     height: 571px;
     width: inherit;
@@ -515,17 +528,48 @@ p.description {
     font-size: 52px;
   }
   .title-description{
-    color: $salmon;
+    margin-bottom: 105px;
+    h3 {
+      color: $salmon;
+      font-weight: 300;
+    }
   }
   .info-header .col-md-3 {
     border-left: 1px solid $mediumGray;
     padding-left: 22px;
+    margin-bottom: 90px;
+  }
+  .detail-textblock {
+    margin-bottom: 50px;
+    h4 {
+      color: $salmon;
+    }
   }
   ul {
     text-align: left;
     li {
       list-style: none;
       color: $mediumGray;
+    }
+  }
+  .author {
+    font-size: 16px;
+  }
+  .client-shout-out{
+    background-color: $salmon;
+    color: $cream;
+    padding: 100px 0px;
+    .col-md-5{
+      padding-left: 0px;
+    }
+    p {
+      margin: 0px;
+    }
+    h3{
+      font-size: 20px;
+      font-weight: 500;
+      margin: 0px;
+      margin-bottom: 35px;
     }
   }
 }
@@ -571,9 +615,6 @@ p.description {
 .client-list {
   title {
     margin-top: 125px;
-  }
-  .blockquote-container {
-    margin-bottom: 160px;
   }
   min-height: 100vh;
   background-color: $cream;
