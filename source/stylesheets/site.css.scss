@@ -503,6 +503,33 @@ p.description {
   color: $mediumGray;
 }
 
+////////////////////////// Case Study Page /////////////////////
+.case-study-page {
+  background-color: $cream;
+  .featured-image img {
+    height: 571px;
+    width: inherit;
+    @include circle(571);
+  }
+  .title {
+    font-size: 52px;
+  }
+  .title-description{
+    color: $salmon;
+  }
+  .info-header .col-md-3 {
+    border-left: 1px solid $mediumGray;
+    padding-left: 22px;
+  }
+  ul {
+    text-align: left;
+    li {
+      list-style: none;
+      color: $mediumGray;
+    }
+  }
+}
+
 
 ////////////////////////// How We Work /////////////////////
 .how-we-work {
