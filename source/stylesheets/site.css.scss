@@ -90,6 +90,7 @@ h4 {
 }
 p {
   text-align: left;
+  line-height: 20px;
   font-weight: 300;
 }
 a {
@@ -126,6 +127,14 @@ ul {
 .featured-image img {
   width: 425px;
   margin: 0px 10px;
+}
+
+.bold {
+  font-weight: 500;
+}
+
+.caps {
+  text-transform: uppercase;
 }
 
 @media (min-width:800px) {
@@ -365,6 +374,17 @@ ul {
     z-index: $z-index-4;
   }
 
+  .menu-hover .navbar {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 500;
+      background: none;
+      height: 0px;
+      margin-top: -3px;
+  }
+
   .navigation-links {
     float: none;
     ul {
@@ -534,22 +554,55 @@ p.description {
       font-weight: 300;
     }
   }
-  .info-header .col-md-3 {
-    border-left: 1px solid $mediumGray;
+  .info-header {
+    .col-md-4 {
+    border-left: 1px solid $lightGray;
     padding-left: 22px;
-    margin-bottom: 90px;
+    padding-bottom: 40px;
+    margin-bottom: 50px;
+    }
+    .col-md-2 img{
+      width: 20px;
+    }
+    .col-md-2 {
+      padding: 0px 0px;
+    }
+    p.icon-title {
+      font-size: 12px;
+      font-weight: 400;
+      text-transform: uppercase;
+      color: $darkGray;
+    }
+    .icon-row .col-md-10 {
+      padding-left: 0px;
+    }
+    .col-md-12{
+      padding-left: 10px;
+      p{
+        font-size: 17px;
+        font-weight: 300;
+        color: $darkGray;
+        margin: 0px;
+      }
+    }
   }
   .detail-textblock {
     margin-bottom: 50px;
     h4 {
       color: $salmon;
+      font-weight: 500;
+    }
+    p {
+      margin-top: 0px;
     }
   }
   ul {
     text-align: left;
+    font-weight: 300;
+    padding-left: 0px;
     li {
       list-style: none;
-      color: $mediumGray;
+      color: $darkGray;
     }
   }
   .author {
@@ -562,7 +615,8 @@ p.description {
     .col-md-5{
       padding-left: 0px;
     }
-    p {
+    .col-md-5 p {
+      font-size: 12px;
       margin: 0px;
     }
     h3{
