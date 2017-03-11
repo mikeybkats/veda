@@ -93,6 +93,9 @@ p {
   line-height: 20px;
   font-weight: 300;
 }
+p.title-description {
+  line-height: 29px;
+}
 a {
   font-weight: 300;
   font-style: italic;
@@ -554,6 +557,8 @@ p.description {
       font-weight: 300;
     }
   }
+
+
   .info-header {
     .col-md-4 {
     border-left: 1px solid $lightGray;
