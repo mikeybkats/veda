@@ -18,59 +18,28 @@ title: Our Work
   </div>
 
   <div class="case-study row around-md">
-    <div class="col-md-4">
-      <div class="row center-md">
-        <div class="col-md-12">
-          <img src="" alt="" class="thumb1" />
-        </div>
-      </div>
-      <div class="row center-md">
-        <div class="col-md-12">
-          <h3>Diminishing the Damage of Derelict Crab Pots</h3>
-        </div>
-      </div>
-      <div class="row center-md">
-        <div class="col-md-8">
-          <a href="../case-study-1/" class="btn-work btn-primary">see the case study</a>
-        </div>
-      </div>
-    </div>
 
-    <div class="col-md-4">
-      <div class="row center-md">
-        <div class="col-md-12">
-          <img src="" alt="" class="thumb2" />
+    <cms:pages masterpage='featured-case-study/index.php'>
+      <div class="col-md-4">
+        <div class="row center-md">
+          <div class="col-md-12">
+            <img src="<cms:show featured_image/>" alt="" class="thumb" />
+          </div>
+        </div>
+        <div class="row center-md">
+          <div class="col-md-12">
+            <h3>
+              <cms:show project_title />
+            </h3>
+          </div>
+        </div>
+        <div class="row center-md">
+          <div class="col-md-8">
+            <a href="../featured-case-study/<cms:show k_page_name />.html" class="btn-work btn-primary">see the case study</a>
+          </div>
         </div>
       </div>
-      <div class="row center-md">
-        <div class="col-md-12">
-          <h3>Oil Spill Preparedness: Is Everyone Ready?</h3>
-        </div>
-      </div>
-      <div class="row center-md">
-        <div class="col-md-8">
-          <a href="" class="btn-work btn-primary">see the case study</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-md-4">
-      <div class="row center-md">
-        <div class="col-md-12">
-          <img src="" alt="" class="thumb3" />
-        </div>
-      </div>
-      <div class="row center-md">
-        <div class="col-md-12">
-          <h3>Early Action on Super Fund Clean up</h3>
-        </div>
-      </div>
-      <div class="row center-md">
-        <div class="col-md-8">
-          <a href="" class="btn-work btn-primary">see the case study</a>
-        </div>
-      </div>
-    </div>
+    </cms:pages>
 
   </div>
 
