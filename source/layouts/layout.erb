@@ -9,8 +9,7 @@
     <!-- Use title if it's in the page YAML frontmatter -->
     <title><%= current_page.data.title || "Middleman" %></title>
 
-    <%= stylesheet_link_tag "../fonts/font", :site %>
-    <%= stylesheet_link_tag "flexboxgrid.min", :site %>
+    <%= stylesheet_link_tag "flexboxgrid.min", "../fonts/font", :site %>
     <%= javascript_include_tag  :all %>
   </head>
 
@@ -33,7 +32,7 @@
             <li><%= link_to 'Our Work', '../our-work/' %></li>
             <li><%= link_to 'The Veda Way', '../the-veda-way/' %></li>
             <li><%= link_to 'Our Team', '../the-veda-team/' %></li>
-            <li><%= link_to 'Contact', 'mailto:someone@example.com?Subject=Hello%20again' %></li>
+            <li><%= link_to 'Contact', '#contact' %></li>
           </ul>
         </div>
       </div>
@@ -65,7 +64,7 @@
           <div class="col-md-6 col-md">
                 <div class="row middle-md">
                   <div class="col-md">
-                    <h4 class="footer-email">hello@vedaenv.com</h4>
+                    <h4 class="footer-email" id="contact">hello@vedaenv.com</h4>
                   </div>
                   <div class="col-md">
                     <ul class="social-nav">

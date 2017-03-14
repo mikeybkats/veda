@@ -4,3 +4,4 @@
 //= require './hamburger.js'
 //= require './work-menu.js'
 //= require './nav-highlight.js'
+//= require './scrollto.js'

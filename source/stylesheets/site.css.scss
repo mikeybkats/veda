@@ -22,7 +22,6 @@ body {
 }
 
 .container {
-  // width: 1280px;
   margin: 0 auto;
 }
 
@@ -504,7 +503,7 @@ ul {
 }
 
 ////////////////////////// Featured Case Study /////////////////////
-.featured-case-study {
+.case-study-featured {
   height: 100vh;
   background-color: $cream;
   justify-content: center;
@@ -756,20 +755,7 @@ div .client-grid > div:nth-child(3) {
 
 .case-study {
   margin: 75px 0px;
-  .thumb1 {
-    background: url("../images/crab-small.jpg") center center no-repeat;
-    height: 315px;
-    width: 315px;
-    @include circle(315);
-  }
-  .thumb2 {
-    background: url("../images/boat-small.jpg") center center no-repeat;
-    height: 315px;
-    width: 315px;
-    @include circle(315);
-  }
-  .thumb3 {
-    background: url("../images/fish-small.jpg") center center no-repeat;
+  .thumb {
     height: 315px;
     width: 315px;
     @include circle(315);
