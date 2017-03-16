@@ -14,23 +14,36 @@ menu_hover: true
     </div>
   </div>
 </div>
+
 <div class="case-study-featured">
-  <div>
-    <div class="row middle-md center-xs between-xs">
-      <div class="col-md-6">
-        <ul class="row middle-sm slider-list">
-          <li>FEATURED PROJECTS</li>
-          <li class="item active"><a href="" class="indicator"></a></li>
-          <li class="item"><a href="" class="indicator"></a></li>
-          <li class="item"><a href="" class="indicator"></a></li>
-        </ul>
-        <h2 class="featured-project-title">Diminishing the Damage of Derelict Crab Pots</h2>
-        <p class="description">Veda convened scientists, government regulators, pro- fessional, tribal & recreational fishermen, and citizens to work together to commit to action that is helping save the fishery and all that depend on it.</p>
-        <a href="../case-study-1/" class="btn btn-primary">See Case Study</a>
-      </div>
-      <div class="featured-case-study-image">
-        <div class="slider-image"></div>
-      </div>
+  <div class="row">
+    <div class="col-md-6">
+      <ul class="row middle-sm indicator-list">
+        <li>FEATURED PROJECTS</li>
+        <li class="item"><a href="" class="indicator active"></a></li>
+        <li class="item"><a href="" class="indicator"></a></li>
+        <li class="item"><a href="" class="indicator"></a></li>
+      </ul>
+      <cms:pages masterpage='featured-case-study/index.php' >
+        <div class="case-study-details">
+          <h2 class="slick-class featured-project-title">
+            <cms:show project_title />
+          </h2>
+          <p class="slick-class description">
+            <cms:show project_description />
+          </p>
+          <a class="btn btn-primary" href="../featured-case-study/<cms:show k_page_name />.html">See Case Study</a>
+
+        </div>
+      </cms:pages>
+    </div>
+
+    <div class="col-md-6 case-study-image-container">
+      <cms:pages masterpage='featured-case-study/index.php' >
+        <span class="featured-case-study-image">
+          <img src="<cms:show carousel_image />"  />
+        </span>
+      </cms:pages>
     </div>
   </div>
 </div>

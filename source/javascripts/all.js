@@ -5,3 +5,4 @@
 //= require './work-menu.js'
 //= require './nav-highlight.js'
 //= require './scrollto.js'
+//= require './case-studies-carousel.js'
