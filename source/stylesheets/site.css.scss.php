@@ -1,3 +1,4 @@
+<?php require_once($_SERVER['DOCUMENT_ROOT'] . "/couch/cms.php"); ?>
 @charset "utf-8";
 @import "normalize";
 @import "colors";
@@ -20,7 +21,6 @@ body {
   font-family: 'Fira Sans', 'Helvetica Neue', sans-serif, Helvetica, Arial;
   font-size: .85em;
   overflow-x: hidden;
-  // max-width: 1280px;
 }
 
 .container {
@@ -457,7 +457,7 @@ ul {
   height: 100vh;
   position: relative;
   .hero-background{
-    background: url('/images/hero.jpg');
+    background: url('/images/');
     width: 100%;
     position: absolute;
     top: 0;
@@ -509,27 +509,26 @@ ul {
 .case-study-featured {
   padding: 80px;
   background-color: $cream;
-  .featured-case-study-image.active {
-    display: block;
+  .display-none {
+    display: none;
   }
   .featured-case-study-image {
-    display: none;
     margin-right: -150px;
     img {
       @include circle(876);
       width: 876px;
       height: 876px;
-      position: relative;;
-      display: block;
+      position: relative;
+      display: none;
       animation:
-        fadeOut .5s 1 forwards,
-        // slideOut 2s 1 forwards;
+        fadeOut 1s 1 forwards,
+        slideOut 2s 1 forwards;
     }
     img.active {
       display: block;
-      right: -650px;
+      right: 0px;
       animation:
-        slideIn 1s 1 forwards,
+        slideIn 2s 1 forwards,
         fadeIn 1s 1 forwards;
     }
   }
@@ -1232,3 +1231,4 @@ footer {
   align-items: center;
   display: flex;
 }
+<?php COUCH::invoke(); ?>
