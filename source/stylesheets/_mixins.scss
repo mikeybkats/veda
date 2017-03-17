@@ -1,12 +1,12 @@
 @mixin circle($height) {
   border-radius: $height / 2 + px;
-  overflow: hidden;
+  // overflow: hidden;
   // border: solid 1px black;
   // box-shadow: 5px 5px 5px black;
 }
 
 @mixin croppedCircle() {
-  overflow: hidden;
+  // overflow: hidden;
   -webkit-clip-path: circle(50.1% at 80% 50%);
   clip-path: circle(50.1% at 80% 50%);
 }
@@ -36,7 +36,7 @@
 
 @keyframes slideIn {
   0% {
-    right: -650px;
+    right: -600px;
   }
   100% {
     right: 0px;
@@ -69,3 +69,12 @@
     opacity: 0;
   }
 }
+
+// @keyframes displayNone {
+//   0% {
+//     display: block;
+//   }
+//   100% {
+//     display: none;
+//   }
+// }

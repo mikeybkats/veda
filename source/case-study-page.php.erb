@@ -4,171 +4,182 @@ title: Case Study
 
 <div class="row case-study-page">
   <cms:pages masterpage='featured-case-study/index.php'>
+  <div class="container">
 
-  <div class="row center-md">
-    <div class="col-md-12">
+    <div class="row center-md">
+      <div class="col-md-12">
 
-      <div class="row center-md">
-        <div class="col-md-10 featured-image">
-          <div class="col-md-8">
-            <a href="../our-work/" class="btn-work btn-primary">< All work</a>
-          </div>
-          <img src="
-            <cms:show featured_image />
-          "/>
-        </div>
-      </div>
-
-      <div class="row center-md">
-        <div class="col-md-8">
-          <h1 class="title">
-            <cms:show project_title />
-          </h1>
-        </div>
-      </div>
-
-      <div class="row center-md title-description">
-        <div class="col-md-9">
-          <h3>
-            <cms:show project_description />
-          </h3>
-        </div>
-      </div>
-
-      <div class="row center-md info-header">
-        <div class="col-md-10">
-          <div class="row between-sm">
-            <div class="col-md-4">
-              <div class="row middle-sm icon-row">
-                <div class="col-md-2"><%= image_tag 'project-icon.svg' %></div>
-                <div class="col-md-10"><p class="icon-title">Project</p></div>
+            <div class="row center-md">
+              <div class="col-md-10 featured-image">
+                <div class="col-md-8">
+                  <a href="../our-work/" class="btn-work btn-primary">< All work</a>
+                </div>
+                <img src="
+                  <cms:show featured_image />
+                "/>
               </div>
-              <div class="row middle-sm">
+            </div>
+
+            <div class="row center-md">
+              <div class="col-md-8">
+                <h1 class="title">
+                  <cms:show project_title />
+                </h1>
+              </div>
+            </div>
+
+            <div class="row center-md title-description">
+              <div class="col-md-9">
+                <h3>
+                  <cms:show project_description />
+                </h3>
+              </div>
+            </div>
+
+            <div class="row center-md info-header">
+              <div class="col-md-10">
+                <div class="row between-sm">
+                  <div class="col-md-4">
+                    <div class="row middle-sm icon-row">
+                      <div class="col-md-2"><%= image_tag 'project-icon.svg' %></div>
+                      <div class="col-md-10"><p class="icon-title">Project</p></div>
+                    </div>
+                    <div class="row middle-sm">
+                      <div class="col-md-12">
+                        <p>
+                          <cms:show project_gear />
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-md-4">
+                    <div class="row middle-sm icon-row">
+                      <div class="col-md-2"><%= image_tag 'client-icon.svg' %></div>
+                      <div class="col-md-10"><p class="icon-title">client</p></div>
+                    </div>
+                    <div class="row middle-sm">
+                      <div class="col-md-12"><p>
+                        <cms:show project_client />
+                      </p></div>
+                    </div>
+                  </div>
+
+                  <div class="col-md-4">
+                    <div class="row middle-sm icon-row">
+                      <div class="col-md-2"><%= image_tag 'check-icon.svg' %></div>
+                      <div class="col-md-10"><p class="icon-title">veda provided</p></div>
+                    </div>
+                    <div class="row middle-sm">
+                      <div class="col-md-12">
+                        <p>
+                          <cms:related_pages 'categories_jobs' limit='5'>
+                            <a href=""><cms:show k_page_title />, </a>
+                          </cms:related_pages>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+        </div>
+
+
+          <div class="row center-md">
+              <div class="col-md-10">
+                <div class="detail-textblock">
+                  <h4>Situation</h4>
+                  <p>
+                    <cms:show situation />
+                  </p>
+              </div>
+              <div class="detail-textblock">
+                <h4>Design</h4>
+                <p>
+                  <cms:show design />
+                </p>
+              </div>
+              <div class="detail-textblock">
+                <h4>Action</h4>
+                <p>
+                  <cms:show action />
+                </p>
+              </div>
+              <div class="detail-textblock">
+                <h4>Outcome</h4>
+                <p>
+                  <cms:show outcome />
+                </p>
+              </div>
+              <div class="detail-textblock">
+                <h4>Impact</h4>
+                <p>
+                  <cms:show impact />
+                </p>
+              </div>
+            </div>
+          </div>
+    </div>
+
+  </div>
+</div>
+
+  <div class="row case-study-page client-shout-out">
+    <div class="container">
+
+      <div class="row client-shout-out center-sm">
+
+
+          <div class="col-md-10">
+
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="row center-sm between-sm">
+                      <div class="col-md-5">
+                        <p>CLIENT SHOUT OUT: </p>
+                        <h3>
+                          <cms:show client_shout_out_title />
+                        </h3>
+                      </div>
+                      <div class="col-md-3">
+                        <a href="<cms:show client_shout_out_link />" class="btn-white btn-primary">Visit their website</a>
+                      </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row center-sm">
                 <div class="col-md-12">
                   <p>
-                    <cms:show project_gear />
+                    <cms:show client_shout_out_description />
                   </p>
                 </div>
               </div>
             </div>
 
-            <div class="col-md-4">
-              <div class="row middle-sm icon-row">
-                <div class="col-md-2"><%= image_tag 'client-icon.svg' %></div>
-                <div class="col-md-10"><p class="icon-title">client</p></div>
-              </div>
-              <div class="row middle-sm">
-                <div class="col-md-12"><p>
-                  <cms:show project_client />
-                </p></div>
-              </div>
-            </div>
-
-            <div class="col-md-4">
-              <div class="row middle-sm icon-row">
-                <div class="col-md-2"><%= image_tag 'check-icon.svg' %></div>
-                <div class="col-md-10"><p class="icon-title">veda provided</p></div>
-              </div>
-              <div class="row middle-sm">
-                <div class="col-md-12">
-                  <p>
-                    <cms:related_pages 'categories_jobs' limit='5'>
-                      <a href=""><cms:show k_page_title />, </a>
-                    </cms:related_pages>
-                  </p>
-                </div>
-              </div>
-            </div>
           </div>
-        </div>
-      </div>
-
-
-
-      <div class="row center-md">
-        <div class="col-md-10">
-          <div class="detail-textblock">
-            <h4>Situation</h4>
-            <p>
-              <cms:show situation />
-            </p>
-        </div>
-        <div class="detail-textblock">
-          <h4>Design</h4>
-          <p>
-            <cms:show design />
-          </p>
-        </div>
-        <div class="detail-textblock">
-          <h4>Action</h4>
-          <p>
-            <cms:show action />
-          </p>
-        </div>
-        <div class="detail-textblock">
-          <h4>Outcome</h4>
-          <p>
-            <cms:show outcome />
-          </p>
-        </div>
-        <div class="detail-textblock">
-          <h4>Impact</h4>
-          <p>
-            <cms:show impact />
-          </p>
-        </div>
-      </div>
     </div>
+
   </div>
 
-  <div class="row client-shout-out center-sm">
-    <div class="col-md-10">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="row center-sm between-sm">
-            <div class="col-md-5">
-              <p>CLIENT SHOUT OUT: </p>
-              <h3>
-                <cms:show client_shout_out_title />
-              </h3>
-            </div>
-            <div class="col-md-3">
-              <a href="<cms:show client_shout_out_link />" class="btn-white btn-primary">Visit their website</a>
-            </div>
+      <div class="container">
+        <div class="row center-sm veda-quote blockquote-container">
+
+          <div class="col-md-10">
+            <blockquote>
+              <cms:show blockquote />
+            </blockquote>
           </div>
+
+          <div class="row center-sm">
+            <div class="col-md-8 author"><p class="author title">
+              <cms:show blockquote_author />
+            </p></div>
+          </div>
+
         </div>
       </div>
-      <div class="row center-sm">
-        <div class="col-md-12">
-          <p>
-            <cms:show client_shout_out_description />
-          </p>
-        </div>
-      </div>
     </div>
-
-
-  </div>
-
-
-  <div class="row center-sm veda-quote blockquote-container">
-
-    <div class="col-md-10">
-      <blockquote>
-        <cms:show blockquote />
-      </blockquote>
-    </div>
-
-    <div class="row center-sm">
-      <div class="col-md-8 author"><p class="author title">
-        <cms:show blockquote_author />
-      </p></div>
-    </div>
-
-  </div>
-
-  </div>
-
   </cms:pages>
-
 </div>

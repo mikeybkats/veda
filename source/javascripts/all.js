@@ -6,3 +6,4 @@
 //= require './nav-highlight.js'
 //= require './scrollto.js'
 //= require './case-studies-carousel.js'
+//= require './hero-image-fader.js'
