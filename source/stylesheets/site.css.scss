@@ -22,7 +22,14 @@ body {
   overflow-x: hidden;
   // max-width: 1280px;
 }
-
+a::selection {
+  color: rgba(0,0,0,0);
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+a:focus {
+  outline: 0;
+  color: rgba(0,0,0,0);
+}
 .override-transition {
   transition: none !important;
 }
@@ -228,11 +235,12 @@ ul {
   position: fixed;
   font-size: 3em;
   top: 10px;
+  margin-top: 10px;
   right: 15px;
 }
 
 .navbar {
-  height: 54px;
+  height: 75px;
   margin: 0 auto;
   background: $darkGray;
   clear: both;
@@ -349,115 +357,6 @@ ul {
   }
 }
 
-@media screen and (max-width: 800px){
-  .hamburger {
-    display: inline-block;
-    z-index: $z-index-5;
-  }
-  .mobile-menu {
-    align-items: flex-start;
-    align-content: flex-start;
-    background: black;
-    position: fixed;
-    padding: 0px;
-    top: 0;
-    left: -320px;
-    bottom: 0;
-    z-index: $z-index-5;
-    width: 300px;
-    box-shadow: -63px 0px 3px 70px RGBA(0, 0, 0, .50);
-      transition: all 500ms cubic-bezier(0.215, 0.610, 0.355, 1.000);
-    &.active {
-      left: 0;
-      transition: all 500ms cubic-bezier(0.215, 0.610, 0.355, 1.000);
-    }
-  }
-  .menu-hover .navbar {
-    position: inherit;
-  }
-
-  .navbar .logo {
-    float: none;
-  }
-
-  .navbar .logo-mobile {
-    min-width: 170px;
-    float: left;
-    padding: 10px;
-    top: 10px;
-    z-index: $z-index-4;
-  }
-
-  .menu-hover .navbar {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 500;
-      background: none;
-      height: 0px;
-      margin-top: -3px;
-  }
-
-  .navigation-links {
-    float: none;
-    ul {
-      list-style: none;
-      display: block;
-      li {
-        float: none;
-        padding: 0 5px 0 5px;
-        a {
-          text-decoration: none;
-        }
-      }
-      li:nth-child(1){
-        margin: 0px 0px 0px 0px;
-      }
-      li:nth-child(2){
-        margin: 0px 0px 0px 0px;
-      }
-      li:nth-child(3){
-        margin: 0px 0px 0px 0px;
-      }
-      li:nth-child(4){
-        border-left: 0px solid $mediumGray;
-        a {
-          font-style: italic;
-          text-transform: none;
-        }
-        padding: 0px 0px 0px 0px;
-      }
-    }
-  }
-
-  .nav-inner .navigation-links {
-    float: none;
-    ul {
-      list-style: none;
-      li {
-        float: none;
-        padding: 0 5px 0 5px;
-        a {
-          text-decoration: none;
-        }
-      }
-    }
-  }
-
-  .navigation-links:active {
-    ul {
-      display: block;
-      list-style: none;
-      li {
-        padding: 0 5px 0 5px;
-        a {
-          text-decoration: none;
-        }
-      }
-    }
-  }
-}
 
 
 
@@ -505,11 +404,11 @@ ul {
     color: $green;
     text-decoration: none;
     float: left;
-    display: flex;
+
     align-items: center;
     span {
       font-size: 24px;
-      margin-right: 24px;
+      margin-right: 14px;
     }
     .icon-right-arrow {
       height: 24px;
@@ -518,12 +417,30 @@ ul {
       height: 25px;
       }
     }
+
   }
 }
 
 .social-status {
   background-color: $green;
-  padding: 100px 0px;
+  padding: 160px 0px;
+  h2 {
+    font-size: 60px;
+    color: $cream;
+    margin: 0 auto;
+    padding: 0px 0px 35px 0px;
+  }
+  p {
+    max-width: 800px;
+    font-size: 21px;
+    text-align: center;
+    font-style: italic;
+    margin: 0 auto;
+    padding: 0px 0px 65px 0px;
+  }
+  .description {
+    color: $cream;
+  }
 }
 
 ////////////////////////// Featured Case Study /////////////////////
@@ -785,6 +702,10 @@ div .client-grid > div:nth-child(3) {
 ////////////////////////// Our Work /////////////////////
 .our-work-container {
   background: $cream;
+}
+
+.mobile-dropdown{
+  display: none;
 }
 
 .our-work {
@@ -1170,6 +1091,12 @@ footer {
   flex-direction: column;
   justify-content: center;
   align-content: center;
+  .footer-mobile-logo {
+    display: none;
+  }
+  .copyright-mobile{
+    display: none;
+  }
   ul {
     float: left;
     text-align: left;
@@ -1275,4 +1202,435 @@ footer {
   text-decoration: none;
   align-items: center;
   display: flex;
+}
+
+
+/////////////////// media queries ////////////////////
+
+@media screen and (max-width: 800px){
+  h1.title {
+    font-size: 40px;
+  }
+  .title-description {
+    font-size: 16px;
+  }
+  blockquote {
+    font-size: 30px;
+    margin: 0px;
+  }
+  .page-title {
+    margin-top: 30px;
+  }
+  .author {
+    text-align: center;
+  }
+  .row {
+    max-width: 100%;
+  }
+
+  .hamburger {
+    display: inline-block;
+    z-index: $z-index-5;
+  }
+  .mobile-menu {
+    align-items: flex-start;
+    align-content: flex-start;
+    background: black;
+    position: fixed;
+    padding: 0px;
+    top: 0;
+    left: -230px;
+    bottom: 0;
+    z-index: $z-index-5;
+    width: 210px;
+    box-shadow: -63px 0px 3px 70px RGBA(0, 0, 0, .50);
+      transition: all 500ms cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    &.active {
+      left: 0;
+      transition: all 500ms cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    }
+  }
+  .menu-hover .navbar {
+    position: inherit;
+  }
+
+  .navbar .logo {
+    float: none;
+    display: none;
+  }
+
+  .navbar .logo-mobile {
+    width: unset;
+    padding-left: 10px;
+    top: 10px;
+    margin: 10px 0px 0px 15px;
+    display: block;
+    position: absolute;
+    z-index: 400;
+    background-image: url("../images/veda-nav-logo.svg");
+    background-repeat: no-repeat;
+    background-clip: border-box;
+  }
+
+  .menu-hover .navbar .logo-mobile {
+    width: unset;
+    padding-left: 10px;
+    margin-top: 10px;
+    display: block;
+    position: absolute;
+    z-index: 400;
+    background-image: url("../images/logo-top.svg");
+    background-repeat: no-repeat;
+    background-clip: border-box;
+    width: 140px;
+    min-height: 60px;
+    margin-left: 6%;
+  }
+
+  .menu-hover .navbar {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 500;
+      background: none;
+      height: 0px;
+      margin-top: -3px;
+      .logo {
+        float: none;
+        display: none;
+      }
+  }
+
+
+  .navigation-links {
+    float: none;
+    margin-top: 10px;
+    ul {
+      list-style: none;
+      display: block;
+      li {
+        float: none;
+        a {
+          text-decoration: none;
+          text-align: left;
+        }
+      }
+      li:nth-child(1) {
+        padding: 0 5px 0 5px;
+        margin: 15px 0px 0px 20px;
+      }
+      li:nth-child(2){
+        padding: 0 5px 0 5px;
+        margin: 15px 0px 0px 20px;
+      }
+      li:nth-child(3){
+        padding: 0 5px 0 5px;
+        margin: 15px 0px 0px 20px;
+      }
+      li:nth-child(4){
+        border-left: 0px solid $mediumGray;
+        padding: 0 5px 0 5px;
+        margin: 15px 0px 0px 20px;
+      }
+      a {
+        font-style: italic;
+        text-transform: none;
+        text-transform: left;
+        padding: 0px 0px 0px 0px;
+      }
+      &:active {
+        ul {
+          display: block;
+          list-style: none;
+          li {
+            padding: 0 5px 0 5px;
+            a {
+              text-decoration: none;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  ////////////////// footer /////////////////
+
+  footer {
+    height: 100vh;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    .line-break {
+      display: block;
+    }
+    .row {
+      background-color: $darkGray;
+      margin-top: 10px;
+    }
+    .footer-logo {
+      display: none;
+    }
+    .footer-nav {
+      display: none;
+    }
+    .footer-content-row .col-md-6:nth-child(2) .row.middle-md  {
+      flex-direction: column;
+    }
+    .address {
+      margin-top: 25px;
+      margin-bottom: 10px;
+    }
+    .footer-content-row{
+      padding: 0px 30px;
+      margin-bottom: 50px;
+      padding-top: 0px;
+    }
+    .footer-content-row .col-md-6:first-child {
+      margin-top: 40px;
+    }
+    .footer-mobile-logo {
+      display: block;
+      max-width: 75px;
+      padding: 0px;
+      margin-right: 30px;
+      margin-left: 30px;
+    }
+    .footer-badge {
+      min-width: 142px;
+      padding-left: 0px;
+      margin-left: 0px;
+    }
+    .copyright {
+      display: none;
+    }
+    .copyright-mobile{
+      display: flex;
+      font-style: italic;
+      font-weight: 100;
+      color: $mediumGray;
+      margin-left: 0px;
+    }
+  }
+//////////////// home screen  ////////////////
+  .hero {
+    height: 100vh;
+  }
+  .hero .hero-text {
+    max-width: 300px;
+    text-align: left;
+  }
+
+  .hero .hero-text h1 {
+    font-size: 34px;
+    line-height: 34px;
+  }
+
+  .hero-link {
+    max-width: 330px;
+  }
+
+  .case-study-featured {
+    min-height: 960px;
+    margin-top: 20px;
+    padding: 10px;
+    .row {
+      flex-direction: column-reverse;
+    }
+    .case-study-details.active {
+      align-items: center;
+      align-content: center;
+      justify-content: center;
+    }
+    .btn {
+      display: inline-block;
+      padding: 10px 20px 0px 20px;
+    }
+    .indicator-list {
+      flex-direction: inherit;
+      justify-content: center;
+      li:first-child {
+          list-style-type: none;
+          color: RGBA(159, 157, 148, 1);
+          min-width: 100%;
+          padding-right: 0px;
+          p {
+            padding-right: 0px;
+          }
+      }
+    }
+    p {
+      text-align: center;
+    }
+    h2.featured-project-title {
+    text-align: center;
+    }
+    .case-study-image-container {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+    .featured-case-study-image img {
+    border-radius: 134px;
+    width: 268px;
+    height: 268px;
+    position: relative;
+    display: block;
+    }
+  }
+  .case-study-featured .featured-case-study-image {
+    margin-right: 0;
+  }
+
+  .how-we-work {
+    padding: 50px 0px;
+    img {
+    width: 90%;
+    }
+  }
+
+  .client-list{
+    .client-grid {
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 115px;
+    min-width: 100%;
+    display: flex;
+    flex-direction: column;
+    }
+    .row {
+      width: 100%;
+    }
+    img {
+      max-width: 100px;
+    }
+  }
+
+
+  ////////////// work section //////////////
+  .our-work-container{
+    width: 100%;
+  }
+  .mobile-dropdown {
+    max-height: 40px;
+    text-align: center;
+    padding: 0px 15px;
+    background: $darkGray;
+    color: $cream;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-content: center;
+    justify-content: space-between;
+    p {
+      display: block;
+    }
+    i {
+      display: block;
+      margin-top: 2px;
+    }
+
+  }
+
+  .work-categories-menu {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s;
+    margin-bottom: 0px;
+    &.open {
+      transition: max-height 0.5s;
+      max-height: 1000px;
+    }
+    &.close {
+      transition: min-height 0.5s;
+    }
+    li:first-child {
+      display: none;
+    }
+    a {
+      -webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none; /* Safari */
+      -khtml-user-select: none; /* Konqueror HTML */
+      -moz-user-select: none; /* Firefox */
+      -ms-user-select: none; /* Internet Explorer/Edge */
+      user-select: none; /* Non-prefixed version, currently*/
+    }
+
+  }
+  .our-work .job p {
+    line-height: 14px;
+    margin: 5px;
+    margin-left: 0px;
+  }
+  .our-work .job h3 {
+    margin-bottom: 14px;
+  }
+  .case-study {
+    margin: 25px 25px;
+    }
+    .col-md-4 {
+    margin-bottom: 75px;
+  }
+
+
+  //////////////// case study page ////////////
+  .case-study-page {
+    width: 100%;
+    .featured-image img {
+    width: 80% !important;
+    height: unset;
+    margin: 0px 10px;
+    }
+  }
+
+  .case-study .thumb {
+    height: unset;
+    width: 100%;
+    border-radius: 50%;
+  }
+
+  .morework-row {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .our-work .content-col:last-child {
+    padding-bottom: 5px;
+  }
+
+  .content-col {
+    border-left: unset;
+    margin: 0 auto;
+    min-height: 350px;
+  }
+
+
+  //////////////// the veda team /////////////////
+  .the-veda-team {
+    .title-description {
+    font-size: 15px;
+    line-height: 18px;
+    }
+    &.row {
+      width: 100vw;
+    }
+    .featured-image img {
+    width: 80%;
+    margin: 0px 0px;
+    }
+    .bio-col .email {
+      color: RGBA(127, 194, 137, 1);
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 500;
+    }
+    .bio-col .phone-number {
+    color: RGBA(64, 64, 64, 1);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    margin-right: 10px;
+    }
+  }
+
+
 }

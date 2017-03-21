@@ -28,8 +28,8 @@ $(document).ready(function(){
     // matching the photo row with the selection
     $('.category-image-sets .row').each(function(){
       $categoryName = $(this).data('category-name');
-      console.log($selection.attr('id'));
-      console.log($categoryName);
+      // console.log($selection.attr('id'));
+      // console.log($categoryName);
 
       if ($categoryName === $selection.attr('id')){
         $(this).removeClass('hidden');

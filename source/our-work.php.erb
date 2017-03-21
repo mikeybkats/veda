@@ -3,7 +3,7 @@ title: Our Work
 ---
 
 <div class="row center-md our-work-container">
-  <div class="col-md-12">
+  <div class="col-md-12 col-xs-12">
     <div class="container">
 
       <div class="row center-md middle-md">
@@ -25,19 +25,19 @@ title: Our Work
       <div class="case-study row around-md">
         <cms:pages masterpage='featured-case-study/index.php'>
           <div class="col-md-4">
-            <div class="row center-md">
+            <div class="row center-md center-xs">
               <div class="col-md-12">
                 <img src="<cms:show featured_image/>" alt="" class="thumb" />
               </div>
             </div>
-            <div class="row center-md">
+            <div class="row center-md center-xs">
               <div class="col-md-12">
                 <h3>
                   <cms:show project_title />
                 </h3>
               </div>
             </div>
-            <div class="row center-md">
+            <div class="row center-md center-xs">
               <div class="col-md-8">
                 <a href="/featured-case-study/<cms:show k_page_name />.html" class="btn-work btn-primary">see the case study</a>
               </div>
@@ -48,13 +48,17 @@ title: Our Work
 
       <div class="row center-md more-work-section" id="work-examples">
         <div class="col-md-12">
-          <div class="row center-md">
+          <div class="row center-md center-xs">
             <div class="col-md-2">
               <p class="title">MORE WORK</p>
             </div>
           </div>
           <div class="row morework-row morework-row-border top-xs">
-            <div class="work-nav col-md-3">
+            <div class="work-nav col-md-3 col-xs-12">
+              <div class="mobile-dropdown">
+                <p>View All</p>
+                <i class="fa fa-chevron-down" aria-hidden="true"></i>
+              </div>
               <ul class="work-categories-menu">
                 <li class="all active" ><a href="" id="all">View All</a></li>
 
@@ -110,7 +114,7 @@ title: Our Work
         </div>
       </div>
 
-      <div class="row center-sm veda-quote blockquote-container">
+      <div class="row center-sm center-xs veda-quote blockquote-container">
         <div class="col-md-10">
           <blockquote>Veda was extremely helpful in translating the complex science of the project into comprehensible language.</blockquote>
         </div>
