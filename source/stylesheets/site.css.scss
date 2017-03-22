@@ -618,6 +618,7 @@ a.indicator.active{
 ////////////////////////// How We Work /////////////////////
 .how-we-work {
   min-height: 100vh;
+  padding: 100px 0px;
   background-color: $darkGray;
   color: $cream;
   display: flex;
@@ -1399,6 +1400,7 @@ footer {
     .address {
       margin-top: 25px;
       margin-bottom: 10px;
+      padding-left: 0px;
     }
     .footer-content-row{
       padding: 0px 30px;
@@ -1436,7 +1438,6 @@ footer {
     height: 100vh;
   }
   .hero .hero-text {
-    max-width: 300px;
     text-align: left;
   }
 
@@ -1446,7 +1447,7 @@ footer {
   }
 
   .hero-link {
-    max-width: 330px;
+    font-size: 18px;
   }
 
   .case-study-featured {
@@ -1631,7 +1632,14 @@ footer {
 
   //////////////// the veda team /////////////////
   .the-veda-team {
-
+    .bio-col {
+      margin-top: 55px;
+      margin-bottom: 55px;
+    }
+    .bio-col:first-child {
+        margin-top: 55px;
+        margin-bottom: 0px;
+    }
     &.row {
       width: 100vw;
     }
@@ -1658,6 +1666,9 @@ footer {
   .the-veda-way {
     p {
       line-height: 18px;
+    }
+    .the-veda-way .title {
+    margin-top: 30px;
     }
     .reverse-group{
       flex-wrap: wrap-reverse;
