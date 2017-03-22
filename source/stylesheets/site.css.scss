@@ -30,6 +30,9 @@ a:focus {
   outline: 0;
   color: rgba(0,0,0,0);
 }
+.hide-for-desktop {
+  display: none;
+}
 .override-transition {
   transition: none !important;
 }
@@ -83,7 +86,7 @@ h1.title-left {
   text-align: left;
   font-weight: 300;
   font-size: 52px;
-  line-height: 0px;
+  line-height: 50px;
   color: $darkGray;
 }
 h2 {
@@ -945,13 +948,13 @@ div .client-grid > div:nth-child(3) {
     }
   }
   .author {
-    text-align: center;
+    // text-align: center;
     color: RGBA(231, 115, 108, 1);
-    font-weight: 300;
-    font-size: 16px;
-    font-style: italic;
-    text-align: left;
-    margin-bottom: 0px;
+    // font-weight: 300;
+    // font-size: 16px;
+    // font-style: italic;
+    // text-align: left;
+    // margin-bottom: 0px;
   }
   .on-a-mission {
     max-width: 1000px;
@@ -1211,12 +1214,29 @@ footer {
   h1.title {
     font-size: 40px;
   }
-  .title-description {
+  h1.title-left {
+    font-size: 40px;
+  }
+  h2.title {
+    font-size: 40px;
+  }
+  p {
     font-size: 16px;
+    line-height: 18px;
+  }
+  p.title-description {
+    font-size: 16px;
+    line-height: 18px;
   }
   blockquote {
     font-size: 30px;
     margin: 0px;
+  }
+  .blockquote-container {
+    height: 100%;
+  }
+  .hide-for-desktop {
+    display: inline;
   }
   .page-title {
     margin-top: 30px;
@@ -1486,6 +1506,10 @@ footer {
     img {
     width: 90%;
     }
+    p {
+    font-size: 16px;
+    line-height: 18px;
+    }
   }
 
   .client-list{
@@ -1528,7 +1552,6 @@ footer {
       display: block;
       margin-top: 2px;
     }
-
   }
 
   .work-categories-menu {
@@ -1544,7 +1567,10 @@ footer {
       transition: min-height 0.5s;
     }
     li:first-child {
-      display: none;
+      margin-bottom: 0px !important;
+    }
+    li:nth-child(7) {
+    margin-bottom: 0px !important;
     }
     a {
       -webkit-touch-callout: none; /* iOS Safari */
@@ -1554,7 +1580,6 @@ footer {
       -ms-user-select: none; /* Internet Explorer/Edge */
       user-select: none; /* Non-prefixed version, currently*/
     }
-
   }
   .our-work .job p {
     line-height: 14px;
@@ -1606,10 +1631,7 @@ footer {
 
   //////////////// the veda team /////////////////
   .the-veda-team {
-    .title-description {
-    font-size: 15px;
-    line-height: 18px;
-    }
+
     &.row {
       width: 100vw;
     }
@@ -1632,5 +1654,69 @@ footer {
     }
   }
 
+  ///////////////////// the-veda-way ///////////////
+  .the-veda-way {
+    p {
+      line-height: 18px;
+    }
+    .reverse-group{
+      flex-wrap: wrap-reverse;
+    }
+    .container {
+      max-width: 100%;
+    }
+    .process .col-md-5 {
+      // max-width: ;
+    }
+    .featured-image {
+      width: 100%;
+      img {
+        width: 100%;
+        margin: 0px 0px;
+      }
+    }
+    .on-a-mission .on-a-mission-description {
+      margin-left: 0px;
+      margin: 0px 5px;
+      padding: 0px;
+      min-width: unset;
+      .body-text {
+        margin-top: 0px;
+      }
+    }
+    .process-description {
+      padding: 30px 20px 0px 20px;
+    }
+    .row.process {
+      margin: 70px 0px;
+    }
+    .row.process:first-child {
+      margin: 70px 0px;
+      margin-top: 40px;
+    }
+    .services-section {
+      margin: 0px 0px 0px 0px;
+      padding: 15px 0px 0px 0px;
+    }
+    .service:first-child{
+      margin-top: 0px;
+      padding-top: 10px;
+    }
+    .service {
+      .col-xs-12 {
+        padding: 0px;
+      }
+    }
+    .the-veda-way .services-section .service {
+      margin: 0px 0px;
+      padding: 15px 0px;
+    }
+    .the-veda-way p {
+      font-size: 15px;
+    }
+  }
 
+  .number {
+    display: none;
+  }
 }
