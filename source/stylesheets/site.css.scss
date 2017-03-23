@@ -23,12 +23,12 @@ body {
   // max-width: 1280px;
 }
 a::selection {
-  color: rgba(0,0,0,0);
-  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  color: unset;
+  -webkit-tap-highlight-color: inherit;
 }
 a:focus {
   outline: 0;
-  color: rgba(0,0,0,0);
+  color: inherit;
 }
 .hide-for-desktop {
   display: none;
@@ -235,11 +235,11 @@ ul {
 .hamburger {
   display: none;
   float: right;
-  position: fixed;
   font-size: 3em;
   top: 10px;
   margin-top: 10px;
   right: 15px;
+  text-shadow: 1px 2px 2px #333;
 }
 
 .navbar {
@@ -459,8 +459,6 @@ ul {
       height: 876px;
       position: relative;;
       display: block;
-      // animation:
-      //   fadeOut .5s 1 forwards,
     }
     &.active {
       img {
@@ -671,7 +669,7 @@ a.indicator.active{
     color: $darkGray;
   }
   img {
-    padding: 25px 0px 25px 0px;
+    margin: 25px 0px 25px 0px;
     opacity: 1;
     mix-blend-mode: multiply;
   }
@@ -700,6 +698,11 @@ div .client-grid > div:nth-child(3) {
   .row div:last-child {
     background-color: none;
   }
+  .col-md-3 .col-xs-6 {
+    align-items: center;
+    align-content: center;
+    display: flex;
+  }
 }
 
 
@@ -710,6 +713,10 @@ div .client-grid > div:nth-child(3) {
 
 .mobile-dropdown{
   display: none;
+}
+
+.case-study-title{
+  min-height: 155px;
 }
 
 .our-work {
@@ -750,9 +757,9 @@ div .client-grid > div:nth-child(3) {
 .case-study {
   margin: 75px 25px;
   .thumb {
-    height: 315px;
-    width: 315px;
-    @include circle(315);
+    height: 100%;
+    width: 100%;
+    @include circlePerc(100%);
   }
 
   div {
@@ -770,7 +777,7 @@ div .client-grid > div:nth-child(3) {
 }
 
 .morework-row {
-  width: 937px;
+  width: 100%;
   margin: 0 auto;
   .left {
     padding-left: 0px;
@@ -837,6 +844,7 @@ div .client-grid > div:nth-child(3) {
 
   min-height: 100vh;
   .process-section {
+    padding: 0px 30px;
     background-image: url("../images/background-worm.svg");
     background-repeat: no-repeat;
     background-clip: border-box;
@@ -846,6 +854,7 @@ div .client-grid > div:nth-child(3) {
   }
   @media(max-width: 1200px){
     .process-section {
+      padding: 0px 30px;
       background-image: url("")
     }
   }
@@ -1210,6 +1219,11 @@ footer {
 
 
 /////////////////// media queries ////////////////////
+@media screen and (max-width: 1100px){
+  .reverse-group{
+    flex-wrap: wrap-reverse;
+  }
+}
 
 @media screen and (max-width: 800px){
   h1.title {
@@ -1234,7 +1248,7 @@ footer {
     margin: 0px;
   }
   .blockquote-container {
-    height: 100%;
+    // height: 100%;
   }
   .hide-for-desktop {
     display: inline;
@@ -1253,6 +1267,7 @@ footer {
     display: inline-block;
     z-index: $z-index-5;
   }
+
   .mobile-menu {
     align-items: flex-start;
     align-content: flex-start;
@@ -1378,14 +1393,13 @@ footer {
   ////////////////// footer /////////////////
 
   footer {
-    height: 100vh;
+    height: 700px;
     padding-top: 0px;
     padding-bottom: 0px;
     .line-break {
       display: block;
     }
     .row {
-      background-color: $darkGray;
       margin-top: 10px;
     }
     .footer-logo {
@@ -1451,7 +1465,7 @@ footer {
   }
 
   .case-study-featured {
-    min-height: 960px;
+    min-height: 870px;
     margin-top: 20px;
     padding: 10px;
     .row {
@@ -1461,6 +1475,7 @@ footer {
       align-items: center;
       align-content: center;
       justify-content: center;
+      min-height: 100px;
     }
     .btn {
       display: inline-block;

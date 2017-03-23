@@ -20,7 +20,7 @@ $(document).ready(function(){
     $('.featured-case-study-image').removeClass('display active');
     $('.indicator-list li a').removeClass('active');
     $($('.case-study-details')[index]).addClass('display active');
-    $($('.featured-case-study-image')[index]).addClass('display active');
+    $($('.case-study-featured .featured-case-study-image')[index]).addClass('display active');
     $($('.indicator-list li a')[index]).addClass('active')
 
   }
