@@ -1,20 +1,20 @@
 <!doctype html>
 <?php require_once($_SERVER['DOCUMENT_ROOT'] . "/couch/cms.php"); ?>
 <html>
-  <head>
-    <meta content="IE=edge" http-equiv="X-UA-Compatible">
-    <meta charset="utf-8">
-    <meta content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+<head>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta charset="utf-8">
+  <meta content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
 
-    <!-- Use title if it's in the page YAML frontmatter -->
-    <title><%= current_page.data.title || "Middleman" %></title>
+  <!-- Use title if it's in the page YAML frontmatter -->
+  <title><%= current_page.data.title || "Middleman" %></title>
 
-    <%= stylesheet_link_tag "flexboxgrid.min", "../fonts/font", :site %>
-    <%= javascript_include_tag  :all %>
-  </head>
+  <%= stylesheet_link_tag "flexboxgrid.min", "../fonts/font", :site %>
+  <%= javascript_include_tag  :all %>
+</head>
 
-  <body class="<%= page_classes %><%= current_page.data.menu_hover ? ' menu-hover' : '' %>">
-    <div class="content">
+<body class="<%= page_classes %><%= current_page.data.menu_hover ? ' menu-hover' : '' %>">
+
     <nav class="navbar">
       <i class="fa fa-bars hamburger" aria-hidden="true"></i>
 
@@ -45,73 +45,73 @@
     <footer>
       <div class="container">
         <div class="row footer-content-row end-md around-md middle-md">
-          <div class="col-md-6 col-md">
+          <div class="col-md-6">
             <div class="row end-md middle-md">
               <div class="footer-logo col-md-4">
                 <%= image_tag "logo-footer.svg" %>
               </div>
               <div class="row middle-md footer-nav">
                 <div class="col-md">
-                    <ul>
-                      <li class="../our-work/"><a href="../our-work/">Our Work</a></li>
-                      <li class="../the-veda-way/"><a href="../the-veda-way/">The Veda Way</a></li>
-                      <li class="../our-team/"><a href="../our-team/">Our Team</a></li>
-                      <li><a href="mailto:hello@vedaenv.com" class="list-item-plain">Contact</a></li>
-                    </ul>
-                  </div>
+                  <ul>
+                    <li class="../our-work/"><a href="../our-work/">Our Work</a></li>
+                    <li class="../the-veda-way/"><a href="../the-veda-way/">The Veda Way</a></li>
+                    <li class="../our-team/"><a href="../our-team/">Our Team</a></li>
+                    <li><a href="mailto:hello@vedaenv.com" class="list-item-plain">Contact</a></li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
 
-          <div class="col-md-6 col-md">
-                <div class="row middle-md">
-                  <div class="col-md">
-                    <h4 class="footer-email" id="contact">hello@vedaenv.com</h4>
-                  </div>
-                  <div class="col-md">
-                    <ul class="social-nav">
-                      <li><a href="https://www.facebook.com/Veda-Environmental-589457534496212/" class="social-icon"><%= image_tag "facebook.svg" %></a></li>
-                      <!-- <li><a href="" class="social-icon"><%= image_tag "twitter.svg" %></a></li> -->
-                      <li><a href="https://www.instagram.com/vedaenvironmental/?hl=en" class="social-icon"><%= image_tag "instagram.svg" %></a></li>
-                    </ul>
-                  </div>
+          <div class="col-md-6 col-sm-4">
+            <div class="row middle-md">
+              <div class="col-md">
+                <h4 class="footer-email" id="contact">hello@vedaenv.com</h4>
+              </div>
+              <div class="col-md">
+                <ul class="social-nav">
+                  <li><a href="https://www.facebook.com/Veda-Environmental-589457534496212/" class="social-icon"><%= image_tag "facebook.svg" %></a></li>
+                  <!-- <li><a href="" class="social-icon"><%= image_tag "twitter.svg" %></a></li> -->
+                  <li><a href="https://www.instagram.com/vedaenvironmental/?hl=en" class="social-icon"><%= image_tag "instagram.svg" %></a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="row start-md">
+              <div class="col-md-4 col-xs-12 address">
+                <div>
+                  <p>Seattle</p>
+                  <h4 class="footer-phone">206.409.3253</h4>
+                  <p class="footer-address"><span class="line-break">2211 Elliott Ave. Suite 200 </span><span class="line-break">Seattle, WA 98121</span></p>
                 </div>
-                <div class="row start-md">
-                  <div class="col-md-4 col-xs-12 address">
-                    <div>
-                      <p>Seattle</p>
-                      <h4 class="footer-phone">206.409.3253</h4>
-                      <p class="footer-address"><span class="line-break">2211 Elliott Ave. Suite 200 </span><span class="line-break">Seattle, WA 98121</span></p>
-                    </div>
-                  </div>
-                  <div class="col-md-4 col-xs-12 address">
-                    <div>
-                      <p>Bellingham</p>
-                      <h4 class="footer-phone">360.319.3493</h4>
-                      <p class="footer-address"><span class="line-break">1155 N. State St. Suite 400 </span><span class="line-break">Bellingham, WA 98225</span></p>
-                    </div>
-                  </div>
+              </div>
+              <div class="col-md-4 col-xs-12 address">
+                <div>
+                  <p>Bellingham</p>
+                  <h4 class="footer-phone">360.319.3493</h4>
+                  <p class="footer-address"><span class="line-break">1155 N. State St. Suite 400 </span><span class="line-break">Bellingham, WA 98225</span></p>
                 </div>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="row start-lg middle-lg middle-xs">
-        <div class="footer-mobile-logo col-xs">
-          <%= image_tag "logo-footer.svg" %>
+        <div class="row start-lg middle-lg middle-xs">
+          <div class="footer-mobile-logo col-xs">
+            <%= image_tag "logo-footer.svg" %>
+          </div>
+          <div class="footer-badge col-xs-offset-1">
+            <%= image_tag "certified-facilitator.svg" %>
+          </div>
+          <div class="copyright col-md-4">
+            ©2017 Veda Environmental. All Rights Reserved.
+          </div>
         </div>
-        <div class="footer-badge col-xs-offset-1">
-          <%= image_tag "certified-facilitator.svg" %>
+        <div class="row start-lg middle-lg center-xs">
+          <div class="copyright-mobile col-md-4">
+            ©2017 Veda Environmental. All Rights Reserved.
+          </div>
         </div>
-        <div class="copyright col-md-4">
-          ©2017 Veda Environmental. All Rights Reserved.
-        </div>
-      </div>
-      <div class="row start-lg middle-lg center-xs">
-        <div class="copyright-mobile col-md-4">
-          ©2017 Veda Environmental. All Rights Reserved.
-        </div>
-      </div>
-    </footer>
+      </footer>
     </div>
   </body>
   </html>
-<?php COUCH::invoke(); ?>
+  <?php COUCH::invoke(); ?>
