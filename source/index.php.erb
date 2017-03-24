@@ -22,7 +22,7 @@ menu_hover: true
 <div class="case-study-featured">
 <div class="container">
   <div class="row slider-row middle-sm center-xs">
-    <div class="col-md-6">
+    <div class="indicator-col col-md-6 ">
       <div class="row center-xs indicator-row">
         <div class="col-md-8 col-xs-6">
           <ul class="row middle-sm indicator-list">
@@ -49,9 +49,9 @@ menu_hover: true
 
     <div class="col-md-6 case-study-image-container">
       <cms:pages masterpage='featured-case-study/index.php' >
-        <span class="featured-case-study-image">
+        <div class="featured-case-study-image">
           <img src="<cms:show carousel_image />"  />
-        </span>
+        </div>
       </cms:pages>
     </div>
 
@@ -128,3 +128,46 @@ menu_hover: true
 </div>
 
 </div>
+
+<script>
+var $caseStudy = $('.case-study-featured');
+var $hero = $('.hero');
+
+function isElementInViewport (el) {
+  if (typeof jQuery === "function" && el instanceof jQuery) {
+    el = el[0];
+  }
+
+  var rect = el.getBoundingClientRect();
+  console.log(rect);
+
+  return (
+    rect.bottom >= 0
+  );
+}
+
+function onVisibilityChange(el, callback) {
+    return function () {
+      var old_visible = false;
+      var visible = isElementInViewport(el);
+      if (visible === old_visible){
+        $('body').removeClass('menu-hover');
+      }
+      if (visible != old_visible) {
+        old_visible = visible;
+        if (typeof callback == 'function') {
+          callback();
+        }
+      }
+    }
+}
+
+var handler = onVisibilityChange( $hero , function() {
+  /* your code go here */
+  $('body').addClass('menu-hover');
+});
+
+//jQuery
+$(window).on('DOMContentLoaded load resize scroll', handler);
+
+</script>

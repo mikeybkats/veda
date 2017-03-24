@@ -43,19 +43,19 @@
 
 @keyframes slideIn {
   0% {
-    right: -600px;
+    margin-left: 500px;
   }
   100% {
-    right: 0px;
+    margin-left: -200px;
   }
 }
 
 @keyframes slideOut {
   0% {
-    right: 0px;
+    margin-left: 0px;
   }
   100% {
-    right: -600px;
+    margin-left: -200px;
   }
 }
 

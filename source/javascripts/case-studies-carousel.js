@@ -6,6 +6,7 @@ $(document).ready(function(){
 
     $('.case-study-details').first().addClass('display active');
     $('.featured-case-study-image').first().addClass('display active');
+    $('.featured-case-study-image').first().animate({ marginLeft: "-1200px" }, 1000, function(){});
     numOfCaseStudies = $('.case-study-details').length
 
     rotateCaseStudies(csIndex);
@@ -18,9 +19,11 @@ $(document).ready(function(){
   function selectActiveCaseStudy(index) {
     $('.case-study-details').removeClass('display active');
     $('.featured-case-study-image').removeClass('display active');
+    $('.featured-case-study-image').css('margin-left', '0px');
     $('.indicator-list li a').removeClass('active');
     $($('.case-study-details')[index]).addClass('display active');
     $($('.case-study-featured .featured-case-study-image')[index]).addClass('display active');
+    $($('.case-study-featured .featured-case-study-image')[index]).animate({marginLeft: "-1200px"}, 1000, function(){});
     $($('.indicator-list li a')[index]).addClass('active')
 
   }

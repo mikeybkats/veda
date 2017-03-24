@@ -238,10 +238,14 @@ ul {
 }
 
 .navbar {
+  transition: all 0.5s;
+  z-index: 600;
   height: 75px;
   margin: 0 auto;
   background: $darkGray;
   clear: both;
+  position: fixed;
+  width: 100%;
   &,a, a:visited {
     color: $cream;
   }
@@ -278,6 +282,31 @@ ul {
     margin-top: 0px;
     margin-left: 45px;
   }
+  .navigation-links {
+    margin: 0 0 0 90px;
+  }
+}
+.menu-hover .navbar {
+  transition: all 0.5s;
+  background: none;
+  height: 60px;
+  margin-top: 20px;
+  a {
+    display: block;
+    min-width: 100px;
+    min-height: 60px;
+  }
+  .logo {
+    background-image: url("../images/logo-top.svg");
+    background-repeat: no-repeat;
+    background-clip: border-box;
+    min-width: 187px;
+    min-height: 60px;
+    margin-left: 6%;
+  }
+  .navigation-links {
+    margin: 0 0 0 0px;
+  }
 }
 
 .nav-inner {
@@ -286,7 +315,6 @@ ul {
 
 .navigation-links {
   margin: 0px;
-
   height: 18px;
   ul {
     list-style: none;
@@ -330,32 +358,6 @@ ul {
     }
   }
 }
-
-.menu-hover .navbar {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: $z-index-5;
-  background: none;
-  height: 60px;
-  margin-top: 37px;
-  a {
-    display: block;
-    min-width: 100px;
-    min-height: 60px;
-  }
-  .logo {
-    background-image: url("../images/logo-top.svg");
-    background-repeat: no-repeat;
-    background-clip: border-box;
-    min-width: 187px;
-    min-height: 60px;
-    margin-left: 6%;
-  }
-}
-
-
 
 
 ////////////////////////// Hero /////////////////////
@@ -445,21 +447,32 @@ ul {
 .case-study-featured {
   padding: 80px;
   background-color: $cream;
-  .featured-case-study-image {
+  overflow: hidden;
+  .indicator-col {
+    z-index: $z-index-5;
+  }
+  .case-study-image-container {
+    min-height: 1000px;
+  }
+  .case-study-image-container .featured-case-study-image {
     display: none;
-    margin-right: -150px;
     img {
-      @include circle(876);
-      width: 876px;
-      height: 876px;
-      position: relative;;
+      z-index: $z-index-1;
+      margin-left: 1200px;
+      @include circlePerc(100%);
+      width: 90%;
+      height: 90%;
+      max-height: 875px;
+      max-width: 875px;
       display: block;
     }
     &.active {
       animation: fadeIn 1s 1 forwards;
       img {
-        right: -650px;
-        animation: slideIn 1s 1 forwards,
+        // margin-left: 0px;
+        // transition: all 500ms cubic-bezier(0.420, 0.000, 1.000, 1.000); /* ease-in */
+        // right: -650px;
+        // animation: slideIn 1s 1 forwards,
       }
     }
   }
@@ -1264,12 +1277,15 @@ footer {
 }
 
 @media screen and (max-width: 800px){
-  .navbar {
-    a {
+  .menu-hover .navbar a {
       min-width: 100px;
       min-height: 20px;
       margin: 20px 5px;
-    }
+  }
+  .navbar a {
+      min-width: 100px;
+      min-height: 20px;
+      margin: 20px 5px;
   }
   h1.title {
     font-size: 40px;
@@ -1298,9 +1314,6 @@ footer {
   .hide-for-desktop {
     display: inline;
   }
-  .page-title {
-    margin-top: 30px;
-  }
   .author {
     text-align: center;
   }
@@ -1311,14 +1324,14 @@ footer {
   .hamburger {
     display: inline-block;
     margin: 10px;
+    position: fixed;
     z-index: $z-index-5;
-    // position: fixed;
   }
 
   .mobile-menu {
     align-items: flex-start;
     align-content: flex-start;
-    background: black;
+    background: $darkGray;
     position: fixed;
     padding: 0px;
     top: 0;
@@ -1327,7 +1340,7 @@ footer {
     z-index: $z-index-5;
     width: 210px;
     box-shadow: -63px 0px 3px 70px RGBA(0, 0, 0, .50);
-      transition: all 500ms cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    transition: all 500ms cubic-bezier(0.215, 0.610, 0.355, 1.000);
     &.active {
       left: 0;
       transition: all 500ms cubic-bezier(0.215, 0.610, 0.355, 1.000);
@@ -1348,8 +1361,8 @@ footer {
     top: 10px;
     margin: 10px 0px 0px 15px;
     display: block;
-    position: absolute;
-    z-index: 400;
+    position: fixed;
+    z-index: 500;
     background-image: url("../images/veda-nav-logo.svg");
     background-repeat: no-repeat;
     background-clip: border-box;
@@ -1359,9 +1372,6 @@ footer {
     width: unset;
     padding-left: 10px;
     margin-top: 10px;
-    display: block;
-    position: absolute;
-    z-index: 400;
     background-image: url("../images/logo-top.svg");
     background-repeat: no-repeat;
     background-clip: border-box;
@@ -1561,13 +1571,19 @@ footer {
       width: 100%;
       display: flex;
       justify-content: center;
+      min-height: unset;
+      max-width: 300px !important;
+      max-height: 300px !important;
     }
-    .featured-case-study-image img {
-    border-radius: 134px;
-    width: 268px;
-    height: 268px;
-    position: relative;
-    display: block;
+    .featured-case-study-image {
+      max-height: 300px;
+      img {
+        border-radius: 134px;
+        max-width: 268px !important;
+        max-height: 268px !important;
+        position: relative;
+        display: block;
+      }
     }
   }
   .case-study-featured .featured-case-study-image {
@@ -1843,9 +1859,7 @@ footer {
 }
 
 @media screen and (max-width: 600px){
-  h1.title {
-    font-size: 22px;
-  }
+
   .case-study-page .title-description{
     margin-bottom: 35px;
     h3 {
