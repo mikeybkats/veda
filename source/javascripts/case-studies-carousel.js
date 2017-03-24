@@ -29,7 +29,7 @@ $(document).ready(function(){
     csTimeout = setTimeout(function() {
       selectActiveCaseStudy((currentCaseStudyIndex + 1) % numOfCaseStudies );
       rotateCaseStudies(currentCaseStudyIndex + 1);
-    }, 3000)
+    }, 5000)
   }
 })()
   //$('.case-study-details').first().removeClass('display').addClass('active');

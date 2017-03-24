@@ -1,4 +1,39 @@
 $(document).ready(function(){
+    var idArray = [];
+    var urlArray = [];
+
+    function makeIdArray(){
+      $('.work-categories-menu a').each(function(){
+        idArray.push($(this).attr('id'));
+      });
+    }
+
+    function removeSpecialCharacters(){
+      $(idArray).each(function(index){
+        var string = idArray[index]
+        if (string.indexOf('_') > -1){
+          string = string.replace('_', '-');
+        }
+        urlArray.splice( index , 1, string);
+        return urlArray;
+      });
+    }
+
+    function selectMenuItem(){
+      $(urlArray).each(function(index){
+        var urlName = urlArray[index];
+        // console.log(urlName);
+        var idName = idArray[index];
+        // console.log(window.location.href.indexOf(urlName));
+        if(window.location.href.indexOf(urlName) > -1) {
+          $selection = $(document.getElementById(idName));
+          $(document.getElementById(idName)).parents('li').addClass('active');
+          // console.log($selection);
+          $selection.click();
+        }
+      });
+    }
+
   // on click highlighting the nav menu item
   $('.work-categories-menu a').click(function(event){
     event.preventDefault();
@@ -28,8 +63,6 @@ $(document).ready(function(){
     // matching the photo row with the selection
     $('.category-image-sets .row').each(function(){
       $categoryName = $(this).data('category-name');
-      // console.log($selection.attr('id'));
-      // console.log($categoryName);
 
       if ($categoryName === $selection.attr('id')){
         $(this).removeClass('hidden');
@@ -40,7 +73,6 @@ $(document).ready(function(){
       if($selection.attr("id") === "all") {
         $('.category-image-sets .row').first().removeClass('hidden');
       }
-
     });
 
   });
@@ -48,4 +80,8 @@ $(document).ready(function(){
   // load photo row for view all
   $('.category-image-sets .row').first().removeClass('hidden');
 
+
+  makeIdArray();
+  removeSpecialCharacters();
+  selectMenuItem();
 });

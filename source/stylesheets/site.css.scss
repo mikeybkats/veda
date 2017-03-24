@@ -20,14 +20,9 @@ body {
   font-family: 'Fira Sans', 'Helvetica Neue', sans-serif, Helvetica, Arial;
   font-size: .85em;
   overflow-x: hidden;
-  // max-width: 1280px;
-}
-a::selection {
-  color: unset;
-  -webkit-tap-highlight-color: inherit;
+  width: 100%;
 }
 a:focus {
-  outline: 0;
   color: inherit;
 }
 .hide-for-desktop {
@@ -461,14 +456,11 @@ ul {
       display: block;
     }
     &.active {
+      animation: fadeIn 1s 1 forwards;
       img {
         right: -650px;
-        animation:
-          slideIn 1s 1 forwards,
-
+        animation: slideIn 1s 1 forwards,
       }
-      animation:
-        fadeIn 1s 1 forwards;
     }
   }
   .display {
@@ -526,9 +518,9 @@ a.indicator.active{
     width: inherit;
     @include circle(571);
   }
-  .title {
-    font-size: 52px;
-  }
+  // .title {
+  //   font-size: 52px;
+  // }
   .title-description{
     margin-bottom: 105px;
     h3 {
@@ -559,6 +551,9 @@ a.indicator.active{
     }
     .icon-row .col-md-10 {
       padding-left: 0px;
+      img {
+        display:block;
+      }
     }
     .col-md-12{
       padding-left: 10px;
@@ -596,6 +591,11 @@ a.indicator.active{
     background-color: $salmon;
     color: $cream;
     padding: 40px 0px;
+    .container {
+      margin: unset;
+      max-width: unset;
+      width: 100% !important;
+    }
     .col-md-5{
       padding-left: 0px;
     }
@@ -609,6 +609,9 @@ a.indicator.active{
       margin: 0px;
       margin-bottom: 35px;
     }
+  }
+  .mobile-client-link {
+    display: none;
   }
 }
 
@@ -868,6 +871,10 @@ div .client-grid > div:nth-child(3) {
     .service {
       margin: 25px 0px;
       padding: 35px 0px;
+      img {
+        max-width: 70%;
+        max-height: 70%;
+      }
     }
     h4 {
     }
@@ -912,6 +919,7 @@ div .client-grid > div:nth-child(3) {
   .number img {
     max-height: 150px;
     min-width: 120px;
+    max-width: 120px;
     margin: 0px 0px;
     padding: 0px 10px;
   }
@@ -1110,11 +1118,17 @@ footer {
   .copyright-mobile{
     display: none;
   }
+  .footer-badge img {
+    max-width: 142px;
+  }
   ul {
     float: left;
     text-align: left;
   }
   li {
+    img {
+      max-width: 32px;
+    }
     a {
       display: block;
       text-transform: uppercase;
@@ -1223,9 +1237,40 @@ footer {
   .reverse-group{
     flex-wrap: wrap-reverse;
   }
+  .indicator-row .col-md-8 {
+
+  }
+  .hero .hero-text h1 {
+    font-size: 60px;
+    line-height: 60px;
+  }
+  .case-study-featured .featured-case-study-image {
+    display: none;
+    img {
+      @include circlePerc(100%);
+      width: 100%;
+      height: 100%;
+      position: relative;;
+      display: block;
+      max-width: 600px;
+    }
+  }
+}
+
+@media screen and (max-width: 1000px){
+  .case-study-featured .slider-row{
+    flex-direction: column-reverse;
+  }
 }
 
 @media screen and (max-width: 800px){
+  .navbar {
+    a {
+      min-width: 100px;
+      min-height: 20px;
+      margin: 20px 5px;
+    }
+  }
   h1.title {
     font-size: 40px;
   }
@@ -1265,7 +1310,9 @@ footer {
 
   .hamburger {
     display: inline-block;
+    margin: 10px;
     z-index: $z-index-5;
+    // position: fixed;
   }
 
   .mobile-menu {
@@ -1350,6 +1397,7 @@ footer {
         a {
           text-decoration: none;
           text-align: left;
+          max-height: 12px;
         }
       }
       li:nth-child(1) {
@@ -1430,6 +1478,9 @@ footer {
       padding: 0px;
       margin-right: 30px;
       margin-left: 30px;
+      img {
+        max-width: 75px;
+      }
     }
     .footer-badge {
       min-width: 142px;
@@ -1444,7 +1495,7 @@ footer {
       font-style: italic;
       font-weight: 100;
       color: $mediumGray;
-      margin-left: 0px;
+      margin-left: 30px;
     }
   }
 //////////////// home screen  ////////////////
@@ -1465,7 +1516,7 @@ footer {
   }
 
   .case-study-featured {
-    min-height: 870px;
+    min-height: 670px;
     margin-top: 20px;
     padding: 10px;
     .row {
@@ -1481,9 +1532,14 @@ footer {
       display: inline-block;
       padding: 10px 20px 0px 20px;
     }
+    .indicator-row {
+      align-items: center;
+      margin-bottom: 50px;
+    }
     .indicator-list {
       flex-direction: inherit;
       justify-content: center;
+
       li:first-child {
           list-style-type: none;
           color: RGBA(159, 157, 148, 1);
@@ -1499,6 +1555,7 @@ footer {
     }
     h2.featured-project-title {
     text-align: center;
+    font-size: 22px;
     }
     .case-study-image-container {
       width: 100%;
@@ -1528,11 +1585,16 @@ footer {
     }
   }
 
+  .social-status {
+    background-color: $green;
+    padding: 80px 0px;
+  }
+
   .client-list{
     .client-grid {
     margin-left: 0px;
     margin-right: 0px;
-    margin-top: 115px;
+    margin-top: 50px;
     min-width: 100%;
     display: flex;
     flex-direction: column;
@@ -1617,9 +1679,42 @@ footer {
   .case-study-page {
     width: 100%;
     .featured-image img {
-    width: 80% !important;
-    height: unset;
-    margin: 0px 10px;
+      width: 80% !important;
+      height: unset;
+      margin: 0px 10px;
+    }
+    .featured-image a {
+      display: none;
+    }
+    .icon-row img {
+      display: none;
+    }
+    .info-header .col-md-4{
+      border-left: unset;
+      padding-left: 22px;
+      padding-bottom: 20px;
+      padding-top: 20px;
+      margin-bottom: 0px;
+      border-bottom: 1px solid $lightGray;
+      &:first-child {
+        padding-top: 0px;
+      }
+      &:nth-child(3){
+        margin-bottom: 30px;
+      }
+    }
+    .client-shout-out {
+      .col-xs-12 {
+        margin-left: 0px;
+        padding-left: 0px;
+      }
+    }
+    .client-link {
+      display: none;
+    }
+    .mobile-client-link{
+      margin-top: 20px;
+      display: block;
     }
   }
 
@@ -1745,4 +1840,19 @@ footer {
   .number {
     display: none;
   }
+}
+
+@media screen and (max-width: 600px){
+  h1.title {
+    font-size: 22px;
+  }
+  .case-study-page .title-description{
+    margin-bottom: 35px;
+    h3 {
+      color: $salmon;
+      font-weight: 300;
+      font-size: 16px;
+    }
+  }
+
 }
