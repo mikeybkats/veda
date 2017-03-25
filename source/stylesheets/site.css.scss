@@ -138,6 +138,9 @@ ul {
     font-weight: 300;
     color: RGBA(122, 120, 115, 1);
     text-align: center;
+    &.left {
+      text-align: left;
+    }
 }
 
 .row {
@@ -190,17 +193,20 @@ ul {
   display: block;
   width: 120px;
   height: 30px;
-  padding: 8px 30px 0 30px;
+  padding: 10px 30px 0 30px;
   font-size: 14px;
   text-decoration: none;
 }
 
+.btn-primary {
+  color: white;
+  background-color: $green;
+  font-style: italic;
+}
+
 .btn-work {
-  display: block;
-  width: 152px;
-  height: 30px;
-  padding: 10px 18px 12px 18px;
-  text-decoration: none;
+  width: 100px;
+  padding: 10px 10px 0px 10px;
 }
 
 .btn-veda-way {
@@ -209,12 +215,6 @@ ul {
   height: 30px;
   padding: 8px 18px 0 18px;
   text-decoration: none;
-}
-
-.btn-primary {
-  color: white;
-  background-color: $green;
-  font-style: italic;
 }
 
 .btn-white {
@@ -226,8 +226,6 @@ ul {
   padding: 8px 18px 0 18px;
   text-decoration: none;
 }
-
-
 
 ////////////////////////// Navbar /////////////////////
 
@@ -456,11 +454,14 @@ ul {
   padding: 80px;
   background-color: $cream;
   overflow: hidden;
+  .slider-row {
+    height: 870px;
+  }
   .indicator-col {
     z-index: $z-index-5;
   }
   .case-study-image-container {
-    min-height: 1000px;
+    min-height: 850px;
   }
   .case-study-image-container .featured-case-study-image {
     display: none;
@@ -468,8 +469,8 @@ ul {
       z-index: $z-index-1;
       margin-left: 1200px;
       @include circlePerc(100%);
-      width: 90%;
-      height: 90%;
+      width: 100%;
+      height: 100%;
       max-height: 875px;
       max-width: 875px;
       display: block;
@@ -534,6 +535,7 @@ a.indicator.active{
 
 ////////////////////////// Case Study Page /////////////////////
 .case-study-page {
+  padding-top: 100px;
   background-color: $cream;
   .featured-image{
     margin-top: 35px;
@@ -552,6 +554,7 @@ a.indicator.active{
       color: $salmon;
       font-weight: 300;
     }
+
   }
 
 
@@ -791,7 +794,9 @@ div .client-grid > div:nth-child(3) {
     width: 100%;
     @include circlePerc(100%);
   }
-
+  .btn.btn-primary {
+    margin: 0px auto;
+  }
   div {
     h3 {
       text-align: center;
@@ -799,10 +804,6 @@ div .client-grid > div:nth-child(3) {
       font-size: 25px;
       font-weight: 300;
     }
-  }
-  a {
-    margin: 0px auto;
-    text-align: center;
   }
 }
 
@@ -1286,6 +1287,7 @@ footer {
   .case-study-featured {
     .slider-row{
       flex-direction: column-reverse;
+      height: unset;
     }
     .indicator-list li p {
       text-align: center;
@@ -1728,6 +1730,7 @@ footer {
     line-height: 14px;
     margin: 5px;
     margin-left: 0px;
+    text-align: left;
   }
 
   .col-md-4 {
@@ -1738,6 +1741,9 @@ footer {
   //////////////// case study page ////////////
   .case-study-page {
     width: 100%;
+    p {
+      text-align: left;
+    }
     .featured-image img {
       width: 80% !important;
       height: unset;
