@@ -83,6 +83,15 @@ h1.title {
   margin-bottom: 0px;
   color: $darkGray;
 }
+h1.title-case-study {
+  margin-top: 50px;
+  text-align: center;
+  font-weight: 300;
+  font-size: 52px;
+  line-height: 52px;
+  margin-bottom: 0px;
+  color: $darkGray;
+}
 h1.title-left {
   text-align: left;
   font-weight: 300;
@@ -132,8 +141,10 @@ ul {
   text-align: center;
 }
 .title-description {
+  h3 {
     font-size: 21px;
-    line-height: 21px;
+    line-height: 25px;
+    margin-top: 40px;
     font-style: italic;
     font-weight: 300;
     color: RGBA(122, 120, 115, 1);
@@ -141,6 +152,7 @@ ul {
     &.left {
       text-align: left;
     }
+  }
 }
 
 .row {
@@ -286,6 +298,9 @@ ul {
   }
   .navigation-links {
     margin: 0 0 0 90px;
+    a:hover {
+      color: $green;
+    }
   }
 }
 .menu-hover .navbar {
@@ -439,6 +454,11 @@ ul {
     font-style: italic;
     margin: 0 auto;
     padding: 0px 0px 65px 0px;
+    a {
+      font-size: 16px;
+      color: $darkGray;
+      font-style: italic;
+    }
   }
   .description {
     font-size: 16px;
@@ -491,6 +511,9 @@ ul {
   .case-study-details {
     display: none;
     animation: fadeOut .5s 1 forwards;
+    .btn {
+      margin-top: 45px;
+    }
   }
   .case-study-details.active {
     min-height: 450px;
@@ -534,30 +557,27 @@ a.indicator.active{
 }
 
 ////////////////////////// Case Study Page /////////////////////
+.shout-out {
+  background-color: $salmon;
+  margin-top: 60px;
+}
+
 .case-study-page {
-  padding-top: 100px;
-  background-color: $cream;
   .featured-image{
-    margin-top: 35px;
+    margin-top: 125px;
   }
   .featured-image img {
     height: 571px;
     width: inherit;
     @include circle(571);
   }
-  // .title {
-  //   font-size: 52px;
-  // }
   .title-description{
     margin-bottom: 105px;
     h3 {
       color: $salmon;
       font-weight: 300;
     }
-
   }
-
-
   .info-header {
     .col-md-4 {
     border-left: 1px solid $lightGray;
@@ -618,7 +638,13 @@ a.indicator.active{
   .client-shout-out{
     background-color: $salmon;
     color: $cream;
-    padding: 40px 0px;
+    padding: 90px 0px;
+    .col-md-10 {
+      padding-left: 0px;
+    }
+    & * {
+      margin-left: 0px;
+    }
     .container {
       margin: unset;
       max-width: unset;
@@ -647,7 +673,7 @@ a.indicator.active{
 ////////////////////////// How We Work /////////////////////
 .how-we-work {
   min-height: 100vh;
-  padding: 100px 0px;
+  padding: 75px 0px;
   background-color: $darkGray;
   color: $cream;
   display: flex;
@@ -667,6 +693,7 @@ a.indicator.active{
   p {
     max-width: 800px;
     font-size: 21px;
+    line-height: 25px;
     text-align: center;
     font-style: italic;
     margin: 0 auto;
@@ -1579,6 +1606,11 @@ footer {
     min-height: 670px;
     margin-top: 20px;
     padding: 10px;
+    .case-study-details{
+      .btn {
+        margin-top: 0px;
+      }
+    }
     .row {
       flex-direction: column-reverse;
     }
@@ -1622,6 +1654,7 @@ footer {
     h2.featured-project-title {
     text-align: center;
     font-size: 22px;
+    margin-top: 50px;
     }
     .case-study-image-container {
       width: 100%;
@@ -1770,6 +1803,9 @@ footer {
       }
     }
     .client-shout-out {
+      & * {
+        margin-left: 5px;
+      }
       .col-xs-12 {
         margin-left: 0px;
         padding-left: 0px;

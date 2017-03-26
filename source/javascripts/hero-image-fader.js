@@ -12,7 +12,7 @@ $(document).ready(function(){
       // console.log(fadeIndex % 3);
       crossFade(fadeIndex + 1);
 
-    }, 5000)
+    }, 8000)
   }
 
     crossFade(fadeIndex);

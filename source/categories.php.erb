@@ -1,5 +1,9 @@
 <cms:template title="Categories" clonable="1" routable='1'>
   <cms:repeatable name='category_images' >
-    <cms:editable type='image' name='category_image' label='Image' />
+
+    <cms:editable type='image' name='category_image' show_preview='0' label='ImageThumbnail' />
+    <cms:editable type='image' name='category_large_image' show_preview='0' label='ImageLarge' />
+
   </cms:repeatable>
+
 </cms:template>

@@ -84,7 +84,9 @@ title: Our Work
                 <cms:pages masterpage='categories/index.php'>
                   <div class="row thumbnail-row hidden" data-category-name="<cms:show k_page_name />">
                     <cms:show_repeatable 'category_images' count='6'>
-                      <div class="col-md-2"><img src="<cms:show category_image />" id=""/></div>
+                      <div class="col-md-2">
+                        <a href="<cms:show category_large_image />" data-lightbox="image">
+                        <img src="<cms:show category_image />" id="" /></a></div>
                     </cms:show_repeatable>
                   </div>
                 </cms:pages>
