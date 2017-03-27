@@ -117,8 +117,11 @@ h4 {
 }
 p {
   text-align: left;
-  line-height: 20px;
   font-weight: 300;
+}
+
+.left {
+  text-align: left !important;
 }
 
 a {
@@ -140,6 +143,15 @@ ul {
 .title {
   text-align: center;
 }
+p.title-description {
+    color: $darkGray;
+    font-size: 21px;
+    line-height: 25px !important;
+    text-align: center;
+    font-style: italic;
+    line-height: 20px;
+    font-weight: 300;
+}
 .title-description {
   h3 {
     font-size: 21px;
@@ -153,6 +165,9 @@ ul {
       text-align: left;
     }
   }
+}
+.bold {
+  font-weight: bold;
 }
 
 .row {
@@ -641,9 +656,11 @@ a.indicator.active{
     padding: 90px 0px;
     .col-md-10 {
       padding-left: 0px;
+      margin-left: 30px;
     }
     & * {
       margin-left: 0px;
+      padding-left: 0px;
     }
     .container {
       margin: unset;
@@ -773,8 +790,8 @@ div .client-grid > div:nth-child(3) {
   display: none;
 }
 
-.case-study-title{
-  min-height: 155px;
+.case-study-title {
+  min-height: 130px;
 }
 
 .our-work {
@@ -814,8 +831,8 @@ div .client-grid > div:nth-child(3) {
   }
 }
 
-.case-study {
-  margin: 40px 25px 25px 25px;
+.featured-case-studies-row {
+  margin: 40px 25px 110px 25px;
   .thumb {
     height: 100%;
     width: 100%;
@@ -925,14 +942,6 @@ div .client-grid > div:nth-child(3) {
         max-height: 70%;
       }
     }
-
-    // p {
-    //   margin: 0px;
-    //   font-size: 16px;
-    //   font-style: normal;
-    //   font-weight: 300;
-    //   color: $mediumGray;
-    // }
     a {
       display: block;
       text-align: left;
@@ -1130,7 +1139,7 @@ div .client-grid > div:nth-child(3) {
     }
     .author{
       padding: 0px 40px 40px 40px;
-      font-size: 12px;
+      font-size: 11px;
       color: $darkGray;
       font-weight: 300;
     }
@@ -1139,7 +1148,11 @@ div .client-grid > div:nth-child(3) {
     background-color: $orange;
     min-width: 100%;
     padding: 190px 0px;
+    img {
+      max-width: 90%;
+    }
     h3{
+      text-align: center;
       font-size: 24px;
       color: $darkGray;
       font-weight: 300;
@@ -1202,11 +1215,11 @@ footer {
       font-weight: 100;
       text-transform: uppercase;
       margin: 0px;
-      font-size: .85em;
+      font-size: 14px;
       text-align: left;
     }
     p.footer-address {
-      font-size: .85em;
+      font-size: 13px;
       margin: 0px;
       line-height: 18px;
       text-align: left;
@@ -1549,6 +1562,10 @@ footer {
       margin-bottom: 10px;
       padding-left: 0px;
     }
+    h4.footer-phone a {
+      font-size: 24px;
+      color: $cream;
+    }
     .footer-content-row{
       padding: 0px 30px;
       margin-bottom: 50px;
@@ -1583,7 +1600,7 @@ footer {
       margin-left: 30px;
     }
   }
-//////////////// home screen  ////////////////
+  //////////////// home screen  ////////////////
   .hero {
     height: 100vh;
   }
@@ -1600,7 +1617,7 @@ footer {
     font-size: 18px;
   }
   .slider-row {
-    min-height: 670px;
+    min-height: 720px;
   }
   .case-study-featured {
     min-height: 670px;
@@ -1654,6 +1671,7 @@ footer {
     h2.featured-project-title {
     text-align: center;
     font-size: 22px;
+    line-height: 30px;
     margin-top: 50px;
     }
     .case-study-image-container {
@@ -1689,7 +1707,14 @@ footer {
     }
   }
 
+  .social-status {
+    padding: 80px 0px;
+  }
+
   .client-list{
+    .client-list-link {
+      margin-top: 20px;
+    }
     .client-grid {
     margin-left: 0px;
     margin-right: 0px;
@@ -1802,9 +1827,15 @@ footer {
         margin-bottom: 30px;
       }
     }
+    .col-md-10 {
+      margin-left: 0px;
+    }
     .client-shout-out {
       & * {
         margin-left: 5px;
+      }
+      .col-md-5 {
+        margin-left: 0px;
       }
       .col-xs-12 {
         margin-left: 0px;
@@ -1820,7 +1851,11 @@ footer {
     }
   }
 
-  .case-study .thumb {
+  .featured-case-studies-row {
+    margin: 40px 25px -50px 25px;
+  }
+
+  .featured-case-studies-row .thumb {
     height: unset;
     width: 100%;
     border-radius: 50%;
@@ -1847,6 +1882,9 @@ footer {
     .bio-col {
       margin-top: 55px;
       margin-bottom: 55px;
+      .description {
+        text-align: left;
+      }
     }
     .bio-col:first-child {
         margin-top: 55px;
@@ -1872,10 +1910,45 @@ footer {
     font-weight: 500;
     margin-right: 10px;
     }
+    .fun-fact {
+      padding: 120px 0px 150px 0px;
+      img {
+        max-width: 100%;
+      }
+    }
+    .bio-col .testimonial {
+      padding: 0px 0px 0px 0px;
+      text-align: left;
+      color: $salmon;
+      font-size: 15px;
+    }
+    .bio-col .author {
+      text-align: left;
+      color: $salmon;
+      font-size: 13px;
+    }
+    .bio-col .blue-block{
+      background-color: unset;
+      border-radius: 5px;
+      margin-top: 45px;
+    }
+    .bio-col .green-block{
+      background-color: unset;
+      border-radius: 5px;
+      margin-top: 45px;
+    }
   }
 
   ///////////////////// the-veda-way ///////////////
   .the-veda-way {
+    .btn-veda-way {
+      display: block;
+      width: 200px;
+      height: 30px;
+      padding: 8px 18px 0 18px;
+      text-decoration: none;
+      text-align: center !important;
+    }
     .reverse-group{
       flex-wrap: wrap-reverse;
     }
@@ -1897,8 +1970,16 @@ footer {
       margin: 0px 5px;
       padding: 0px;
       min-width: unset;
+      p {
+        text-align: left;
+      }
       .body-text {
         margin-top: 0px;
+      }
+    }
+    .process-section .process-description {
+      * {
+        text-align: left;
       }
     }
     .process-description {
@@ -1920,6 +2001,9 @@ footer {
       padding-top: 10px;
     }
     .service {
+      * {
+        text-align: left;
+      }
       .col-xs-12 {
         padding: 0px;
       }
@@ -1927,14 +2011,18 @@ footer {
     .the-veda-way .services-section .service {
       margin: 0px 0px;
       padding: 15px 0px;
+      h4 {
+        color: $darkGray;
+        font-weight: bold;
+      }
       p {
+        margin-top: 0px;
+        padding-top: 0px;
         font-size: 15px;
         line-height: 18px;
       }
     }
   }
-
-
   .number {
     display: none;
   }
