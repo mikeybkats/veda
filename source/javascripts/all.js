@@ -8,3 +8,5 @@
 //= require './case-studies-carousel.js'
 //= require './hero-image-fader.js'
 //= require './work-category-mobile.js'
+//= require './lightbox.js'
+//= require './lightbox-options.js'

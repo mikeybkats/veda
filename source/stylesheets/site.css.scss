@@ -20,16 +20,17 @@ body {
   font-family: 'Fira Sans', 'Helvetica Neue', sans-serif, Helvetica, Arial;
   font-size: .85em;
   overflow-x: hidden;
-  // max-width: 1280px;
+  width: 100%;
 }
-a::selection {
-  color: unset;
-  -webkit-tap-highlight-color: inherit;
-}
+
 a:focus {
-  outline: 0;
   color: inherit;
 }
+
+a.hero-link:hover {
+  color: $cream;
+}
+
 .hide-for-desktop {
   display: none;
 }
@@ -79,8 +80,17 @@ h1.title {
   text-align: center;
   font-weight: 300;
   font-size: 60px;
+  margin-bottom: 0px;
   color: $darkGray;
-
+}
+h1.title-case-study {
+  margin-top: 50px;
+  text-align: center;
+  font-weight: 300;
+  font-size: 52px;
+  line-height: 52px;
+  margin-bottom: 0px;
+  color: $darkGray;
 }
 h1.title-left {
   text-align: left;
@@ -107,15 +117,13 @@ h4 {
 }
 p {
   text-align: left;
-  line-height: 20px;
   font-weight: 300;
 }
-p.title-description {
-  line-height: 29px;
+
+.left {
+  text-align: left !important;
 }
-.title-description p {
-  line-height: 29px;
-}
+
 a {
   font-weight: 300;
   font-style: italic;
@@ -135,11 +143,31 @@ ul {
 .title {
   text-align: center;
 }
-.title-description {
+p.title-description {
+    color: $darkGray;
     font-size: 21px;
+    line-height: 25px !important;
+    text-align: center;
+    font-style: italic;
+    line-height: 20px;
+    font-weight: 300;
+}
+.title-description {
+  h3 {
+    font-size: 21px;
+    line-height: 25px;
+    margin-top: 40px;
     font-style: italic;
     font-weight: 300;
     color: RGBA(122, 120, 115, 1);
+    text-align: center;
+    &.left {
+      text-align: left;
+    }
+  }
+}
+.bold {
+  font-weight: bold;
 }
 
 .row {
@@ -192,16 +220,20 @@ ul {
   display: block;
   width: 120px;
   height: 30px;
-  padding: 8px 0 0 0;
+  padding: 10px 30px 0 30px;
+  font-size: 14px;
   text-decoration: none;
 }
 
+.btn-primary {
+  color: white;
+  background-color: $green;
+  font-style: italic;
+}
+
 .btn-work {
-  display: block;
-  width: 152px;
-  height: 30px;
-  padding: 8px 18px 0 18px;
-  text-decoration: none;
+  width: 100px;
+  padding: 10px 10px 0px 10px;
 }
 
 .btn-veda-way {
@@ -210,12 +242,6 @@ ul {
   height: 30px;
   padding: 8px 18px 0 18px;
   text-decoration: none;
-}
-
-.btn-primary {
-  color: white;
-  background-color: $green;
-  font-style: italic;
 }
 
 .btn-white {
@@ -227,8 +253,6 @@ ul {
   padding: 8px 18px 0 18px;
   text-decoration: none;
 }
-
-
 
 ////////////////////////// Navbar /////////////////////
 
@@ -243,10 +267,14 @@ ul {
 }
 
 .navbar {
+  transition: all 0.5s;
+  z-index: 600;
   height: 75px;
   margin: 0 auto;
   background: $darkGray;
   clear: both;
+  position: fixed;
+  width: 100%;
   &,a, a:visited {
     color: $cream;
   }
@@ -283,6 +311,34 @@ ul {
     margin-top: 0px;
     margin-left: 45px;
   }
+  .navigation-links {
+    margin: 0 0 0 90px;
+    a:hover {
+      color: $green;
+    }
+  }
+}
+.menu-hover .navbar {
+  transition: all 0.5s;
+  background: none;
+  height: 60px;
+  margin-top: 20px;
+  a {
+    display: block;
+    min-width: 100px;
+    min-height: 60px;
+  }
+  .logo {
+    background-image: url("../images/logo-top.svg");
+    background-repeat: no-repeat;
+    background-clip: border-box;
+    min-width: 187px;
+    min-height: 60px;
+    margin-left: 6%;
+  }
+  .navigation-links {
+    margin: 0 0 0 0px;
+  }
 }
 
 .nav-inner {
@@ -291,7 +347,6 @@ ul {
 
 .navigation-links {
   margin: 0px;
-
   height: 18px;
   ul {
     list-style: none;
@@ -336,37 +391,11 @@ ul {
   }
 }
 
-.menu-hover .navbar {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: $z-index-5;
-  background: none;
-  height: 60px;
-  margin-top: 37px;
-  a {
-    display: block;
-    min-width: 100px;
-    min-height: 60px;
-  }
-  .logo {
-    background-image: url("../images/logo-top.svg");
-    background-repeat: no-repeat;
-    background-clip: border-box;
-    min-width: 187px;
-    min-height: 60px;
-    margin-left: 6%;
-  }
-}
-
-
-
 
 ////////////////////////// Hero /////////////////////
 
 .hero {
-  height: 100vh;
+  height: 90vh;
   position: relative;
   background: $darkGray;
   .hero-background{
@@ -426,49 +455,69 @@ ul {
 
 .social-status {
   background-color: $green;
-  padding: 160px 0px;
+  padding: 80px 120px;
   h2 {
     font-size: 60px;
+    line-height: 35px;
     color: $cream;
     margin: 0 auto;
     padding: 0px 0px 35px 0px;
   }
   p {
     max-width: 800px;
-    font-size: 21px;
     text-align: center;
     font-style: italic;
     margin: 0 auto;
     padding: 0px 0px 65px 0px;
+    a {
+      font-size: 16px;
+      color: $darkGray;
+      font-style: italic;
+    }
   }
   .description {
-    color: $cream;
+    font-size: 16px;
+    color: $darkGray;
   }
-}
 
+}
+  .underline {
+    text-decoration: underline;
+  }
 ////////////////////////// Featured Case Study /////////////////////
 .case-study-featured {
   padding: 80px;
   background-color: $cream;
-  .featured-case-study-image {
+  overflow: hidden;
+  .slider-row {
+    height: 870px;
+  }
+  .indicator-col {
+    z-index: $z-index-5;
+  }
+  .case-study-image-container {
+    min-height: 850px;
+  }
+  .case-study-image-container .featured-case-study-image {
     display: none;
-    margin-right: -150px;
     img {
-      @include circle(876);
-      width: 876px;
-      height: 876px;
-      position: relative;;
+      z-index: $z-index-1;
+      margin-left: 1200px;
+      @include circlePerc(100%);
+      width: 100%;
+      height: 100%;
+      max-height: 875px;
+      max-width: 875px;
       display: block;
     }
     &.active {
+      animation: fadeIn 1s 1 forwards;
       img {
-        right: -650px;
-        animation:
-          slideIn 1s 1 forwards,
-
+        // margin-left: 0px;
+        // transition: all 500ms cubic-bezier(0.420, 0.000, 1.000, 1.000); /* ease-in */
+        // right: -650px;
+        // animation: slideIn 1s 1 forwards,
       }
-      animation:
-        fadeIn 1s 1 forwards;
     }
   }
   .display {
@@ -477,6 +526,9 @@ ul {
   .case-study-details {
     display: none;
     animation: fadeOut .5s 1 forwards;
+    .btn {
+      margin-top: 45px;
+    }
   }
   .case-study-details.active {
     min-height: 450px;
@@ -486,13 +538,17 @@ ul {
 
 h2.featured-project-title {
   font-weight: 300;
+  line-height: 48px;
   color: $darkGray;
 }
 
 a.indicator.active{
   background: $lightGray;
 }
-
+.indicator-row .col-md-8 {
+  margin-left: 0px;
+  padding-left: 0px;
+}
 .indicator-list {
   display: flex;
   padding-left: 0px;
@@ -516,18 +572,19 @@ a.indicator.active{
 }
 
 ////////////////////////// Case Study Page /////////////////////
+.shout-out {
+  background-color: $salmon;
+  margin-top: 60px;
+}
+
 .case-study-page {
-  background-color: $cream;
   .featured-image{
-    margin-top: 35px;
+    margin-top: 125px;
   }
   .featured-image img {
     height: 571px;
     width: inherit;
     @include circle(571);
-  }
-  .title {
-    font-size: 52px;
   }
   .title-description{
     margin-bottom: 105px;
@@ -536,8 +593,6 @@ a.indicator.active{
       font-weight: 300;
     }
   }
-
-
   .info-header {
     .col-md-4 {
     border-left: 1px solid $lightGray;
@@ -559,6 +614,9 @@ a.indicator.active{
     }
     .icon-row .col-md-10 {
       padding-left: 0px;
+      img {
+        display:block;
+      }
     }
     .col-md-12{
       padding-left: 10px;
@@ -595,7 +653,20 @@ a.indicator.active{
   .client-shout-out{
     background-color: $salmon;
     color: $cream;
-    padding: 40px 0px;
+    padding: 90px 0px;
+    .col-md-10 {
+      padding-left: 0px;
+      margin-left: 30px;
+    }
+    & * {
+      margin-left: 0px;
+      padding-left: 0px;
+    }
+    .container {
+      margin: unset;
+      max-width: unset;
+      width: 100% !important;
+    }
     .col-md-5{
       padding-left: 0px;
     }
@@ -610,13 +681,16 @@ a.indicator.active{
       margin-bottom: 35px;
     }
   }
+  .mobile-client-link {
+    display: none;
+  }
 }
 
 
 ////////////////////////// How We Work /////////////////////
 .how-we-work {
   min-height: 100vh;
-  padding: 100px 0px;
+  padding: 75px 0px;
   background-color: $darkGray;
   color: $cream;
   display: flex;
@@ -636,6 +710,7 @@ a.indicator.active{
   p {
     max-width: 800px;
     font-size: 21px;
+    line-height: 25px;
     text-align: center;
     font-style: italic;
     margin: 0 auto;
@@ -715,15 +790,17 @@ div .client-grid > div:nth-child(3) {
   display: none;
 }
 
-.case-study-title{
-  min-height: 155px;
+.case-study-title {
+  min-height: 130px;
 }
 
 .our-work {
   .job {
+    margin: 20px 0px;
     h3 {
-      line-height: 21px;
-      margin-bottom: 0px;
+      line-height: 18px;
+      font-size: 18px;
+      margin-bottom: 5px;
       color: $darkGray;
     }
     p {
@@ -748,20 +825,22 @@ div .client-grid > div:nth-child(3) {
 }
 
 .page-title {
-  margin-top: 110px;
+  margin-top: 150px;
   h1 {
     text-align: center;
   }
 }
 
-.case-study {
-  margin: 75px 25px;
+.featured-case-studies-row {
+  margin: 40px 25px 110px 25px;
   .thumb {
     height: 100%;
     width: 100%;
     @include circlePerc(100%);
   }
-
+  .btn.btn-primary {
+    margin: 0px auto;
+  }
   div {
     h3 {
       text-align: center;
@@ -769,10 +848,6 @@ div .client-grid > div:nth-child(3) {
       font-size: 25px;
       font-weight: 300;
     }
-  }
-  a {
-    margin: 0px auto;
-    text-align: center;
   }
 }
 
@@ -840,23 +915,17 @@ div .client-grid > div:nth-child(3) {
 }
 
 ////////////////////////// the-veda-way /////////////////////
-.the-veda-way {
 
+.the-veda-way {
   min-height: 100vh;
   .process-section {
-    padding: 0px 30px;
+    padding: 30px 30px 0px 30px;
     background-image: url("../images/background-worm.svg");
     background-repeat: no-repeat;
     background-clip: border-box;
     background-size: 80% 80%, contain;
     background-position-y: 180px;
     background-position-x: 180px;
-  }
-  @media(max-width: 1200px){
-    .process-section {
-      padding: 0px 30px;
-      background-image: url("")
-    }
   }
 
   .services-section {
@@ -868,15 +937,10 @@ div .client-grid > div:nth-child(3) {
     .service {
       margin: 25px 0px;
       padding: 35px 0px;
-    }
-    h4 {
-    }
-    p {
-      margin: 0px;
-      font-size: 16px;
-      font-style: normal;
-      font-weight: 300;
-      color: $mediumGray;
+      img {
+        max-width: 70%;
+        max-height: 70%;
+      }
     }
     a {
       display: block;
@@ -912,6 +976,7 @@ div .client-grid > div:nth-child(3) {
   .number img {
     max-height: 150px;
     min-width: 120px;
+    max-width: 120px;
     margin: 0px 0px;
     padding: 0px 10px;
   }
@@ -922,15 +987,13 @@ div .client-grid > div:nth-child(3) {
   .bottom-border {
     border-bottom: 1px solid $extraLightGray;
   }
-  p {
-    font-size: 21px;
-    font-style: italic;
-    font-weight: 300;
-    color: $mediumGray;
-  }
-  .title{
-    margin-top: 110px;
-  }
+  // p {
+  //   font-size: 21px;
+  //   font-style: italic;
+  //   font-weight: 300;
+  //   color: $mediumGray;
+  // }
+
   .process-description {
     padding: 0px 30px;
     h3 {
@@ -1076,7 +1139,7 @@ div .client-grid > div:nth-child(3) {
     }
     .author{
       padding: 0px 40px 40px 40px;
-      font-size: 12px;
+      font-size: 11px;
       color: $darkGray;
       font-weight: 300;
     }
@@ -1085,7 +1148,11 @@ div .client-grid > div:nth-child(3) {
     background-color: $orange;
     min-width: 100%;
     padding: 190px 0px;
+    img {
+      max-width: 90%;
+    }
     h3{
+      text-align: center;
       font-size: 24px;
       color: $darkGray;
       font-weight: 300;
@@ -1110,11 +1177,17 @@ footer {
   .copyright-mobile{
     display: none;
   }
+  .footer-badge img {
+    max-width: 142px;
+  }
   ul {
     float: left;
     text-align: left;
   }
   li {
+    img {
+      max-width: 32px;
+    }
     a {
       display: block;
       text-transform: uppercase;
@@ -1142,12 +1215,14 @@ footer {
       font-weight: 100;
       text-transform: uppercase;
       margin: 0px;
-      font-size: .85em;
+      font-size: 14px;
+      text-align: left;
     }
     p.footer-address {
-      font-size: .85em;
+      font-size: 13px;
       margin: 0px;
       line-height: 18px;
+      text-align: left;
     }
     h4.footer-email {
       font-size: 2em;
@@ -1162,6 +1237,7 @@ footer {
       font-weight: 300;
       color: $cream;
       margin: 0px;
+      text-align: left;
     }
   }
 }
@@ -1219,13 +1295,86 @@ footer {
 
 
 /////////////////// media queries ////////////////////
+@media(max-width: 1200px){
+  .the-veda-way .process-section {
+    background-image: unset;
+  }
+}
+
 @media screen and (max-width: 1100px){
   .reverse-group{
     flex-wrap: wrap-reverse;
   }
+
+  .hero .hero-text h1 {
+    font-size: 60px;
+    line-height: 60px;
+  }
+  .case-study-featured .featured-case-study-image {
+    display: none;
+    img {
+      @include circlePerc(100%);
+      width: 100%;
+      height: 100%;
+      position: relative;;
+      display: block;
+      max-width: 600px;
+    }
+  }
 }
 
+@media screen and (max-width: 1000px){
+  .case-study-featured {
+    .slider-row{
+      flex-direction: column-reverse;
+      height: unset;
+    }
+    .indicator-list li p {
+      text-align: center;
+      padding-right: 0px;
+    }
+    .indicator-row .col-xs-4 {
+      padding: 0px 0px;
+    }
+  }
+  .case-study-image-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    min-height: unset !important;
+    max-height: 600px !important;
+  }
+  .featured-case-study-image {
+    max-height: 600px;
+    img {
+      border-radius: 134px;
+      max-width: 500px !important;
+      max-height: 500px !important;
+      position: relative;
+      display: block;
+    }
+  }
+
+}
+
+
+
 @media screen and (max-width: 800px){
+  .navbar {
+    .navigation-links {
+      margin: 0 0 0 0px;
+    }
+  }
+  .menu-hover .navbar a {
+      min-width: 100px;
+      min-height: 20px;
+      margin: 20px 5px;
+  }
+  .navbar a {
+      min-width: 100px;
+      min-height: 20px;
+      margin: 20px 5px;
+  }
   h1.title {
     font-size: 40px;
   }
@@ -1253,9 +1402,6 @@ footer {
   .hide-for-desktop {
     display: inline;
   }
-  .page-title {
-    margin-top: 30px;
-  }
   .author {
     text-align: center;
   }
@@ -1265,13 +1411,15 @@ footer {
 
   .hamburger {
     display: inline-block;
+    margin: 10px;
+    position: fixed;
     z-index: $z-index-5;
   }
 
   .mobile-menu {
     align-items: flex-start;
     align-content: flex-start;
-    background: black;
+    background: $darkGray;
     position: fixed;
     padding: 0px;
     top: 0;
@@ -1280,7 +1428,7 @@ footer {
     z-index: $z-index-5;
     width: 210px;
     box-shadow: -63px 0px 3px 70px RGBA(0, 0, 0, .50);
-      transition: all 500ms cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    transition: all 500ms cubic-bezier(0.215, 0.610, 0.355, 1.000);
     &.active {
       left: 0;
       transition: all 500ms cubic-bezier(0.215, 0.610, 0.355, 1.000);
@@ -1301,8 +1449,8 @@ footer {
     top: 10px;
     margin: 10px 0px 0px 15px;
     display: block;
-    position: absolute;
-    z-index: 400;
+    position: fixed;
+    z-index: 500;
     background-image: url("../images/veda-nav-logo.svg");
     background-repeat: no-repeat;
     background-clip: border-box;
@@ -1312,9 +1460,6 @@ footer {
     width: unset;
     padding-left: 10px;
     margin-top: 10px;
-    display: block;
-    position: absolute;
-    z-index: 400;
     background-image: url("../images/logo-top.svg");
     background-repeat: no-repeat;
     background-clip: border-box;
@@ -1350,6 +1495,7 @@ footer {
         a {
           text-decoration: none;
           text-align: left;
+          max-height: 12px;
         }
       }
       li:nth-child(1) {
@@ -1416,6 +1562,10 @@ footer {
       margin-bottom: 10px;
       padding-left: 0px;
     }
+    h4.footer-phone a {
+      font-size: 24px;
+      color: $cream;
+    }
     .footer-content-row{
       padding: 0px 30px;
       margin-bottom: 50px;
@@ -1430,6 +1580,9 @@ footer {
       padding: 0px;
       margin-right: 30px;
       margin-left: 30px;
+      img {
+        max-width: 75px;
+      }
     }
     .footer-badge {
       min-width: 142px;
@@ -1444,10 +1597,10 @@ footer {
       font-style: italic;
       font-weight: 100;
       color: $mediumGray;
-      margin-left: 0px;
+      margin-left: 30px;
     }
   }
-//////////////// home screen  ////////////////
+  //////////////// home screen  ////////////////
   .hero {
     height: 100vh;
   }
@@ -1463,11 +1616,18 @@ footer {
   .hero-link {
     font-size: 18px;
   }
-
+  .slider-row {
+    min-height: 720px;
+  }
   .case-study-featured {
-    min-height: 870px;
+    min-height: 670px;
     margin-top: 20px;
     padding: 10px;
+    .case-study-details{
+      .btn {
+        margin-top: 0px;
+      }
+    }
     .row {
       flex-direction: column-reverse;
     }
@@ -1481,9 +1641,14 @@ footer {
       display: inline-block;
       padding: 10px 20px 0px 20px;
     }
+    .indicator-row {
+      margin-bottom: 30px;
+    }
     .indicator-list {
+      padding: 0px 40px;
       flex-direction: inherit;
       justify-content: center;
+      }
       li:first-child {
           list-style-type: none;
           color: RGBA(159, 157, 148, 1);
@@ -1494,25 +1659,39 @@ footer {
           }
       }
     }
+
+    .indicator-col .start-sm {
+      justify-content: center !important;
+      align-items: center !important;
+    }
+
     p {
       text-align: center;
     }
     h2.featured-project-title {
     text-align: center;
+    font-size: 22px;
+    line-height: 30px;
+    margin-top: 50px;
     }
     .case-study-image-container {
       width: 100%;
       display: flex;
       justify-content: center;
+      min-height: unset;
+      max-height: 300px !important;
     }
-    .featured-case-study-image img {
-    border-radius: 134px;
-    width: 268px;
-    height: 268px;
-    position: relative;
-    display: block;
+    .featured-case-study-image {
+      max-height: 300px;
+      img {
+        border-radius: 134px;
+        max-width: 268px !important;
+        max-height: 268px !important;
+        position: relative;
+        display: block;
+      }
     }
-  }
+
   .case-study-featured .featured-case-study-image {
     margin-right: 0;
   }
@@ -1528,11 +1707,18 @@ footer {
     }
   }
 
+  .social-status {
+    padding: 80px 0px;
+  }
+
   .client-list{
+    .client-list-link {
+      margin-top: 20px;
+    }
     .client-grid {
     margin-left: 0px;
     margin-right: 0px;
-    margin-top: 115px;
+    margin-top: 50px;
     min-width: 100%;
     display: flex;
     flex-direction: column;
@@ -1597,18 +1783,15 @@ footer {
       user-select: none; /* Non-prefixed version, currently*/
     }
   }
+
   .our-work .job p {
     line-height: 14px;
     margin: 5px;
     margin-left: 0px;
+    text-align: left;
   }
-  .our-work .job h3 {
-    margin-bottom: 14px;
-  }
-  .case-study {
-    margin: 25px 25px;
-    }
-    .col-md-4 {
+
+  .col-md-4 {
     margin-bottom: 75px;
   }
 
@@ -1616,14 +1799,63 @@ footer {
   //////////////// case study page ////////////
   .case-study-page {
     width: 100%;
+    p {
+      text-align: left;
+    }
     .featured-image img {
-    width: 80% !important;
-    height: unset;
-    margin: 0px 10px;
+      width: 80% !important;
+      height: unset;
+      margin: 0px 10px;
+    }
+    .featured-image a {
+      display: none;
+    }
+    .icon-row img {
+      display: none;
+    }
+    .info-header .col-md-4{
+      border-left: unset;
+      padding-left: 22px;
+      padding-bottom: 20px;
+      padding-top: 20px;
+      margin-bottom: 0px;
+      border-bottom: 1px solid $lightGray;
+      &:first-child {
+        padding-top: 0px;
+      }
+      &:nth-child(3){
+        margin-bottom: 30px;
+      }
+    }
+    .col-md-10 {
+      margin-left: 0px;
+    }
+    .client-shout-out {
+      & * {
+        margin-left: 5px;
+      }
+      .col-md-5 {
+        margin-left: 0px;
+      }
+      .col-xs-12 {
+        margin-left: 0px;
+        padding-left: 0px;
+      }
+    }
+    .client-link {
+      display: none;
+    }
+    .mobile-client-link{
+      margin-top: 20px;
+      display: block;
     }
   }
 
-  .case-study .thumb {
+  .featured-case-studies-row {
+    margin: 40px 25px -50px 25px;
+  }
+
+  .featured-case-studies-row .thumb {
     height: unset;
     width: 100%;
     border-radius: 50%;
@@ -1650,6 +1882,9 @@ footer {
     .bio-col {
       margin-top: 55px;
       margin-bottom: 55px;
+      .description {
+        text-align: left;
+      }
     }
     .bio-col:first-child {
         margin-top: 55px;
@@ -1675,15 +1910,44 @@ footer {
     font-weight: 500;
     margin-right: 10px;
     }
+    .fun-fact {
+      padding: 120px 0px 150px 0px;
+      img {
+        max-width: 100%;
+      }
+    }
+    .bio-col .testimonial {
+      padding: 0px 0px 0px 0px;
+      text-align: left;
+      color: $salmon;
+      font-size: 15px;
+    }
+    .bio-col .author {
+      text-align: left;
+      color: $salmon;
+      font-size: 13px;
+    }
+    .bio-col .blue-block{
+      background-color: unset;
+      border-radius: 5px;
+      margin-top: 45px;
+    }
+    .bio-col .green-block{
+      background-color: unset;
+      border-radius: 5px;
+      margin-top: 45px;
+    }
   }
 
   ///////////////////// the-veda-way ///////////////
   .the-veda-way {
-    p {
-      line-height: 18px;
-    }
-    .the-veda-way .title {
-    margin-top: 30px;
+    .btn-veda-way {
+      display: block;
+      width: 200px;
+      height: 30px;
+      padding: 8px 18px 0 18px;
+      text-decoration: none;
+      text-align: center !important;
     }
     .reverse-group{
       flex-wrap: wrap-reverse;
@@ -1706,8 +1970,16 @@ footer {
       margin: 0px 5px;
       padding: 0px;
       min-width: unset;
+      p {
+        text-align: left;
+      }
       .body-text {
         margin-top: 0px;
+      }
+    }
+    .process-section .process-description {
+      * {
+        text-align: left;
       }
     }
     .process-description {
@@ -1729,6 +2001,9 @@ footer {
       padding-top: 10px;
     }
     .service {
+      * {
+        text-align: left;
+      }
       .col-xs-12 {
         padding: 0px;
       }
@@ -1736,13 +2011,40 @@ footer {
     .the-veda-way .services-section .service {
       margin: 0px 0px;
       padding: 15px 0px;
-    }
-    .the-veda-way p {
-      font-size: 15px;
+      h4 {
+        color: $darkGray;
+        font-weight: bold;
+      }
+      p {
+        margin-top: 0px;
+        padding-top: 0px;
+        font-size: 15px;
+        line-height: 18px;
+      }
     }
   }
-
   .number {
     display: none;
+  }
+
+}
+
+
+
+
+@media screen and (max-width: 600px){
+
+  .case-study-page .title-description{
+    margin-bottom: 35px;
+    h3 {
+      color: $salmon;
+      font-weight: 300;
+      font-size: 16px;
+    }
+  }
+  .case-study-featured {
+    .indicator-list{
+      padding: 0px 0px;
+    }
   }
 }

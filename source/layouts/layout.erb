@@ -9,14 +9,16 @@
   <!-- Use title if it's in the page YAML frontmatter -->
   <title><%= current_page.data.title || "Middleman" %></title>
 
-  <%= stylesheet_link_tag "flexboxgrid.min", "../fonts/font", :site %>
+  <%= stylesheet_link_tag "flexboxgrid.min", "lightbox", "../fonts/font", :site %>
   <%= javascript_include_tag  :all %>
 </head>
 
 <body class="<%= page_classes %><%= current_page.data.menu_hover ? ' menu-hover' : '' %>">
 
     <nav class="navbar">
-      <i class="fa fa-bars hamburger" aria-hidden="true"></i>
+      <div>
+        <i class="fa fa-bars hamburger" aria-hidden="true"></i>
+      </div>
 
       <div class="logo-mobile">
         <a href="/">
@@ -56,7 +58,7 @@
                     <li class="../our-work/"><a href="../our-work/">Our Work</a></li>
                     <li class="../the-veda-way/"><a href="../the-veda-way/">The Veda Way</a></li>
                     <li class="../our-team/"><a href="../our-team/">Our Team</a></li>
-                    <li><a href="mailto:hello@vedaenv.com" class="list-item-plain">Contact</a></li>
+                    <!-- <li><a href="mailto:hello@vedaenv.com" class="list-item-plain">Contact</a></li> -->
                   </ul>
                 </div>
               </div>
@@ -66,7 +68,7 @@
           <div class="col-md-6 col-sm-4">
             <div class="row middle-md">
               <div class="col-md">
-                <h4 class="footer-email" id="contact">hello@vedaenv.com</h4>
+                <a href="mailto:hello@vedaenv.com"><h4 class="footer-email" id="contact">hello@vedaenv.com</h4></a>
               </div>
               <div class="col-md">
                 <ul class="social-nav">
@@ -105,7 +107,7 @@
             ©2017 Veda Environmental. All Rights Reserved.
           </div>
         </div>
-        <div class="row start-lg middle-lg center-xs">
+        <div class="row start-lg middle-lg start-xs">
           <div class="copyright-mobile col-md-4">
             ©2017 Veda Environmental. All Rights Reserved.
           </div>

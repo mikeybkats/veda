@@ -11,7 +11,7 @@ menu_hover: true
 </div>
   <div class="container fill-height hero-text">
     <div class="row fill-height middle-xs">
-      <div class="col-md-12 hero-text">
+      <div class="col-md-12 col-sm-10 col-xs-10 hero-text">
         <h1>Connecting the dots between science, policy &amp; people.</h1>
         <a href="/our-work/" class="hero-link"><span>See what we've been up to</span><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
       </div>
@@ -21,23 +21,27 @@ menu_hover: true
 
 <div class="case-study-featured">
 <div class="container">
-  <div class="row middle-sm center-xs">
-    <div class="col-md-6">
-      <ul class="row middle-sm indicator-list">
-        <li><p>FEATURED PROJECTS</p></li>
-        <li class="item"><a href="#" class="indicator active"></a></li>
-        <li class="item"><a href="#" class="indicator"></a></li>
-        <li class="item"><a href="#" class="indicator"></a></li>
-      </ul>
+  <div class="row slider-row middle-sm center-xs">
+    <div class="indicator-col col-md-6 ">
+      <div class="row start-sm center-xs indicator-row">
+        <div class="col-md-8 col-sm-6 col-xs-4">
+          <ul class="row middle-sm indicator-list">
+            <li><p>FEATURED PROJECTS</p></li>
+            <li class="item"><a href="#" class="indicator active"></a></li>
+            <li class="item"><a href="#" class="indicator"></a></li>
+            <li class="item"><a href="#" class="indicator"></a></li>
+          </ul>
+        </div>
+      </div>
       <cms:pages masterpage='featured-case-study/index.php' >
         <div class="case-study-details">
           <h2 class="featured-project-title">
             <cms:show project_title />
           </h2>
-          <p class="title-description">
+          <p class="title-description left">
             <cms:show project_description />
           </p>
-          <a class="btn btn-primary" href="/featured-case-study/<cms:show k_page_name />.html">See Case Study</a>
+          <a class="btn btn-primary" href="/featured-case-study/<cms:show k_page_name />.html">See the Case Study</a>
 
         </div>
       </cms:pages>
@@ -45,11 +49,12 @@ menu_hover: true
 
     <div class="col-md-6 case-study-image-container">
       <cms:pages masterpage='featured-case-study/index.php' >
-        <span class="featured-case-study-image">
+        <div class="featured-case-study-image">
           <img src="<cms:show carousel_image />"  />
-        </span>
+        </div>
       </cms:pages>
     </div>
+
   </div>
 </div>
 </div>
@@ -62,9 +67,11 @@ menu_hover: true
         <p>Over the years we’ve done this sort of thing enough to see a method to our madness. We’ve indentified four steps to solving the kinds of problems we solve.</p>
         <%= image_tag "how-we-work.svg" %>
         <div class="row center-sm center-xs">
-          <div class="col-md-2">
+          <a href="/the-veda-way/" class="btn btn-primary">The Veda Way</a>
+
+          <!-- <div class="col-md-2">
             <a href="/the-veda-way/" class="btn btn-primary">The Veda Way</a>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>
@@ -75,9 +82,9 @@ menu_hover: true
   <div class="container col-md-10">
     <div class="social-title">
       <h2 class="title">Social Status</h2>
-      <p class="description">The latest from our Instagram feed</p>
+      <p class="description">The latest from our <a href="https://www.instagram.com/vedaenvironmental/" class="underline">Instagram feed</a></p>
     </div>
-      <!-- LightWidget WIDGET --><script src="//lightwidget.com/widgets/lightwidget.js"></script><iframe src="//lightwidget.com/widgets/fadf5d4408985a8abd8b394ee2783a7a.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>
+      <!-- LightWidget WIDGET --><script src="//lightwidget.com/widgets/lightwidget.js"></script><iframe src="//lightwidget.com/widgets/fadf5d4408985a8abd8b394ee2783a7a.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 80%; border: 0; overflow: hidden;"></iframe>
   </div>
 </div>
 
@@ -86,7 +93,7 @@ menu_hover: true
       <div class="row center-sm">
         <div class="col-md-12 client-grid">
           <h1 class="title">Some of our Happy clients</h1>
-          <a href="" class="client-list-link">See See Full Client List</a>
+          <a href="" class="client-list-link">See Full Client List</a>
           <div class="row between-md">
             <div class="col-md-3 col-xs-6"><%= image_tag "department-of-ecology.png" %></div>
             <div class="col-md-3 col-xs-6"><%= image_tag "epa.png" %></div>
@@ -123,3 +130,46 @@ menu_hover: true
 </div>
 
 </div>
+
+<script>
+var $caseStudy = $('.case-study-featured');
+var $hero = $('.hero');
+
+function isElementInViewport (el) {
+  if (typeof jQuery === "function" && el instanceof jQuery) {
+    el = el[0];
+  }
+
+  var rect = el.getBoundingClientRect();
+  console.log(rect);
+
+  return (
+    rect.bottom >= 0
+  );
+}
+
+function onVisibilityChange(el, callback) {
+    return function () {
+      var old_visible = false;
+      var visible = isElementInViewport(el);
+      if (visible === old_visible){
+        $('body').removeClass('menu-hover');
+      }
+      if (visible != old_visible) {
+        old_visible = visible;
+        if (typeof callback == 'function') {
+          callback();
+        }
+      }
+    }
+}
+
+var handler = onVisibilityChange( $hero , function() {
+  /* your code go here */
+  $('body').addClass('menu-hover');
+});
+
+//jQuery
+$(window).on('DOMContentLoaded load resize scroll', handler);
+
+</script>

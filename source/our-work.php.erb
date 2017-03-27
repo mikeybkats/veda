@@ -14,7 +14,7 @@ title: Our Work
             </div>
           </div>
           <div class="row center-sm">
-            <div class="col-md-11">
+            <div class="col-md-12">
               <p class="title-description">Veda has been helping shape policy, communication and education in our environment for over two decades. The results speak for themselves.</p>
             </div>
           </div>
@@ -22,7 +22,7 @@ title: Our Work
       </div>
 
 
-      <div class="case-study row around-md center-xs">
+      <div class="featured-case-studies-row row around-md center-xs">
         <cms:pages masterpage='featured-case-study/index.php'>
           <div class="col-md-4">
             <div class="row center-md center-xs">
@@ -39,7 +39,7 @@ title: Our Work
             </div>
             <div class="row center-md center-xs">
               <div class="col-md-12">
-                <a href="/featured-case-study/<cms:show k_page_name />.html" class="btn-work btn-primary">see the case study</a>
+                <a href="/featured-case-study/<cms:show k_page_name />.html" class="btn btn-primary">see the case study</a>
               </div>
             </div>
           </div>
@@ -84,7 +84,9 @@ title: Our Work
                 <cms:pages masterpage='categories/index.php'>
                   <div class="row thumbnail-row hidden" data-category-name="<cms:show k_page_name />">
                     <cms:show_repeatable 'category_images' count='6'>
-                      <div class="col-md-2"><img src="<cms:show category_image />" id=""/></div>
+                      <div class="col-md-2">
+                        <a href="<cms:show category_large_image />" data-lightbox="image">
+                        <img src="<cms:show category_image />" id="" /></a></div>
                     </cms:show_repeatable>
                   </div>
                 </cms:pages>
