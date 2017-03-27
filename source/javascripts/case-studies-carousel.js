@@ -32,7 +32,7 @@ $(document).ready(function(){
     csTimeout = setTimeout(function() {
       selectActiveCaseStudy((currentCaseStudyIndex + 1) % numOfCaseStudies );
       rotateCaseStudies(currentCaseStudyIndex + 1);
-    }, 5000)
+    }, 8000)
   }
 })()
   //$('.case-study-details').first().removeClass('display').addClass('active');

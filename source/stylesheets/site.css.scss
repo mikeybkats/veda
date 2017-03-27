@@ -745,8 +745,9 @@ a.indicator.active{
   }
   img {
     margin: 25px 0px 25px 0px;
-    opacity: 1;
-    mix-blend-mode: multiply;
+    background-color: $cream;
+    // opacity: 1;
+    // mix-blend-mode: multiply;
   }
   .client-list-link {
     margin: 0px 0px 50px 0px;
@@ -917,6 +918,13 @@ div .client-grid > div:nth-child(3) {
 ////////////////////////// the-veda-way /////////////////////
 
 .the-veda-way {
+  .section-border {
+    border-bottom: 1px solid $extraLightGray;
+    width: 88%;
+    padding: 0px 0px;
+    margin: 0px auto;
+  }
+
   min-height: 100vh;
   .process-section {
     padding: 30px 30px 0px 30px;
@@ -930,7 +938,7 @@ div .client-grid > div:nth-child(3) {
 
   .services-section {
     margin: 55px 0px 0px 0px;
-    padding: 55px 0px 110px 0px;
+    padding: 55px 0px 100px 0px;
     .row {
     min-width: 100%;
     }
@@ -984,16 +992,6 @@ div .client-grid > div:nth-child(3) {
     width: 420px;
     margin: 0px 10px;
   }
-  .bottom-border {
-    border-bottom: 1px solid $extraLightGray;
-  }
-  // p {
-  //   font-size: 21px;
-  //   font-style: italic;
-  //   font-weight: 300;
-  //   color: $mediumGray;
-  // }
-
   .process-description {
     padding: 0px 30px;
     h3 {
@@ -1021,26 +1019,32 @@ div .client-grid > div:nth-child(3) {
     }
   }
   .author {
-    // text-align: center;
-    color: RGBA(231, 115, 108, 1);
-    // font-weight: 300;
-    // font-size: 16px;
-    // font-style: italic;
-    // text-align: left;
-    // margin-bottom: 0px;
+      color: RGBA(231, 115, 108, 1);
   }
   .on-a-mission {
-    max-width: 1000px;
+    // max-width: 1000px;
     padding: 10px 0px 10px 0px;
     margin: 0px 0px;
     min-height: 700px;
     img {
     margin-right: 30px;
     }
+    .on-a-mission-content {
+      padding: 80px 0px;
+    }
     .on-a-mission-description {
       margin-left: 60px;
       padding: 0px;
       min-width: 450px;
+      .title-description p {
+          color: $darkGray;
+          font-size: 21px;
+          line-height: 25px !important;
+          text-align: left;
+          font-style: italic;
+          line-height: 20px;
+          font-weight: 300;
+      }
       .body-text {
         margin-top: 70px;
       }
@@ -1941,6 +1945,9 @@ footer {
 
   ///////////////////// the-veda-way ///////////////
   .the-veda-way {
+    .section-border{
+      width: 95%;
+    }
     .btn-veda-way {
       display: block;
       width: 200px;
@@ -1965,18 +1972,22 @@ footer {
         margin: 0px 0px;
       }
     }
-    .on-a-mission .on-a-mission-description {
-      margin-left: 0px;
-      margin: 0px 5px;
-      padding: 0px;
-      min-width: unset;
-      p {
-        text-align: left;
-      }
-      .body-text {
-        margin-top: 0px;
+
+    .on-a-mission {
+      .on-a-mission-description {
+        margin-left: 0px;
+        margin: 0px 5px;
+        padding: 0px;
+        min-width: unset;
+        p {
+          text-align: left;
+        }
+        .body-text {
+          margin-top: 0px;
+        }
       }
     }
+
     .process-section .process-description {
       * {
         text-align: left;
