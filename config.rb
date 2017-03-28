@@ -1,13 +1,13 @@
 require 'font-awesome-sass'
-class AddCms < Middleman::Extension
-  def initialize(app, options_hash={}, &block)
-    super
-  end
-  def after_build(builder)
-    builder.thor.run 'cp -r /Applications/MAMP/couch /Applications/MAMP/htdocs'
-  end
-end
-::Middleman::Extensions.register(:add_cms, AddCms)
+# class AddCms < Middleman::Extension
+#   def initialize(app, options_hash={}, &block)
+#     super
+#   end
+#   def after_build(builder)
+#     builder.thor.run 'cp -r /Applications/MAMP/couch /Applications/MAMP/htdocs'
+#   end
+# end
+# ::Middleman::Extensions.register(:add_cms, AddCms)
 ###
 # Page options, layouts, aliases and proxies
 ###
