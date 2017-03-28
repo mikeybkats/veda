@@ -745,9 +745,8 @@ a.indicator.active{
   }
   img {
     margin: 25px 0px 25px 0px;
-    background-color: $cream;
-    // opacity: 1;
-    // mix-blend-mode: multiply;
+    opacity: 1;
+    mix-blend-mode: multiply;
   }
   .client-list-link {
     margin: 0px 0px 50px 0px;
@@ -1066,6 +1065,9 @@ div .client-grid > div:nth-child(3) {
   .bio-col{
     margin-top: 55px;
     margin-bottom: 120px;
+    .featured-image img {
+      width: 100%;
+    }
     .team-member{
       margin-top: 60px;
       .name{
