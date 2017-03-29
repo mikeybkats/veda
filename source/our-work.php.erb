@@ -100,8 +100,10 @@ title: Our Work
                     <p><span class="bold">YEAR: </span><cms:show year /></p>
                     <p><span class="bold">VEDA PROVIDED: </span>
                       <cms:related_pages 'categories_jobs' limit='5'>
-                      <a href=""><cms:show k_page_title />, </a>
+                  <a href=""><cms:show k_page_title /><cms:if k_count != k_total_records>,</cms:if>
+                </a>
                     </cms:related_pages>
+
                     </p>
                   </div>
                 </div>

@@ -21,6 +21,7 @@ body {
   font-size: .85em;
   overflow-x: hidden;
   width: 100%;
+  outline: 0;
 }
 
 a:focus {
@@ -223,12 +224,19 @@ p.title-description {
   padding: 10px 30px 0 30px;
   font-size: 14px;
   text-decoration: none;
-}
+  }
 
 .btn-primary {
   color: white;
   background-color: $green;
   font-style: italic;
+  text-align: center;
+}
+.btn-primary:hover {
+  background: darken($green, 10%);
+}
+.btn-primary:focus {
+  color: white;
 }
 
 .btn-work {
@@ -248,11 +256,17 @@ p.title-description {
   background-color: $cream;
   color: $mediumGray;
   display: block;
-  width: 170px;
   height: 30px;
-  padding: 8px 18px 0 18px;
+  padding: 8px 25px 0 25px;
   text-decoration: none;
 }
+
+.btn-white:hover {
+  background: darken($cream, 15%);
+}
+.btn-white:focus {
+    color: $mediumGray;
+  }
 
 ////////////////////////// Navbar /////////////////////
 
@@ -323,6 +337,7 @@ p.title-description {
   background: none;
   height: 60px;
   margin-top: 20px;
+  position: absolute;
   a {
     display: block;
     min-width: 100px;
@@ -658,9 +673,8 @@ a.indicator.active{
       padding-left: 0px;
       margin-left: 30px;
     }
-    & * {
-      margin-left: 0px;
-      padding-left: 0px;
+    & > div {
+      margin: 0 !important;
     }
     .container {
       margin: unset;
@@ -1178,6 +1192,9 @@ footer {
   flex-direction: column;
   justify-content: center;
   align-content: center;
+  a:hover {
+    color: darken($cream, 10%);
+  }
   .footer-mobile-logo {
     display: none;
   }
@@ -1203,6 +1220,9 @@ footer {
       line-height: 30px;
       color: $mediumGray;
       text-decoration: none;
+    }
+    a:hover {
+      color: darken($mediumGray, 10%);
     }
     a.list-item-plain {
       display: block;
