@@ -13,5 +13,6 @@ $(document).on('click', 'a[href^="#"]', function(event) {
   }, 0);
 });
 
+
 // Set the offset when entering page with hash present in the url
 window.setTimeout(offsetAnchor, 0);
