@@ -1477,7 +1477,7 @@ footer {
     top: 10px;
     margin: 10px 0px 0px 15px;
     display: block;
-    position: fixed;
+    position: absolute;
     z-index: 500;
     background-image: url("../images/veda-nav-logo.svg");
     background-repeat: no-repeat;
@@ -1589,6 +1589,9 @@ footer {
       margin-top: 25px;
       margin-bottom: 10px;
       padding-left: 0px;
+    }
+    h4.footer-email {
+      font-size: 26px !important;
     }
     h4.footer-phone a {
       font-size: 24px;
@@ -1854,6 +1857,9 @@ footer {
       &:nth-child(3){
         margin-bottom: 30px;
       }
+      p.icon-title {
+        text-align: center;
+      }
     }
     .col-md-10 {
       margin-left: 0px;
@@ -2008,6 +2014,13 @@ footer {
         }
         .body-text {
           margin-top: 0px;
+        }
+        .title-description p {
+          color: $darkGray;
+          font-size: 16px;
+          line-height: 20px !important;
+          text-align: left;
+          font-style: italic;
         }
       }
     }

@@ -47,7 +47,7 @@
 
         <div class="row center-md center-xs">
           <div class="col-md-10 featured-image">
-            <div class="col-md-8">
+            <div class="col-md-8 col-xs">
               <a href="../our-work/" class="btn btn-work btn-primary">< All work</a>
             </div>
             <img src="
@@ -57,7 +57,7 @@
         </div>
 
         <div class="row center-md center-xs">
-          <div class="col-md-8">
+          <div class="col-md-8 col-xs">
             <h1 class="title-case-study">
               <cms:show project_title />
             </h1>
@@ -78,11 +78,11 @@
 
               <div class="col-md-4 col-xs-11">
                 <div class="row middle-sm center-xs icon-row">
-                  <div class="col-md-2"><%= image_tag 'project-icon.svg' %></div>
-                  <div class="col-md-10"><p class="icon-title">Project</p></div>
+                  <div class="col-md-2 col-xs"><%= image_tag 'project-icon.svg' %></div>
+                  <div class="col-md-10 col-xs-12"><p class="icon-title">Project</p></div>
                 </div>
                 <div class="row middle-sm">
-                  <div class="col-md-12">
+                  <div class="col-md-12 col-xs">
                     <p>
                       <cms:show project_gear />
                     </p>
@@ -92,11 +92,11 @@
 
               <div class="col-md-4 col-xs-11">
                 <div class="row middle-sm center-xs icon-row">
-                  <div class="col-md-2"><%= image_tag 'client-icon.svg' %></div>
-                  <div class="col-md-10"><p class="icon-title">client</p></div>
+                  <div class="col-md-2 col-xs"><%= image_tag 'client-icon.svg' %></div>
+                  <div class="col-md-10 col-xs-12"><p class="icon-title">client</p></div>
                 </div>
                 <div class="row middle-sm">
-                  <div class="col-md-12"><p>
+                  <div class="col-md-12 col-xs"><p>
                     <cms:show project_client />
                   </p></div>
                 </div>
@@ -104,15 +104,17 @@
 
               <div class="col-md-4 col-xs-11">
                 <div class="row middle-sm center-xs icon-row">
-                  <div class="col-md-2"><%= image_tag 'check-icon.svg' %></div>
-                  <div class="col-md-10"><p class="icon-title">veda provided</p></div>
+                  <div class="col-md-2 col-xs"><%= image_tag 'check-icon.svg' %></div>
+                  <div class="col-md-10 col-xs-12"><p class="icon-title">veda provided</p></div>
                 </div>
-                <div class="row middle-sm">
-                  <div class="col-md-12">
+                <div class="row middle-sm middle-xs">
+                  <div class="col-md-12 col-xs">
                     <p>
                       <cms:related_pages 'categories_jobs' limit='5'>
-                      <a href=""><cms:show k_page_title />, </a>
-                    </cms:related_pages>
+                      <a href="<cms:show category_url />">
+                      <cms:show k_page_title /><cms:if k_count != k_total_records>,</cms:if>
+                      </a>
+                      </cms:related_pages>
                   </p>
                 </div>
               </div>
@@ -181,22 +183,22 @@
               <!-- <div class="row client-shout-out center-sm center-xs">
                 <div class="col-md-10 col-xs-11"> -->
                   <div class="row">
-                    <div class="col-md-12">
+                    <div class="col-md-12 col-xs-12">
                       <div class="row center-sm between-sm between-xs">
-                        <div class="col-md-5 col-sm-10">
+                        <div class="col-md-5 col-sm-10 col-xs-12">
                           <p>CLIENT SHOUT OUT: </p>
                           <h3>
                             <cms:show client_shout_out_title />
                           </h3>
                         </div>
-                        <div class="col-md-3 client-link">
+                        <div class="col-md-3 col-xs client-link">
                           <a href="<cms:show client_site_link/>" class="btn-white btn-primary">Visit their website</a>
                         </div>
                       </div>
                     </div>
                   </div>
                   <div class="row center-sm">
-                    <div class="col-md-12">
+                    <div class="col-md-12 col-xs-12">
                       <p>
                         <cms:show client_shout_out_description />
                       </p>
