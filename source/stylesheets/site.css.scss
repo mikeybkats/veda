@@ -41,7 +41,6 @@ a.hero-link:hover {
 
 .container {
   margin: 0 auto !important;
-  // overflow: hidden;
   max-width: 1280px;
 }
 
@@ -256,7 +255,7 @@ p.title-description {
   background-color: $cream;
   color: $mediumGray;
   display: block;
-  max-width: 170px;
+  max-width: 60%;
   height: 30px;
   padding: 8px 25px 0 25px;
   text-decoration: none;
@@ -1078,11 +1077,13 @@ div .client-grid > div:nth-child(3) {
 .the-veda-team {
   min-height: 100vh;
   background-color: $cream;
+
   .bio-col{
     margin-top: 55px;
     margin-bottom: 120px;
     .featured-image img {
       width: 100%;
+      max-width: 425px;
     }
     .team-member{
       margin-top: 60px;
@@ -1382,7 +1383,17 @@ footer {
       display: block;
     }
   }
-
+  .client-shout-out {
+    .client-link {
+      display: none;
+    }
+    .mobile-client-link{
+      margin-left: 15px;
+      margin-top: 20px;
+      display: block;
+      max-width: 50%;
+    }
+  }
 }
 
 
@@ -1418,7 +1429,7 @@ footer {
   }
   p.title-description {
     font-size: 16px;
-    line-height: 18px;
+    line-height: 18px !important;
   }
   blockquote {
     font-size: 30px;
@@ -1882,6 +1893,7 @@ footer {
     .mobile-client-link{
       margin-top: 20px;
       display: block;
+      max-width: 50%;
     }
   }
 
@@ -1913,6 +1925,14 @@ footer {
 
   //////////////// the veda team /////////////////
   .the-veda-team {
+    .col-xs-12{
+      margin: 0px;
+      padding: 0px;
+    }
+    .col-xs-12.top-container {
+      padding-right: 1rem;
+      padding-left: 1rem;
+    }
     .bio-col {
       margin-top: 55px;
       margin-bottom: 55px;
