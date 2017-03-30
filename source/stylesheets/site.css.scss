@@ -2144,6 +2144,7 @@ footer {
 .dots .dot {
    animation-name: blink;
    animation-iteration-count: infinite;
+   animation-direction: normal;
    animation-duration: 3s;
    animation-fill-mode: both;
 }

@@ -11,7 +11,7 @@ $(document).ready(function(){
     function removeSpecialCharacters(){
       $(idArray).each(function(index){
         var string = idArray[index]
-        if (string.indexOf('_') > -1){
+        while(string.indexOf('_') > -1){
           string = string.replace('_', '-');
         }
         urlArray.splice( index , 1, string);
@@ -22,7 +22,7 @@ $(document).ready(function(){
     function selectMenuItem(){
       $(urlArray).each(function(index){
         var urlName = urlArray[index];
-        // console.log(urlName);
+        console.log(urlName);
         var idName = idArray[index];
         // console.log(window.location.href.indexOf(urlName));
         if(window.location.href.indexOf(urlName) > -1) {
@@ -79,7 +79,6 @@ $(document).ready(function(){
 
   // load photo row for view all
   $('.category-image-sets .row').first().removeClass('hidden');
-
 
   makeIdArray();
   removeSpecialCharacters();

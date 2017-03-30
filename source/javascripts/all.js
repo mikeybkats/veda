@@ -10,3 +10,4 @@
 //= require './work-category-mobile.js'
 //= require './lightbox.js'
 //= require './lightbox-options.js'
+//= require './page-offset-scroll.js'
