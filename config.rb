@@ -29,10 +29,10 @@ page '/*.txt', layout: false
 
 # General configuration
 # activate :directory_indexes
+# set :index_file, "index.php"
 # activate :php
 activate :autoprefixer
 activate :sprockets
-# set :index_file, "index.php"
 # activate :add_cms
 # Reload the browser automatically whenever files change
 configure :development do
