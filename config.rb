@@ -18,6 +18,7 @@ require 'font-awesome-sass'
 page '/*.xml', layout: false
 page '/*.json', layout: false
 page '/*.txt', layout: false
+page '/*.xml', layout: false
 
 #page 'job.*', layout: false
 # With alternative layout

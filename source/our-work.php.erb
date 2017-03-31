@@ -22,7 +22,7 @@ title: Our Work
 
 
       <div class="featured-case-studies-row row around-md center-xs">
-        <cms:pages masterpage='featured-case-study/index.php'>
+        <cms:pages masterpage='featured-case-study.php'>
           <div class="col-md-4">
             <div class="row center-md center-xs">
               <div class="col-md-12">
@@ -61,11 +61,11 @@ title: Our Work
               <ul class="work-categories-menu">
                 <li class="all active" ><a href="" id="all">View All</a></li>
 
-                <cms:pages masterpage='categories/index.php'>
+                <cms:pages masterpage='categories.php'>
                   <li><a href="" id="<cms:show k_page_name />"><cms:show k_page_title /></a></li>
                 </cms:pages>
 
-                <cms:pages masterpage='job/index.php'>
+                <cms:pages masterpage='job.php'>
                   <cms:each business_status as='cat'>
                     <li><a href="" id=""><cms:show cat /></a></li>
                   </cms:each>
@@ -80,7 +80,7 @@ title: Our Work
               </div>
 
               <div class="category-image-sets">
-                <cms:pages masterpage='categories/index.php'>
+                <cms:pages masterpage='categories.php'>
                   <div class="row thumbnail-row hidden" data-category-name="<cms:show k_page_name />">
                     <cms:show_repeatable 'category_images' count='6'>
                       <div class="col-md-2">
@@ -91,7 +91,7 @@ title: Our Work
                 </cms:pages>
               </div>
 
-              <cms:pages masterpage='job/index.php'>
+              <cms:pages masterpage='job.php'>
                 <div class="row job " data-tag="<cms:related_pages 'categories_jobs' limit='5'><cms:show k_page_name />     </cms:related_pages>">
                   <div class="col-md-12">
                     <h3><cms:show job_title /></h3>

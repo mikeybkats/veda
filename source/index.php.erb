@@ -5,7 +5,7 @@ menu_hover: true
 
 <div class="hero">
   <div class="hero-bg-container">
-  <cms:pages masterpage='featured-case-study/index.php'>
+  <cms:pages masterpage='featured-case-study.php'>
     <div id="<cms:show k_page_name />" class="hero-background override-transition" style="background:url('<cms:show hero_image/>') center center/cover no-repeat"></div>
   </cms:pages>
 </div>
@@ -33,7 +33,7 @@ menu_hover: true
           </ul>
         </div>
       </div>
-      <cms:pages masterpage='featured-case-study/index.php' >
+      <cms:pages masterpage='index.php' >
         <div class="case-study-details">
           <h2 class="featured-project-title">
             <cms:show project_title />
@@ -41,14 +41,14 @@ menu_hover: true
           <p class="title-description left">
             <cms:show project_description />
           </p>
-          <a class="btn btn-primary" href="/featured-case-study/<cms:show k_page_name />.html">See the Case Study</a>
+          <a class="btn btn-primary" href="featured-case-study.php?pname=<cms:show k_page_name />">See the Case Study</a>
 
         </div>
       </cms:pages>
     </div>
 
     <div class="col-md-6 case-study-image-container">
-      <cms:pages masterpage='featured-case-study/index.php' >
+      <cms:pages masterpage='featured-case-study.php' >
         <div class="featured-case-study-image">
           <img src="<cms:show carousel_image />"  />
         </div>
