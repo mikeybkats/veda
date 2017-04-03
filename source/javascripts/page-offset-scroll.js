@@ -13,7 +13,7 @@ removeSlashCharacters();
 
 console.log(pathString);
 
-if( pathString === 'the-veda-way'){
+if( pathString === 'the-veda-way.php'){
   function offsetAnchor() {
     if (location.hash.length !== 0) {
       window.scrollTo(window.scrollX, window.scrollY - 100);

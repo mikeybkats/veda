@@ -850,6 +850,7 @@ div .client-grid > div:nth-child(3) {
   .thumb {
     height: 100%;
     width: 100%;
+    max-width: 425px;
     @include circlePerc(100%);
   }
   .btn.btn-primary {
@@ -1394,6 +1395,12 @@ footer {
       max-width: 50%;
     }
   }
+  .case-study-title{
+    min-height: 0px;
+  }
+  .case-study-btn-row{
+    margin-bottom: 60px;
+  }
 }
 
 
@@ -1896,7 +1903,9 @@ footer {
       max-width: 50%;
     }
   }
-
+  .case-study-btn-row{
+    margin-bottom: 0px;
+  }
   .featured-case-studies-row {
     margin: 40px 25px -50px 25px;
   }
