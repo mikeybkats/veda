@@ -18,6 +18,7 @@ require 'font-awesome-sass'
 page '/*.xml', layout: false
 page '/*.json', layout: false
 page '/*.txt', layout: false
+page '/*.xml', layout: false
 
 #page 'job.*', layout: false
 # With alternative layout
@@ -28,11 +29,11 @@ page '/*.txt', layout: false
 #  which_fake_page: "Rendering a fake page with a local variable" }
 
 # General configuration
-activate :directory_indexes
+# activate :directory_indexes
+# set :index_file, "index.php"
 # activate :php
 activate :autoprefixer
 activate :sprockets
-set :index_file, "index.php"
 # activate :add_cms
 # Reload the browser automatically whenever files change
 configure :development do

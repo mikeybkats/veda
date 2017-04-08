@@ -5,7 +5,7 @@ menu_hover: true
 
 <div class="hero">
   <div class="hero-bg-container">
-  <cms:pages masterpage='featured-case-study/index.php'>
+  <cms:pages masterpage='featured-case-study.php'>
     <div id="<cms:show k_page_name />" class="hero-background override-transition" style="background:url('<cms:show hero_image/>') center center/cover no-repeat"></div>
   </cms:pages>
 </div>
@@ -13,7 +13,7 @@ menu_hover: true
     <div class="row fill-height middle-xs">
       <div class="col-md-12 col-sm-10 col-xs-10 hero-text">
         <h1>Connecting the dots between science, policy &amp; people.</h1>
-        <a href="/our-work/" class="hero-link"><span>See what we've been up to</span><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+        <a href="/our-work.php" class="hero-link"><span>See what we've been up to</span><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
       </div>
     </div>
   </div>
@@ -22,6 +22,7 @@ menu_hover: true
 <div class="case-study-featured">
 <div class="container">
   <div class="row slider-row middle-sm center-xs">
+
     <div class="indicator-col col-md-6 ">
       <div class="row start-sm center-xs indicator-row">
         <div class="col-md-8 col-sm-6 col-xs-4">
@@ -33,7 +34,7 @@ menu_hover: true
           </ul>
         </div>
       </div>
-      <cms:pages masterpage='featured-case-study/index.php' >
+      <cms:pages masterpage='featured-case-study.php' >
         <div class="case-study-details">
           <h2 class="featured-project-title">
             <cms:show project_title />
@@ -41,18 +42,31 @@ menu_hover: true
           <p class="title-description left">
             <cms:show project_description />
           </p>
-          <a class="btn btn-primary" href="/featured-case-study/<cms:show k_page_name />.html">See the Case Study</a>
+          <a class="btn btn-primary" href="featured-case-study.php?pname=<cms:show k_page_name />">See the Case Study</a>
 
         </div>
       </cms:pages>
     </div>
 
     <div class="col-md-6 case-study-image-container">
-      <cms:pages masterpage='featured-case-study/index.php' >
+      <cms:pages masterpage='featured-case-study.php' >
         <div class="featured-case-study-image">
           <img src="<cms:show carousel_image />"  />
         </div>
       </cms:pages>
+    </div>
+
+    <div class="indicator-col-mobile col-md-6 ">
+      <div class="row start-sm center-xs indicator-row">
+        <div class="col-md-8 col-sm-12 col-xs-6">
+          <ul class="row middle-sm indicator-list">
+            <li><p>FEATURED PROJECTS</p></li>
+            <li class="item"><a href="#" class="indicator active"></a></li>
+            <li class="item"><a href="#" class="indicator"></a></li>
+            <li class="item"><a href="#" class="indicator"></a></li>
+          </ul>
+        </div>
+      </div>
     </div>
 
   </div>
@@ -71,7 +85,7 @@ menu_hover: true
         </div>
 
         <div class="row center-sm center-xs">
-          <a href="/the-veda-way/" class="btn btn-primary">The Veda Way</a>
+          <a href="/the-veda-way.php" class="btn btn-primary">The Veda Way</a>
         </div>
       </div>
     </div>
@@ -92,7 +106,7 @@ menu_hover: true
     <div class="container">
       <div class="row center-sm">
         <div class="col-md-12 client-grid">
-          <h1 class="title">Some of our Happy clients</h1>
+          <h1 class="title">Some of our Happy Clients</h1>
           <a href="" class="client-list-link">See Full Client List</a>
           <div class="row between-md">
             <div class="col-md-3 col-xs-6"><%= image_tag "department-of-ecology.png" %></div>
@@ -119,7 +133,7 @@ menu_hover: true
     <div class="row center-sm veda-quote blockquote-container">
 
       <div class="col-md-10">
-        <blockquote>One of the most informative public meetings I have ever attended... They did an excellent job.</blockquote>
+        <blockquote>One of the most informative public meetings I've ever attended... They did an excellent job.</blockquote>
       </div>
 
       <div class="row center-sm center-xs">
@@ -141,7 +155,7 @@ function isElementInViewport (el) {
   }
 
   var rect = el.getBoundingClientRect();
-  console.log(rect);
+  // console.log(rect);
 
   return (
     rect.bottom >= 0

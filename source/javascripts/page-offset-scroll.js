@@ -1,7 +1,7 @@
 //remove slashes
 var pathString = location.pathname;
 
-console.log(pathString);
+// console.log(pathString);
 
 function removeSlashCharacters(){
   while(pathString.indexOf('/') > -1){
@@ -11,9 +11,9 @@ function removeSlashCharacters(){
 };
 removeSlashCharacters();
 
-console.log(pathString);
+// console.log(pathString);
 
-if( pathString === 'the-veda-way'){
+if( pathString === 'the-veda-way.php'){
   function offsetAnchor() {
     if (location.hash.length !== 0) {
       window.scrollTo(window.scrollX, window.scrollY - 100);

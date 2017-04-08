@@ -1,0 +1,11 @@
+<% pages = sitemap.resources.find_all{|p| p.source_file.match(/\.php/) } %>
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<% pages.each do |p| %>
+  <url>
+    <loc>localhost:8888/<%=p.destination_path.gsub('index.php','')%></loc>
+    <priority>0.7</priority>
+  </url>
+
+<% end %>
+</urlset>
