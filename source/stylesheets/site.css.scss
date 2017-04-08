@@ -2044,6 +2044,9 @@ footer {
     width: 80%;
     margin: 0px 0px;
     }
+    p.contact {
+      text-align: left;
+    }
     .bio-col .email {
       color: RGBA(127, 194, 137, 1);
       font-size: 18px;
@@ -2051,10 +2054,12 @@ footer {
       font-weight: 500;
     }
     .bio-col .phone-number {
-    color: RGBA(64, 64, 64, 1);
+    a {
+      color: RGBA(64, 64, 64, 1) !important;
+      font-weight: 500;
+    }
     font-size: 18px;
     font-style: normal;
-    font-weight: 500;
     margin-right: 10px;
     }
     .fun-fact {
