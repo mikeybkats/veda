@@ -454,8 +454,9 @@ p.title-description {
 
     align-items: center;
     span {
-      font-size: 24px;
-      margin-right: 14px;
+      font-size: 20px;
+      margin-right: 10px;
+      font-weight: 400;
     }
     .icon-right-arrow {
       height: 24px;
@@ -1616,9 +1617,9 @@ footer {
       flex-direction: column;
     }
     .address {
-      margin-top: 25px;
-      margin-bottom: 10px;
-      padding-left: 0px;
+      margin-top: 25px !important;
+      margin-bottom: 10px !important;
+      padding-left: 0px !important;
     }
     h4.footer-email {
       font-size: 26px !important;
@@ -1837,6 +1838,10 @@ footer {
     }
   }
 
+  .more-work-section {
+    margin-top: 30px;
+  }
+
   .work-categories-menu {
     max-height: 0;
     overflow: hidden;
@@ -1927,6 +1932,9 @@ footer {
       & * {
         margin-left: 5px;
       }
+      h3 {
+        margin-bottom: 10px;
+      }
       .col-md-5 {
         margin-left: 0px;
       }
@@ -1941,7 +1949,7 @@ footer {
     .mobile-client-link{
       margin-top: 20px;
       display: block;
-      max-width: 100%;
+      max-width: 80%;
     }
   }
   .case-study-btn-row{
@@ -1970,6 +1978,15 @@ footer {
     border-left: unset;
     margin: 0 auto;
     min-height: 350px;
+    .row.category-selection-title {
+      display: none;
+    }
+    .category-image-sets{
+      display: none;
+    }
+    a {
+      line-height: 20px;
+    }
   }
 
 
