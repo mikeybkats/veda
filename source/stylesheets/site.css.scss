@@ -312,6 +312,9 @@ p.title-description {
   .logo-mobile {
     display: none;
   }
+  .hamburger-logo-mobile {
+    display: none;
+  }
   .logo img {
     width: 190px;
     max-height: 100px;
@@ -444,10 +447,10 @@ p.title-description {
     color: $green;
     text-decoration: none;
     float: left;
-
+    font-style: italic;
     align-items: center;
     span {
-      font-size: 20px;
+      font-size: 24px;
       margin-right: 10px;
       font-weight: 400;
     }
@@ -1508,7 +1511,7 @@ footer {
     margin: 10px 0px 0px 15px;
     display: block;
     position: absolute;
-    z-index: 500;
+    z-index: 600;
     background-image: url("../images/veda-nav-logo.svg");
     background-repeat: no-repeat;
     background-clip: border-box;
@@ -1674,7 +1677,7 @@ footer {
     line-height: 34px;
   }
 
-  .hero-link {
+  .hero .hero-link span {
     font-size: 18px;
   }
   .slider-row {
