@@ -1409,6 +1409,15 @@ footer {
 
 
 @media screen and (max-width: 800px){
+  h1.title-case-study {
+    margin-top: 20px;
+    text-align: center;
+    font-weight: 300;
+    font-size: 22px;
+    line-height: 28px;
+    margin-bottom: 0px;
+    color: $darkGray;
+  }
   .navbar {
     .navigation-links {
       margin: 0 0 0 0px;
@@ -1874,6 +1883,11 @@ footer {
     p {
       text-align: left;
     }
+    .title-description h3 {
+      line-height: 18px;
+      margin-top: 25px;
+    }
+
     .featured-image img {
       width: 80% !important;
       height: unset;
@@ -1887,16 +1901,20 @@ footer {
     }
     .info-header .col-md-4{
       border-left: unset;
-      padding-left: 22px;
+      padding: 0px;
       padding-bottom: 20px;
       padding-top: 20px;
       margin-bottom: 0px;
       border-bottom: 1px solid $lightGray;
       &:first-child {
         padding-top: 0px;
+        border-top: 1px solid RGBA(159, 157, 148, 1);
       }
       &:nth-child(3){
         margin-bottom: 30px;
+      }
+      p {
+        text-align: center;
       }
       p.icon-title {
         text-align: center;
@@ -1923,7 +1941,7 @@ footer {
     .mobile-client-link{
       margin-top: 20px;
       display: block;
-      max-width: 50%;
+      max-width: 100%;
     }
   }
   .case-study-btn-row{
