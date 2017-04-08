@@ -11,6 +11,7 @@ $z-index-2: 200;
 $z-index-3: 300;
 $z-index-4: 400;
 $z-index-5: 500;
+$z-index-6: 600;
 
 
 ////////////////////////// Base /////////////////////
@@ -190,7 +191,9 @@ p.title-description {
 .hamburger {
   display: none;
 }
-
+.home-link {
+  display: none;
+}
 @media (min-width:800px) {
   body{
     margin: 0 auto;
@@ -376,19 +379,19 @@ p.title-description {
         color: $green;
       }
     }
-    li:nth-child(1){
+    li:nth-child(2){
       padding: 0px 0px 0px 0px;
       text-align: center;
     }
-    li:nth-child(2){
+    li:nth-child(3){
       padding: 0px 0px 0px 10px;
       text-align: center;
     }
-    li:nth-child(3){
+    li:nth-child(4){
       padding: 0px 5px 0px 5px;
       text-align: center;
     }
-    li:nth-child(4){
+    li:nth-child(5){
       border-left: 2px solid $mediumGray;
       text-align: left;
       max-width: 60px;
@@ -1488,12 +1491,15 @@ footer {
     z-index: $z-index-5;
     justify-content: center;
     align-items: center;
-    padding-bottom: 50%;
+    padding-bottom: 65%;
     transition: all 500ms cubic-bezier(0.215, 0.610, 0.355, 1.000);
     &.active {
       top: 0;
       transition: all 500ms cubic-bezier(0.215, 0.610, 0.355, 1.000);
     }
+  }
+  .home-link {
+    display: block;
   }
   .menu-hover .navbar {
     position: inherit;
@@ -1505,6 +1511,11 @@ footer {
   }
 
   .navbar .logo-mobile {
+    a {
+      min-width: 100px;
+      min-height: 50px;
+      margin: 0px;
+    }
     width: 60px;
     max-height: 30px;
     top: 6px;
@@ -1554,16 +1565,13 @@ footer {
       li {
         float: none;
         a {
+          font-size: 20px;
           text-decoration: none;
           text-align: center;
           max-height: 12px;
         }
       }
-      li:nth-child(1) {
-        padding: 0px;
-        margin: 0px;
-      }
-      li:nth-child(2){
+      li:nth-child(2) {
         padding: 0px;
         margin: 0px;
       }
@@ -1572,9 +1580,16 @@ footer {
         margin: 0px;
       }
       li:nth-child(4){
-        border-left: none;
         padding: 0px;
         margin: 0px;
+      }
+      li:nth-child(5){
+        border-left: none;
+        padding: 0px;
+        padding-top: 20px;
+        margin: 0px;
+        max-width: 100%;
+        text-align: center;
       }
       a {
         font-style: italic;
@@ -1694,7 +1709,6 @@ footer {
       .btn {
         margin-top: 0px;
       }
-
     }
     .row {
       flex-direction: column-reverse;
