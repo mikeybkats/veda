@@ -187,6 +187,10 @@ p.title-description {
   text-transform: uppercase;
 }
 
+.hamburger {
+  display: none;
+}
+
 @media (min-width:800px) {
   body{
     margin: 0 auto;
@@ -269,17 +273,6 @@ p.title-description {
   }
 
 ////////////////////////// Navbar /////////////////////
-
-.hamburger {
-  display: none;
-  float: right;
-  font-size: 3em;
-  top: 10px;
-  margin-top: 10px;
-  right: 15px;
-  text-shadow: 1px 2px 2px #333;
-}
-
 .navbar {
   transition: all 0.5s;
   z-index: 600;
@@ -1420,6 +1413,7 @@ footer {
     color: $darkGray;
   }
   .navbar {
+    height: 54px;
     .navigation-links {
       margin: 0 0 0 0px;
     }
@@ -1469,27 +1463,32 @@ footer {
   }
 
   .hamburger {
+    float: right;
+    font-size: 2.2em;
+    top: 2px;
+    right: 15px;
     display: inline-block;
     margin: 10px;
     position: fixed;
-    z-index: $z-index-5;
+    z-index: 600;
   }
 
   .mobile-menu {
-    align-items: flex-start;
-    align-content: flex-start;
-    background: $darkGray;
     position: fixed;
     padding: 0px;
-    top: 0;
-    left: -230px;
+    top: -100%;
     bottom: 0;
+    z-index: 500;
+    width: 100%;
+    box-shadow: -0px 0px 0px 0px RGBA(0, 0, 0, 0.5);
+    background: $darkGray;
     z-index: $z-index-5;
-    width: 210px;
-    box-shadow: -63px 0px 3px 70px RGBA(0, 0, 0, .50);
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 50%;
     transition: all 500ms cubic-bezier(0.215, 0.610, 0.355, 1.000);
     &.active {
-      left: 0;
+      top: 0;
       transition: all 500ms cubic-bezier(0.215, 0.610, 0.355, 1.000);
     }
   }
@@ -1503,9 +1502,9 @@ footer {
   }
 
   .navbar .logo-mobile {
-    width: unset;
-    padding-left: 10px;
-    top: 10px;
+    width: 60px;
+    max-height: 30px;
+    top: 6px;
     margin: 10px 0px 0px 15px;
     display: block;
     position: absolute;
@@ -1553,26 +1552,26 @@ footer {
         float: none;
         a {
           text-decoration: none;
-          text-align: left;
+          text-align: center;
           max-height: 12px;
         }
       }
       li:nth-child(1) {
-        padding: 0 5px 0 5px;
-        margin: 15px 0px 0px 20px;
+        padding: 0px;
+        margin: 0px;
       }
       li:nth-child(2){
-        padding: 0 5px 0 5px;
-        margin: 15px 0px 0px 20px;
+        padding: 0px;
+        margin: 0px;
       }
       li:nth-child(3){
-        padding: 0 5px 0 5px;
-        margin: 15px 0px 0px 20px;
+        padding: 0px;
+        margin: 0px;
       }
       li:nth-child(4){
-        border-left: 0px solid $mediumGray;
-        padding: 0 5px 0 5px;
-        margin: 15px 0px 0px 20px;
+        border-left: none;
+        padding: 0px;
+        margin: 0px;
       }
       a {
         font-style: italic;
