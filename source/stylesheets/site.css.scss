@@ -11,6 +11,7 @@ $z-index-2: 200;
 $z-index-3: 300;
 $z-index-4: 400;
 $z-index-5: 500;
+$z-index-6: 600;
 
 
 ////////////////////////// Base /////////////////////
@@ -187,6 +188,12 @@ p.title-description {
   text-transform: uppercase;
 }
 
+.hamburger {
+  display: none;
+}
+.home-link {
+  display: none;
+}
 @media (min-width:800px) {
   body{
     margin: 0 auto;
@@ -269,17 +276,6 @@ p.title-description {
   }
 
 ////////////////////////// Navbar /////////////////////
-
-.hamburger {
-  display: none;
-  float: right;
-  font-size: 3em;
-  top: 10px;
-  margin-top: 10px;
-  right: 15px;
-  text-shadow: 1px 2px 2px #333;
-}
-
 .navbar {
   transition: all 0.5s;
   z-index: 600;
@@ -317,6 +313,9 @@ p.title-description {
     margin-left: 5%;
   }
   .logo-mobile {
+    display: none;
+  }
+  .hamburger-logo-mobile {
     display: none;
   }
   .logo img {
@@ -380,19 +379,19 @@ p.title-description {
         color: $green;
       }
     }
-    li:nth-child(1){
+    li:nth-child(2){
       padding: 0px 0px 0px 0px;
       text-align: center;
     }
-    li:nth-child(2){
+    li:nth-child(3){
       padding: 0px 0px 0px 10px;
       text-align: center;
     }
-    li:nth-child(3){
+    li:nth-child(4){
       padding: 0px 5px 0px 5px;
       text-align: center;
     }
-    li:nth-child(4){
+    li:nth-child(5){
       border-left: 2px solid $mediumGray;
       text-align: left;
       max-width: 60px;
@@ -451,11 +450,12 @@ p.title-description {
     color: $green;
     text-decoration: none;
     float: left;
-
+    font-style: italic;
     align-items: center;
     span {
       font-size: 24px;
-      margin-right: 14px;
+      margin-right: 10px;
+      font-weight: 400;
     }
     .icon-right-arrow {
       height: 24px;
@@ -831,6 +831,10 @@ div .client-grid > div:nth-child(3) {
   }
   .content-col:last-child{
     padding-bottom: 105px;
+  }
+
+  .veda-quote {
+    padding: 140px 0px 140px 0px;
   }
 }
 
@@ -1210,6 +1214,9 @@ footer {
   .footer-badge img {
     max-width: 142px;
   }
+  .line-break {
+    display: block;
+  }
   ul {
     float: left;
     text-align: left;
@@ -1409,7 +1416,17 @@ footer {
 
 
 @media screen and (max-width: 800px){
+  h1.title-case-study {
+    margin-top: 20px;
+    text-align: center;
+    font-weight: 300;
+    font-size: 22px;
+    line-height: 28px;
+    margin-bottom: 0px;
+    color: $darkGray;
+  }
   .navbar {
+    height: 54px;
     .navigation-links {
       margin: 0 0 0 0px;
     }
@@ -1457,31 +1474,40 @@ footer {
   .row {
     max-width: 100%;
   }
-
+  .page-title {
+    margin-top: 120px;
+  }
   .hamburger {
+    z-index: 600;
+    float: right;
+    font-size: 2.2em;
     display: inline-block;
     margin: 10px;
-    position: fixed;
-    z-index: $z-index-5;
+    position: absolute;
+    top: 2px;
+    right: 12px;
   }
 
   .mobile-menu {
-    align-items: flex-start;
-    align-content: flex-start;
-    background: $darkGray;
     position: fixed;
     padding: 0px;
-    top: 0;
-    left: -230px;
+    top: -100%;
     bottom: 0;
+    width: 100%;
+    box-shadow: -0px 0px 0px 0px RGBA(0, 0, 0, 0.5);
+    background: $darkGray;
     z-index: $z-index-5;
-    width: 210px;
-    box-shadow: -63px 0px 3px 70px RGBA(0, 0, 0, .50);
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 70%;
     transition: all 500ms cubic-bezier(0.215, 0.610, 0.355, 1.000);
     &.active {
-      left: 0;
+      top: 0;
       transition: all 500ms cubic-bezier(0.215, 0.610, 0.355, 1.000);
     }
+  }
+  .home-link {
+    display: block;
   }
   .menu-hover .navbar {
     position: inherit;
@@ -1493,13 +1519,18 @@ footer {
   }
 
   .navbar .logo-mobile {
-    width: unset;
-    padding-left: 10px;
-    top: 10px;
-    margin: 10px 0px 0px 15px;
+    a {
+      min-width: 100px;
+      min-height: 50px;
+      margin: 0px;
+    }
+    width: 60px;
+    max-height: 30px;
+    top: 6px;
+    margin: 10px 0px 0px 25px;
     display: block;
     position: absolute;
-    z-index: 500;
+    z-index: 600;
     background-image: url("../images/veda-nav-logo.svg");
     background-repeat: no-repeat;
     background-clip: border-box;
@@ -1542,27 +1573,31 @@ footer {
       li {
         float: none;
         a {
+          font-size: 20px;
           text-decoration: none;
-          text-align: left;
+          text-align: center;
           max-height: 12px;
         }
       }
-      li:nth-child(1) {
-        padding: 0 5px 0 5px;
-        margin: 15px 0px 0px 20px;
-      }
-      li:nth-child(2){
-        padding: 0 5px 0 5px;
-        margin: 15px 0px 0px 20px;
+      li:nth-child(2) {
+        padding: 0px;
+        margin: 0px;
       }
       li:nth-child(3){
-        padding: 0 5px 0 5px;
-        margin: 15px 0px 0px 20px;
+        padding: 0px;
+        margin: 0px;
       }
       li:nth-child(4){
-        border-left: 0px solid $mediumGray;
-        padding: 0 5px 0 5px;
-        margin: 15px 0px 0px 20px;
+        padding: 0px;
+        margin: 0px;
+      }
+      li:nth-child(5){
+        border-left: none;
+        padding: 0px;
+        padding-top: 20px;
+        margin: 0px;
+        max-width: 100%;
+        text-align: center;
       }
       a {
         font-style: italic;
@@ -1607,9 +1642,9 @@ footer {
       flex-direction: column;
     }
     .address {
-      margin-top: 25px;
-      margin-bottom: 10px;
-      padding-left: 0px;
+      margin-top: 25px !important;
+      margin-bottom: 10px !important;
+      padding-left: 0px !important;
     }
     h4.footer-email {
       font-size: 26px !important;
@@ -1665,7 +1700,7 @@ footer {
     line-height: 34px;
   }
 
-  .hero-link {
+  .hero .hero-link span {
     font-size: 18px;
   }
   .slider-row {
@@ -1682,7 +1717,6 @@ footer {
       .btn {
         margin-top: 0px;
       }
-
     }
     .row {
       flex-direction: column-reverse;
@@ -1743,6 +1777,7 @@ footer {
     font-size: 22px;
     line-height: 30px;
     margin-top: 30px;
+    padding: 0px 10%;
     }
     .case-study-image-container {
       width: 100%;
@@ -1770,7 +1805,7 @@ footer {
   .how-we-work {
     padding: 50px 0px;
     .how-we-work-animation {
-    width: 90%;
+      width: 100%;
     }
     p {
     font-size: 16px;
@@ -1799,6 +1834,7 @@ footer {
     }
     img {
       max-width: 100px;
+      max-height: 70px;
     }
   }
 
@@ -1825,6 +1861,10 @@ footer {
       display: block;
       margin-top: 2px;
     }
+  }
+
+  .more-work-section {
+    margin-top: 50px;
   }
 
   .work-categories-menu {
@@ -1873,6 +1913,11 @@ footer {
     p {
       text-align: left;
     }
+    .title-description h3 {
+      line-height: 18px;
+      margin-top: 25px;
+    }
+
     .featured-image img {
       width: 80% !important;
       height: unset;
@@ -1886,16 +1931,20 @@ footer {
     }
     .info-header .col-md-4{
       border-left: unset;
-      padding-left: 22px;
+      padding: 0px;
       padding-bottom: 20px;
       padding-top: 20px;
       margin-bottom: 0px;
       border-bottom: 1px solid $lightGray;
       &:first-child {
         padding-top: 0px;
+        border-top: 1px solid RGBA(159, 157, 148, 1);
       }
       &:nth-child(3){
         margin-bottom: 30px;
+      }
+      p {
+        text-align: center;
       }
       p.icon-title {
         text-align: center;
@@ -1907,6 +1956,9 @@ footer {
     .client-shout-out {
       & * {
         margin-left: 5px;
+      }
+      h3 {
+        margin-bottom: 10px;
       }
       .col-md-5 {
         margin-left: 0px;
@@ -1922,7 +1974,7 @@ footer {
     .mobile-client-link{
       margin-top: 20px;
       display: block;
-      max-width: 50%;
+      max-width: 80%;
     }
   }
   .case-study-btn-row{
@@ -1951,6 +2003,15 @@ footer {
     border-left: unset;
     margin: 0 auto;
     min-height: 350px;
+    .row.category-selection-title {
+      display: none;
+    }
+    .category-image-sets{
+      display: none;
+    }
+    a {
+      line-height: 20px;
+    }
   }
 
 
@@ -1982,6 +2043,9 @@ footer {
     width: 80%;
     margin: 0px 0px;
     }
+    p.contact {
+      text-align: left;
+    }
     .bio-col .email {
       color: RGBA(127, 194, 137, 1);
       font-size: 18px;
@@ -1989,10 +2053,12 @@ footer {
       font-weight: 500;
     }
     .bio-col .phone-number {
-    color: RGBA(64, 64, 64, 1);
+    a {
+      color: RGBA(64, 64, 64, 1) !important;
+      font-weight: 500;
+    }
     font-size: 18px;
     font-style: normal;
-    font-weight: 500;
     margin-right: 10px;
     }
     .fun-fact {
@@ -2011,6 +2077,8 @@ footer {
       text-align: left;
       color: $salmon;
       font-size: 13px;
+      padding-left: 0px;
+      padding-right: 0px;
     }
     .bio-col .blue-block{
       background-color: unset;
@@ -2043,8 +2111,8 @@ footer {
     .container {
       max-width: 100%;
     }
-    .process .col-md-5 {
-      // max-width: ;
+    .process-section {
+      padding: 30px 0px 0px 0px;
     }
     .featured-image {
       width: 100%;

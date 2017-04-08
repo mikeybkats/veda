@@ -16,15 +16,15 @@
 
   <cms:editable name='categories_jobs' type='relation' order="6" masterpage="categories.php"/>
 
-  <cms:editable name="situation" type="textarea" order="7"></cms:editable>
+  <cms:editable name="situation" type="richtext" order="7"></cms:editable>
 
-  <cms:editable name="design" type="textarea" order="8"></cms:editable>
+  <cms:editable name="design" type="richtext" order="8"></cms:editable>
 
-  <cms:editable name="action" type="textarea" order="9"></cms:editable>
+  <cms:editable name="action" type="richtext" order="9"></cms:editable>
 
-  <cms:editable name="outcome" type="textarea" order="10"></cms:editable>
+  <cms:editable name="outcome" type="richtext" order="10"></cms:editable>
 
-  <cms:editable name="impact" type="textarea" order="11"></cms:editable>
+  <cms:editable name="impact" type="richtext" order="11"></cms:editable>
 
   <cms:editable name="client_shout_out_title" type="text" order="12"></cms:editable>
 
@@ -43,7 +43,7 @@
   <div class="container">
 
     <div class="row center-md center-xs">
-      <div class="col-md-12 col-xs-11">
+      <div class="col-md-12 col-xs-12">
 
         <div class="row center-md center-xs">
           <div class="col-md-10 featured-image">
@@ -76,7 +76,7 @@
           <div class="col-md-10 col-sm-8">
             <div class="row between-sm center-xs">
 
-              <div class="col-md-4 col-xs-11">
+              <div class="col-md-4 col-xs-12">
                 <div class="row middle-sm center-xs icon-row">
                   <div class="col-md-2 col-xs"><%= image_tag 'project-icon.svg' %></div>
                   <div class="col-md-10 col-xs-12"><p class="icon-title">Project</p></div>
@@ -90,7 +90,7 @@
                 </div>
               </div>
 
-              <div class="col-md-4 col-xs-11">
+              <div class="col-md-4 col-xs-12">
                 <div class="row middle-sm center-xs icon-row">
                   <div class="col-md-2 col-xs"><%= image_tag 'client-icon.svg' %></div>
                   <div class="col-md-10 col-xs-12"><p class="icon-title">client</p></div>
@@ -102,7 +102,7 @@
                 </div>
               </div>
 
-              <div class="col-md-4 col-xs-11">
+              <div class="col-md-4 col-xs-12">
                 <div class="row middle-sm center-xs icon-row">
                   <div class="col-md-2 col-xs"><%= image_tag 'check-icon.svg' %></div>
                   <div class="col-md-10 col-xs-12"><p class="icon-title">veda provided</p></div>
@@ -127,7 +127,7 @@
 
 
     <div class="row center-md center-xs">
-      <div class="col-md-10 col-xs-11">
+      <div class="col-md-10 col-xs-12">
         <div class="detail-textblock">
           <h4>Situation</h4>
           <p>
@@ -222,7 +222,7 @@
     </div>
 
     <div class="row center-sm center-xs">
-      <div class="col-md-8 col-xs-8 author"><p class="author title">
+      <div class="col-md-8 col-sm-8 col-xs-10 author"><p class="author title">
         <cms:show blockquote_author />
       </p></div>
     </div>

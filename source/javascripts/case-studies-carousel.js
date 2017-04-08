@@ -24,7 +24,7 @@ var numOfCaseStudies;
     if (caseStudyIndex >= 3){
       caseStudyIndex = caseStudyIndex - 3;
     }
-    console.log(caseStudyIndex);
+    // console.log(caseStudyIndex);
     return caseStudyIndex;
   }
 

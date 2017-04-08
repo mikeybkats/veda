@@ -11,7 +11,7 @@ menu_hover: true
 </div>
   <div class="container fill-height hero-text">
     <div class="row fill-height middle-xs">
-      <div class="col-md-12 col-sm-10 col-xs-10 hero-text">
+      <div class="col-md-12 col-sm-10 col-xs-12 hero-text">
         <h1>Connecting the dots between science, policy &amp; people.</h1>
         <a href="/our-work.php" class="hero-link"><span>See what we've been up to</span><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
       </div>
@@ -76,7 +76,7 @@ menu_hover: true
 <div class="how-we-work">
   <div class="container">
     <div class="row center-sm middle-sm">
-      <div class="col-md-10">
+      <div class="col-md-10 col-xs-12">
         <h2 class="title">How We Work</h2>
         <p>Over the years we’ve done this sort of thing enough to see a method to our madness. We’ve indentified four steps to solving the kinds of problems we solve.</p>
 
@@ -132,12 +132,12 @@ menu_hover: true
   <div class="container">
     <div class="row center-sm veda-quote blockquote-container">
 
-      <div class="col-md-10">
+      <div class="col-md-10 col-xs-12">
         <blockquote>One of the most informative public meetings I've ever attended... They did an excellent job.</blockquote>
       </div>
 
       <div class="row center-sm center-xs">
-        <div class="col-md-8 author"><p class="author">- Robert Lee, Workshop Participant, Port Angeles</p></div>
+        <div class="col-md-8 col-sm-8 col-xs-10 author"><p class="author">- Robert Lee, Workshop Participant, Port Angeles</p></div>
       </div>
 
     </div>
@@ -158,7 +158,7 @@ function isElementInViewport (el) {
   // console.log(rect);
 
   return (
-    rect.bottom >= 0
+    rect.bottom >= window.innerHeight - 150
   );
 }
 
@@ -185,5 +185,4 @@ var handler = onVisibilityChange( $hero , function() {
 
 //jQuery
 $(window).on('DOMContentLoaded load resize scroll', handler);
-
 </script>
