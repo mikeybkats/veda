@@ -1,7 +1,7 @@
 //remove slashes
 var pathString = location.pathname;
 
-console.log(pathString);
+// console.log(pathString);
 
 function removeSlashCharacters(){
   while(pathString.indexOf('/') > -1){
@@ -11,7 +11,7 @@ function removeSlashCharacters(){
 };
 removeSlashCharacters();
 
-console.log(pathString);
+// console.log(pathString);
 
 if( pathString === 'the-veda-way.php'){
   function offsetAnchor() {
