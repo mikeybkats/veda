@@ -155,10 +155,10 @@ function isElementInViewport (el) {
   }
 
   var rect = el.getBoundingClientRect();
-  // console.log(rect);
+  console.log(rect);
 
   return (
-    rect.bottom >= 0
+    rect.bottom >= 525
   );
 }
 
@@ -185,5 +185,4 @@ var handler = onVisibilityChange( $hero , function() {
 
 //jQuery
 $(window).on('DOMContentLoaded load resize scroll', handler);
-
 </script>

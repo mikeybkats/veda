@@ -832,6 +832,10 @@ div .client-grid > div:nth-child(3) {
   .content-col:last-child{
     padding-bottom: 105px;
   }
+
+  .veda-quote {
+    padding: 140px 0px 140px 0px;
+  }
 }
 
 .more-work-section {
@@ -1210,6 +1214,9 @@ footer {
   .footer-badge img {
     max-width: 142px;
   }
+  .line-break {
+    display: block;
+  }
   ul {
     float: left;
     text-align: left;
@@ -1467,16 +1474,18 @@ footer {
   .row {
     max-width: 100%;
   }
-
+  .page-title {
+    margin-top: 120px;
+  }
   .hamburger {
+    z-index: 600;
     float: right;
     font-size: 2.2em;
-    top: 2px;
-    right: 15px;
     display: inline-block;
     margin: 10px;
-    position: fixed;
-    z-index: 600;
+    position: absolute;
+    top: 2px;
+    right: 12px;
   }
 
   .mobile-menu {
@@ -1519,7 +1528,7 @@ footer {
     width: 60px;
     max-height: 30px;
     top: 6px;
-    margin: 10px 0px 0px 15px;
+    margin: 10px 0px 0px 25px;
     display: block;
     position: absolute;
     z-index: 600;
@@ -1826,6 +1835,7 @@ footer {
     }
     img {
       max-width: 100px;
+      max-height: 70px;
     }
   }
 
@@ -1855,7 +1865,7 @@ footer {
   }
 
   .more-work-section {
-    margin-top: 30px;
+    margin-top: 50px;
   }
 
   .work-categories-menu {
