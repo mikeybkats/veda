@@ -22,6 +22,7 @@ menu_hover: true
 <div class="case-study-featured">
 <div class="container">
   <div class="row slider-row middle-sm center-xs">
+
     <div class="indicator-col col-md-6 ">
       <div class="row start-sm center-xs indicator-row">
         <div class="col-md-8 col-sm-6 col-xs-4">
@@ -53,6 +54,19 @@ menu_hover: true
           <img src="<cms:show carousel_image />"  />
         </div>
       </cms:pages>
+    </div>
+
+    <div class="indicator-col-mobile col-md-6 ">
+      <div class="row start-sm center-xs indicator-row">
+        <div class="col-md-8 col-sm-12 col-xs-6">
+          <ul class="row middle-sm indicator-list">
+            <li><p>FEATURED PROJECTS</p></li>
+            <li class="item"><a href="#" class="indicator active"></a></li>
+            <li class="item"><a href="#" class="indicator"></a></li>
+            <li class="item"><a href="#" class="indicator"></a></li>
+          </ul>
+        </div>
+      </div>
     </div>
 
   </div>
@@ -92,7 +106,7 @@ menu_hover: true
     <div class="container">
       <div class="row center-sm">
         <div class="col-md-12 client-grid">
-          <h1 class="title">Some of our Happy clients</h1>
+          <h1 class="title">Some of our Happy Clients</h1>
           <a href="" class="client-list-link">See Full Client List</a>
           <div class="row between-md">
             <div class="col-md-3 col-xs-6"><%= image_tag "department-of-ecology.png" %></div>
@@ -119,7 +133,7 @@ menu_hover: true
     <div class="row center-sm veda-quote blockquote-container">
 
       <div class="col-md-10">
-        <blockquote>One of the most informative public meetings I have ever attended... They did an excellent job.</blockquote>
+        <blockquote>One of the most informative public meetings I've ever attended... They did an excellent job.</blockquote>
       </div>
 
       <div class="row center-sm center-xs">
@@ -141,7 +155,7 @@ function isElementInViewport (el) {
   }
 
   var rect = el.getBoundingClientRect();
-  console.log(rect);
+  // console.log(rect);
 
   return (
     rect.bottom >= 0
