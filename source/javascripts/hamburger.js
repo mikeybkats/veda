@@ -4,9 +4,12 @@ var scroll = true;
 $(document).ready(function(){
   $('.hamburger').on('click', function(){
 
+    $('body').toggleClass('menu-open');
     $('.mobile-menu').toggleClass('active');
     if ( $('body').hasClass('menu-hover') ){
       hadClass = true;
+    } else {
+      hadClass = false;
     }
     if (hadClass === true){
       $('body').toggleClass('menu-hover');

@@ -618,6 +618,9 @@ a.indicator.active{
     padding-bottom: 40px;
     margin-bottom: 50px;
     }
+    .col-md-4:first-child {
+      border-left: none;
+    }
     .col-md-2 img{
       width: 20px;
     }
@@ -835,6 +838,13 @@ div .client-grid > div:nth-child(3) {
 
   .veda-quote {
     padding: 140px 0px 140px 0px;
+  }
+
+  .category-selection-title {
+    margin-left: 20px;
+    h3 {
+      color: $green;
+    }
   }
 }
 
@@ -1536,7 +1546,9 @@ footer {
     background-repeat: no-repeat;
     background-clip: border-box;
   }
-
+  .menu-open {
+    overflow: hidden;
+  }
   .menu-hover .navbar .logo-mobile {
     width: unset;
     padding-left: 10px;
@@ -1845,6 +1857,7 @@ footer {
     width: 100%;
   }
   .mobile-dropdown {
+    border-radius: 4px;
     max-height: 40px;
     text-align: center;
     padding: 0px 15px;

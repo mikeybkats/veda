@@ -9,12 +9,18 @@ title: Our Work
         <div class="col-md-10">
           <div class="row center-sm center-xs">
             <div class="col-md-8">
-              <h1 class="title page-title">Work, work, work.</h1>
+              <h1 class="title page-title">
+                <cms:editable name="page_title">
+                  Work, work, work.
+                </cms:editable>
+              </h1>
             </div>
           </div>
           <div class="row center-sm">
             <div class="col-md-12">
-              <p class="title-description">Veda has been helping shape policy, communication and education in our environment for over two decades. The results speak for themselves.</p>
+              <cms:editable type="richtext" name="page_description">
+                <p class="title-description">Veda has been helping shape policy, communication and education in our environment for over two decades. The results speak for themselves.</p>
+              </cms:editable>
             </div>
           </div>
         </div>
@@ -120,10 +126,10 @@ title: Our Work
 
       <div class="row center-sm center-xs veda-quote blockquote-container">
         <div class="col-md-10 col-xs-12">
-          <blockquote>Veda was extremely helpful in translating the complex science of the project into comprehensible language.</blockquote>
+          <blockquote><cms:editable name="quote">Veda was extremely helpful in translating the complex science of the project into comprehensible language.</cms:editable></blockquote>
         </div>
         <div class="row center-sm center-xs">
-          <div class="col-md-8 col-sm-8 col-xs-10 author"><p class="author title">- Ron Shultz, Director of Policy & Inter Governmental Relations, Washington Conservation Commission</p>
+          <div class="col-md-8 col-sm-8 col-xs-10 author"><p class="author title">- <cms:editable name="quote_author">Ron Shultz, Director of Policy & Inter Governmental Relations, Washington Conservation Commission</cms:editable></p>
           </div>
         </div>
       </div>

@@ -12,11 +12,21 @@ menu_hover: true
   <div class="container fill-height hero-text">
     <div class="row fill-height middle-xs">
       <div class="col-md-12 col-sm-10 col-xs-12 hero-text">
-        <h1>Connecting the dots between science, policy &amp; people.</h1>
-        <a href="/our-work.php" class="hero-link"><span>See what we've been up to</span><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+        <h1>
+          <cms:editable name='page_title' type='text'>
+            Connecting the dots between science, policy &amp; people.
+          </cms:editable>
+        </h1>
+        <a href="/our-work.php" class="hero-link">
+        <span>
+          <cms:editable name="page_subtitle">
+            See what we've been up to
+          </cms:editable>
+          </span><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
       </div>
     </div>
   </div>
+
 </div>
 
 <div class="case-study-featured">
@@ -77,8 +87,14 @@ menu_hover: true
   <div class="container">
     <div class="row center-sm middle-sm">
       <div class="col-md-10 col-xs-12">
-        <h2 class="title">How We Work</h2>
+        <h2 class="title">
+          <cms:editable name="how_we_work_title">
+            How We Work
+          </cms:editable>
+        </h2>
+        <cms:editable name="how_we_work_paragraph" type="richtext">
         <p>Over the years we’ve done this sort of thing enough to see a method to our madness. We’ve indentified four steps to solving the kinds of problems we solve.</p>
+        </cms:editable>
 
         <div class="how-we-work-animation">
           <%= partial 'how_we_work' %>
@@ -95,8 +111,14 @@ menu_hover: true
 <div class="row social-status">
   <div class="container col-md-10">
     <div class="social-title">
-      <h2 class="title">Social Status</h2>
-      <p class="description">The latest from our <a href="https://www.instagram.com/vedaenvironmental/" class="underline">Instagram feed</a></p>
+      <h2 class="title">
+        <cms:editable name="social_status_title">
+          Social Status
+        </cms:editable>
+      </h2>
+      <cms:editable type="richtext" name="social_status_description">
+        <p class="description">The latest from our <a href="https://www.instagram.com/vedaenvironmental/" class="underline">Instagram feed</a></p>
+      </cms:editable>
     </div>
       <!-- LightWidget WIDGET --><script src="//lightwidget.com/widgets/lightwidget.js"></script><iframe src="//lightwidget.com/widgets/fadf5d4408985a8abd8b394ee2783a7a.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 80%; border: 0; overflow: hidden;"></iframe>
   </div>
@@ -106,7 +128,12 @@ menu_hover: true
     <div class="container">
       <div class="row center-sm">
         <div class="col-md-12 client-grid">
-          <h1 class="title">Some of our Happy Clients</h1>
+          <h1 class="title">
+            <cms:editable name="client_list_title">
+              Some of our Happy Clients
+            </cms:editable>
+          </h1>
+
           <a href="" class="client-list-link">See Full Client List</a>
           <div class="row between-md">
             <div class="col-md-3 col-xs-6"><%= image_tag "department-of-ecology.png" %></div>
@@ -133,11 +160,15 @@ menu_hover: true
     <div class="row center-sm veda-quote blockquote-container">
 
       <div class="col-md-10 col-xs-12">
-        <blockquote>One of the most informative public meetings I've ever attended... They did an excellent job.</blockquote>
+        <blockquote><cms:editable name="quote">One of the most informative public meetings I've ever attended... They did an excellent job.</cms:editable></blockquote>
       </div>
 
       <div class="row center-sm center-xs">
-        <div class="col-md-8 col-sm-8 col-xs-10 author"><p class="author">- Robert Lee, Workshop Participant, Port Angeles</p></div>
+        <div class="col-md-8 col-sm-8 col-xs-10 author"><p class="author">
+          - <cms:editable name="quote_author">
+              Robert Lee, Workshop Participant, Port Angeles
+            </cms:editable>
+          </p></div>
       </div>
 
     </div>
