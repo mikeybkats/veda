@@ -5,7 +5,7 @@ menu_hover: true
 
 <div class="hero">
   <div class="hero-bg-container">
-  <cms:pages masterpage='featured-case-study.php'>
+  <cms:pages masterpage='hero-carousel.php'>
     <div id="<cms:show k_page_name />" class="hero-background override-transition" style="background:url('<cms:show hero_image/>') center center/cover no-repeat"></div>
   </cms:pages>
 </div>
@@ -158,7 +158,7 @@ function isElementInViewport (el) {
   // console.log(rect);
 
   return (
-    rect.bottom >= window.innerHeight - 150
+    rect.bottom >= window.innerHeight - 100
   );
 }
 

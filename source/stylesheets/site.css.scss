@@ -1427,6 +1427,7 @@ footer {
   }
   .navbar {
     height: 54px;
+    margin-top: 0px;
     .navigation-links {
       margin: 0 0 0 0px;
     }
@@ -1625,7 +1626,7 @@ footer {
   footer {
     height: 700px;
     padding-top: 0px;
-    padding-bottom: 0px;
+    // padding-bottom: 0px;
     .line-break {
       display: block;
     }
