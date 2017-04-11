@@ -18,9 +18,11 @@ title: The Veda Way
       </div>
       <div class="row center-sm center-xs">
         <div class="col-md-12 col-xs-11">
-          <cms:editable name="page_description" type="richtext">
-            <p class="title-description">We help our clients, their key stakeholders, and their constituencies understand complex environmental issues, forge common purpose, and formulate practical, coherent policies so they can build prosperous and sustainable futures together. It’s essentially a plug-and-play process that we can adapt to solve any problem. <span class="bold">Here’s how it works:</span></p>
-          </cms:editable>
+            <p class="title-description">
+              <cms:editable name="page_description" type="text">
+                We help our clients, their key stakeholders, and their constituencies understand complex environmental issues, forge common purpose, and formulate practical, coherent policies so they can build prosperous and sustainable futures together. It’s essentially a plug-and-play process that we can adapt to solve any problem.
+              </cms:editable>
+              <span class="bold">Here’s how it works:</span></p>
         </div>
       </div>
     </div>
@@ -37,33 +39,29 @@ title: The Veda Way
         <%= image_tag "number-one.svg" %>
       </div>
       <div class="col-md-5 col-sm-12 process-description">
-        <h3><span class="hide-for-desktop">1. </span><cms:editable name="step_1_title">Situation</cms:editable></h3>
-        <cms:editable name="step_1_description" type="richtext">
+        <h3><span class="hide-for-desktop">1. </span>Situation</h3>
           <p>A deep dive into understanding all that is at play, what’s at stake, who is impacted, and possible solutions.</p>
           <ul>
-            <li>• Ask lots of questions</li>
-            <li>• Interview stakeholders</li>
-            <li>• Review research data</li>
-            <li>• Research similar projects in the community</li>
-            <li>• Interview other professionals</li>
+            <li>Ask lots of questions</li>
+            <li>Interview stakeholders</li>
+            <li>Review research data</li>
+            <li>Research similar projects in the community</li>
+            <li>Interview other professionals</li>
           </ul>
-        </cms:editable>
       </div>
     </div>
 
     <div class="row center-md center-xs between-md middle-md process reverse-group">
       <div class="col-md-5 col-sm-12 process-description">
-          <h3><span class="hide-for-desktop">2. </span><cms:editable name="step_2_title">Design</cms:editable></h3>
-          <cms:editable name="step_2_description" type="richtext">
+          <h3><span class="hide-for-desktop">2. </span>Design</h3>
             <p>We head back to Veda world headquarters to brainstorm ideas on what the solution should look like.</p>
             <ul>
-              <li>• Think and brainstorm</li>
-              <li>• Create flow charts</li>
-              <li>• Collaborate with other people</li>
-              <li>• Write the Action Plan</li>
-              <li>• Share our recommendations with the client</li>
+              <li>Think and brainstorm</li>
+              <li>Create flow charts</li>
+              <li>Collaborate with other people</li>
+              <li>Write the Action Plan</li>
+              <li>Share our recommendations with the client</li>
             </ul>
-          </cms:editable>
       </div>
       <div class="col-md-1 col-xs-2 number">
         <%= image_tag "number-two.svg" %>
@@ -85,31 +83,27 @@ title: The Veda Way
         <%= image_tag "number-three.svg" %>
       </div>
       <div class="col-md-5 ccol-sm-12 process-description">
-          <h3><span class="hide-for-desktop">3. </span><cms:editable name="step_3_title">Action</cms:editable></h3>
-          <cms:editable name="step_3_description" type="richtext">
+          <h3><span class="hide-for-desktop">3. </span>Action</h3>
             <p>A deep dive into understanding all that is at play, what’s at stake, who is impacted, and possible solutions.</p>
             <ul>
-              <li>• Facilitate meetings where groups large or small discuss the problem and share ideas with Veda at the helm</li>
-              <li>• Hold town hall meetings where communities come together to hear information and ask questions</li>
-              <li>• Publish information via websites, handouts, posters, signage, etc.</li>
+              <li>Facilitate meetings where groups large or small discuss the problem and share ideas with Veda at the helm</li>
+              <li>Hold town hall meetings where communities come together to hear information and ask questions</li>
+              <li>Publish information via websites, handouts, posters, signage, etc.</li>
             </ul>
-          </cms:editable>
       </div>
     </div>
 
     <div class="row center-md center-xs between-md middle-md process reverse-group">
       <div class="col-md-5 col-xs-12 process-description">
-        <h3><span class="hide-for-desktop">4. </span><cms:editable name="step_4_title">Outcome</cms:editable></h3>
-        <cms:editable name="step_4_description" type="richtext">
+        <h3><span class="hide-for-desktop">4. </span>Outcome</h3>
           <p>Provide a practical “go forward” plan that will have positive impact for the original issue.</p>
           <ul>
-            <li>• Compile all the learnings into a final report</li>
-            <li>• Define how to move forward, who needs to do what, and who made what commitments</li>
-            <li>• People who weren’t working together before are now collaborating to solve problems</li>
-            <li>• The environment is healthier</li>
-            <li>• Communities of people feel heard and seen</li>
+            <li>Compile all the learnings into a final report</li>
+            <li>Define how to move forward, who needs to do what, and who made what commitments</li>
+            <li>People who weren’t working together before are now collaborating to solve problems</li>
+            <li>The environment is healthier</li>
+            <li>Communities of people feel heard and seen</li>
           </ul>
-        </cms:editable>
         <div class="col-md-8">
           <a href="/our-work.php" class="btn-veda-way btn-primary">See the fruits of our labor</a>
         </div>
@@ -146,9 +140,11 @@ title: The Veda Way
           </div>
           <div class="col-sm-10 col-xs-12">
             <h4><cms:editable name="facilitation_title">Facilitation</cms:editable></h4>
-            <cms:editable name="facilitation_description" type="richtext">
-              <p>Successful meetings, workshops and events rarely happen by chance. Our professional team of facilitators helps ensure success through careful research, planning and design. From there, we bring our well-oiled facilitation skills to guide group conversations and efforts that achieve consensus on priority actions to move important issues forward.</p>
-            </cms:editable>
+            <p>
+              <cms:editable name="facilitation_description" type="text">
+              Successful meetings, workshops and events rarely happen by chance. Our professional team of facilitators helps ensure success through careful research, planning and design. From there, we bring our well-oiled facilitation skills to guide group conversations and efforts that achieve consensus on priority actions to move important issues forward.
+              </cms:editable>
+            </p>
             <a href="/our-work.php?category=facilitation#work-examples">See some examples</a>
           </div>
         </div>
@@ -163,9 +159,11 @@ title: The Veda Way
                 Public Outreach
               </cms:editable>
             </h4>
-            <cms:editable name="public_outreach_description" type="richtext">
-              <p>We help build public outreach processes and products that engage citizens and businesses so that projects have the public’s support and buy-in right from the beginning.</p>
-            </cms:editable>
+            <p>
+                <cms:editable name="public_outreach_description" type="text">
+                We help build public outreach processes and products that engage citizens and businesses so that projects have the public’s support and buy-in right from the beginning.
+              </cms:editable>
+            </p>
             <a href="/our-work.php?category=public-outreach#work-examples">See some examples</a>
           </div>
         </div>
@@ -180,9 +178,11 @@ title: The Veda Way
                 Strategic Planning
               </cms:editable>
             </h4>
-            <cms:editable name="strategic_planning_description" type="richtext">
-              <p>We guide public, private, tribal and non-profit organizations through thoughtful, engaging, and fun planning processes that build relationships and advance important efforts.</p>
-            </cms:editable>
+            <p>
+              <cms:editable name="strategic_planning_description" type="text">
+                We guide public, private, tribal and non-profit organizations through thoughtful, engaging, and fun planning processes that build relationships and advance important efforts.
+              </cms:editable>
+            </p>
             <a href="/our-work.php?category=strategic-planning#work-examples">See some examples</a>
           </div>
         </div>
@@ -197,9 +197,11 @@ title: The Veda Way
                 Stakeholder Engagement
               </cms:editable>
             </h4>
-            <cms:editable name="stakeholder_description" type="richtext">
-              <p>We are experienced at stakeholder mapping to identify essential stakeholders for key topics and issues. We then design processes that engage them appropriately to ensure voices are heard and key entities are included.</p>
-            </cms:editable>
+            <p>
+              <cms:editable name="stakeholder_description" type="text">
+                We are experienced at stakeholder mapping to identify essential stakeholders for key topics and issues. We then design processes that engage them appropriately to ensure voices are heard and key entities are included.
+              </cms:editable>
+            </p>
             <a href="/our-work.php?category=stakeholder-engagement#work-examples">See some examples</a>
           </div>
         </div>
@@ -214,9 +216,11 @@ title: The Veda Way
                 Science Communication and Education
               </cms:editable>
             </h4>
-            <cms:editable name="science_education_description" type="richtext">
-              <p>We translate from the science to the English by working with scientists, technical experts and resource managers to communicate technical information that is meaningful and actionable for decision-makers, planners and the public.</p>
-            </cms:editable>
+            <p>
+              <cms:editable name="science_education_description" type="text">
+                We translate from the science to the English by working with scientists, technical experts and resource managers to communicate technical information that is meaningful and actionable for decision-makers, planners and the public.
+              </cms:editable>
+            </p>
             <a href="/our-work.php?category=science-education#work-examples">See some examples</a>
           </div>
         </div>
@@ -231,9 +235,11 @@ title: The Veda Way
                 Workshop Planning
               </cms:editable>
             </h4>
-              <cms:editable name="workshop_planning_description" type="richtext">
-                <p>We design workshops that deliver. How? By focusing on the key ingredients:  a solid outcome-oriented agenda, detailed preparation, seamless orchestration, and comprehensive follow-up. </p>
-              </cms:editable>
+              <p>
+                <cms:editable name="workshop_planning_description" type="text">
+                  We design workshops that deliver. How? By focusing on the key ingredients:  a solid outcome-oriented agenda, detailed preparation, seamless orchestration, and comprehensive follow-up.
+                </cms:editable>
+              </p>
             <a href="/our-work.php?category=workshop-planning#work-examples">See some examples</a>
           </div>
         </div>

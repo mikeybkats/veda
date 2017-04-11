@@ -33,6 +33,19 @@
   background: url($url) center center no-repeat;
 }
 
+@mixin bulletlist() {
+  padding: 0;
+  margin: 0;
+  li {
+    padding-left: 16px;
+  }
+  li:before {
+    content: "•"; /* Insert content that looks like bullets */
+    margin-left: -13px;
+    margin-right: 8px;
+  }
+}
+
 @mixin clearfix() {
   &::after {
     display: block;
