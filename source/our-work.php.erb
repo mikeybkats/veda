@@ -73,12 +73,9 @@ title: Our Work
                   <li><a href="" id="<cms:show k_page_name />"><cms:show k_page_title /></a></li>
                 </cms:pages>
 
-                <cms:pages masterpage='job.php'>
-                  <cms:each business_status as='cat'>
-                    <li><a href="" id=""><cms:show cat /></a></li>
-                  </cms:each>
-                </cms:pages>
-
+                <li class="Public-status"><a href="" id="Public">Public</a></li>
+                <li><a href="" id="Private">Private</a></li>
+                <li><a href="" id="Nonprofit">Nonprofit</a></li>
               </ul>
             </div>
 
@@ -92,15 +89,19 @@ title: Our Work
                   <div class="row thumbnail-row hidden" data-category-name="<cms:show k_page_name />">
                     <cms:show_repeatable 'category_images' count='6'>
                       <div class="col-md-2">
-                        <a href="<cms:show category_large_image />" data-lightbox="image">
-                        <img src="<cms:show category_image />" id="" /></a></div>
+                        <a href="<cms:show category_image />" data-lightbox="image" class="image-container">
+                        <img src="<cms:thumbnail category_image />" />
+                        <div class="zoom-icon"></div></a>
+                      </div>
                     </cms:show_repeatable>
                   </div>
                 </cms:pages>
               </div>
 
               <cms:pages masterpage='job.php'>
-                <div class="row job " data-tag="<cms:related_pages 'categories_jobs' limit='5'><cms:show k_page_name />     </cms:related_pages>">
+                <div class="row job " data-tag="<cms:related_pages 'categories_jobs' limit='5'><cms:show k_page_name /></cms:related_pages> <cms:each business_status as='cat'><cms:show cat /></cms:each>
+                      ">
+
                   <div class="col-md-12">
                     <h3><cms:show job_title /></h3>
                     <p><span class="bold">CLIENT:</span> <cms:show client /></p>

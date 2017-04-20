@@ -288,7 +288,7 @@ p.title-description {
   &,a, a:visited {
     color: $cream;
   }
-  a {
+  .navigation-links a {
     display: block;
     min-width: 100px;
     min-height: 60px;
@@ -302,6 +302,10 @@ p.title-description {
       // float: left;
     }
   }
+  .logo-container {
+    margin-left: 50px;
+  }
+
   .logo {
     background-image: url("../images/veda-nav-logo.svg");
     background-repeat: no-repeat;
@@ -311,6 +315,9 @@ p.title-description {
     float: left;
     // margin-left: 30px;
     margin-left: 5%;
+    min-width: 100px;
+    min-height: 60px;
+    margin-top: 20px;
   }
   .logo-mobile {
     display: none;
@@ -337,7 +344,7 @@ p.title-description {
   height: 60px;
   margin-top: 20px;
   position: absolute;
-  a {
+  .navigation-links a {
     display: block;
     min-width: 100px;
     min-height: 60px;
@@ -346,9 +353,12 @@ p.title-description {
     background-image: url("../images/logo-top.svg");
     background-repeat: no-repeat;
     background-clip: border-box;
-    min-width: 187px;
+    min-width: 205px;
     min-height: 60px;
     margin-left: 6%;
+    width: 205px;
+    height: 74px;
+    margin-top: 0;
   }
   .navigation-links {
     margin: 0 0 0 0px;
@@ -909,6 +919,17 @@ div .client-grid > div:nth-child(3) {
     background: url("../images/anders-jilden-108186.jpg") center center no-repeat;
     @include square(95);
   }
+  .image-container {
+    position: relative;
+    .zoom-icon {
+      background: url("../images/zoom-icon.png") center center no-repeat;
+      height: 20px;
+      width: 20px;
+      position: absolute;
+      bottom: 10px;
+      right: 5px;
+    }
+  }
 }
 
 .veda-quote {
@@ -922,8 +943,8 @@ div .client-grid > div:nth-child(3) {
     li:first-child{
       margin-bottom: 40px;
     }
-    li:nth-child(7){
-      margin-bottom: 40px;
+    li.Public-status {
+      margin-top: 40px;
     }
     li {
       font-weight: 300;
@@ -1544,6 +1565,7 @@ footer {
       margin: 0px;
     }
     width: 60px;
+    height: 30px;
     max-height: 30px;
     top: 6px;
     margin: 10px 0px 0px 25px;

@@ -71,14 +71,11 @@ $(document).ready(function(){
         $(this).addClass('hidden');
       }
       if($selection.attr("id") === "all") {
-        $('.category-image-sets .row').first().removeClass('hidden');
+        $('.category-image-sets .row').first().addClass('hidden');
       }
     });
 
   });
-
-  // load photo row for view all
-  $('.category-image-sets .row').first().removeClass('hidden');
 
   makeIdArray();
   removeSpecialCharacters();
