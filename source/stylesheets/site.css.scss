@@ -832,7 +832,8 @@ div .client-grid > div:nth-child(3) {
       color: $darkGray;
     }
     p {
-      line-height: 5px;
+      line-height: 18px;
+      margin: 5px 0;
       font-weight: 300px;
       color: $darkGray;
     }
@@ -1940,8 +1941,8 @@ footer {
   }
 
   .our-work .job p {
-    line-height: 14px;
-    margin: 5px;
+    // line-height: 14px;
+    // margin: 5px;
     margin-left: 0px;
     text-align: left;
   }

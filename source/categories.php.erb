@@ -1,9 +1,8 @@
 <cms:template title="Categories" clonable="1" routable='1'>
-  <cms:repeatable name='category_images' >
 
-    <cms:editable type='image' name='category_image' show_preview='0' label='Image' />
-  </cms:repeatable>
 
   <cms:editable name='category_url' type='text'></cms:editable>
+
+  <cms:editable type='relation' name='categories_category_images' masterpage="category_images.php" orderby="page_name"/>
 
 </cms:template>

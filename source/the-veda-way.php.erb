@@ -135,15 +135,29 @@ title: The Veda Way
     </div>
 
       <div class="col-md-12 col-xs-12" >
+        <div class="row center-md middle-md service" id="training">
+          <div class="col-sm-2 ">
+            <%= image_tag "apple.svg" %>
+          </div>
+          <div class="col-sm-10 col-xs-12">
+            <h4><cms:editable name="training_title" order="1">Training</cms:editable></h4>
+            <p>
+              <cms:editable name="training_description" type="text"order="2">
+              Successful meetings, workshops and events rarely happen by chance. Our professional team of facilitators helps ensure success through careful research, planning and design. From there, we bring our well-oiled facilitation skills to guide group conversations and efforts that achieve consensus on priority actions to move important issues forward.
+              </cms:editable>
+            </p>
+            <a href="/our-work.php?category=training#work-examples">See some examples</a>
+          </div>
+        </div>
 
         <div class="row center-md middle-md service" id="facilitation">
           <div class="col-sm-2 ">
             <%= image_tag "facilitation.svg" %>
           </div>
           <div class="col-sm-10 col-xs-12">
-            <h4><cms:editable name="facilitation_title">Facilitation</cms:editable></h4>
+            <h4><cms:editable name="facilitation_title" order="3">Facilitation</cms:editable></h4>
             <p>
-              <cms:editable name="facilitation_description" type="text">
+              <cms:editable name="facilitation_description" type="text" order="4">
               Successful meetings, workshops and events rarely happen by chance. Our professional team of facilitators helps ensure success through careful research, planning and design. From there, we bring our well-oiled facilitation skills to guide group conversations and efforts that achieve consensus on priority actions to move important issues forward.
               </cms:editable>
             </p>
@@ -157,12 +171,12 @@ title: The Veda Way
           </div>
           <div class="col-sm-10 col-xs-12">
             <h4>
-              <cms:editable name="public_outreach_title">
+              <cms:editable name="public_outreach_title" order="5">
                 Public Outreach
               </cms:editable>
             </h4>
             <p>
-                <cms:editable name="public_outreach_description" type="text">
+                <cms:editable name="public_outreach_description" type="text" order="6">
                 We help build public outreach processes and products that engage citizens and businesses so that projects have the public’s support and buy-in right from the beginning.
               </cms:editable>
             </p>
@@ -176,12 +190,12 @@ title: The Veda Way
           </div>
           <div class="col-sm-10 col-xs-12">
             <h4>
-              <cms:editable name="strategic_planning_title">
+              <cms:editable name="strategic_planning_title" order="7">
                 Strategic Planning
               </cms:editable>
             </h4>
             <p>
-              <cms:editable name="strategic_planning_description" type="text">
+              <cms:editable name="strategic_planning_description" type="text" order="8">
                 We guide public, private, tribal and non-profit organizations through thoughtful, engaging, and fun planning processes that build relationships and advance important efforts.
               </cms:editable>
             </p>
@@ -195,12 +209,12 @@ title: The Veda Way
           </div>
           <div class="col-sm-10 col-xs-12">
             <h4>
-              <cms:editable name="stakeholder_title">
+              <cms:editable name="stakeholder_title" order="9">
                 Stakeholder Engagement
               </cms:editable>
             </h4>
             <p>
-              <cms:editable name="stakeholder_description" type="text">
+              <cms:editable name="stakeholder_description" type="text" order="10">
                 We are experienced at stakeholder mapping to identify essential stakeholders for key topics and issues. We then design processes that engage them appropriately to ensure voices are heard and key entities are included.
               </cms:editable>
             </p>
@@ -214,12 +228,12 @@ title: The Veda Way
           </div>
           <div class="col-sm-10 col-xs-12">
             <h4>
-              <cms:editable name="science_education_title" >
+              <cms:editable name="science_education_title" order="11">
                 Science Communication and Education
               </cms:editable>
             </h4>
             <p>
-              <cms:editable name="science_education_description" type="text">
+              <cms:editable name="science_education_description" type="text" order="12">
                 We translate from the science to the English by working with scientists, technical experts and resource managers to communicate technical information that is meaningful and actionable for decision-makers, planners and the public.
               </cms:editable>
             </p>
@@ -233,12 +247,12 @@ title: The Veda Way
           </div>
           <div class="col-sm-10 col-xs-12">
             <h4>
-              <cms:editable name="workshop_planning_title">
+              <cms:editable name="workshop_planning_title" order="13">
                 Workshop Planning
               </cms:editable>
             </h4>
               <p>
-                <cms:editable name="workshop_planning_description" type="text">
+                <cms:editable name="workshop_planning_description" type="text" order="14">
                   We design workshops that deliver. How? By focusing on the key ingredients:  a solid outcome-oriented agenda, detailed preparation, seamless orchestration, and comprehensive follow-up.
                 </cms:editable>
               </p>
@@ -261,13 +275,13 @@ title: The Veda Way
 
         <div class="col-md-5 col-xs-12 on-a-mission-description">
             <h1 class="title-left">
-              <cms:editable name="on_a_mission_title">
+              <cms:editable name="on_a_mission_title" order="15">
                 On a Mission
               </cms:editable>
             </h1>
 
             <div class="title-description body-text">
-              <cms:editable name="on_a_mission_description" type="richtext">
+              <cms:editable name="on_a_mission_description" type="richtext" order="16">
                 <p>At Veda, we are passionate about tackling the daunting environmental challenges of our time: addressing climate change, protecting and restoring habitat and species at risk, preventing oil spills, and cleaning up stormwater.</p>
 
                 <p>We know from experience that solving complex natural resource challenges depends on thoughtful and skillful collaboration across political, social, economic and geographic boundaries. Right up our alley!</p>
@@ -281,11 +295,12 @@ title: The Veda Way
 
   <div class="row center-sm center-xs veda-quote blockquote-container">
     <div class="col-md-10 col-xs-12">
-      <blockquote><cms:editable name="quote">I rely on Sarah and Hilary extensively and their work has been excellent and above expectations.</cms:editable></blockquote>
+      <blockquote><cms:editable name="quote" order="17">I rely on Sarah and Hilary extensively and their work has been excellent and above expectations.</cms:editable></blockquote>
     </div>
 
     <div class="row center-sm center-xs">
-      <div class="col-md-8 col-sm-8 col-xs-10 author"><p class="author title">- <cms:editable name="quote_author">Curtis Hinman, Director, WSU Puyallup Research and Extension Center</cms:editable></p></div>
+      <div class="col-md-8 col-sm-8 col-xs-10 author"><p class="author title">- <cms:editable name="quote_author" order="18">Curtis Hinman, Director, WSU Puyallup Research and Extension Center</cms:editable></p></div>
+       
     </div>
 
   </div>

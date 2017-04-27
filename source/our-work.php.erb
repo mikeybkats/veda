@@ -74,7 +74,7 @@ title: Our Work
                 </cms:pages>
 
                 <li class="Public-status"><a href="" id="Public">Public</a></li>
-                <li><a href="" id="Private">Private</a></li>
+                <!-- <li><a href="" id="Private">Private</a></li> -->
                 <li><a href="" id="Nonprofit">Nonprofit</a></li>
               </ul>
             </div>
@@ -87,13 +87,13 @@ title: Our Work
               <div class="category-image-sets">
                 <cms:pages masterpage='categories.php'>
                   <div class="row thumbnail-row hidden" data-category-name="<cms:show k_page_name />">
-                    <cms:show_repeatable 'category_images' count='6'>
+                    <cms:related_pages 'categories_category_images' limit='6' orderby="page_name" order="asc" >
                       <div class="col-md-2">
                         <a href="<cms:show category_image />" data-lightbox="image" class="image-container">
-                        <img src="<cms:thumbnail category_image />" />
+                        <img src="<cms:thumbnail category_image width="95" height="95"/>" />
                         <div class="zoom-icon"></div></a>
                       </div>
-                    </cms:show_repeatable>
+                    </cms:related_pages>
                   </div>
                 </cms:pages>
               </div>
@@ -119,11 +119,11 @@ title: Our Work
               </cms:pages>
             </div>
           </div>
-          <div class="row morework-row">
-            <div class="col-md left">
-              <p class="">*Projects carried out by Hilary and Sarah prior to founding Veda Environmental</p>
-            </div>
-          </div>
+          <!-- <div class="row morework&#45;row"> -->
+            <!-- <div class="col&#45;md left"> -->
+              <!-- <p class="">*Projects carried out by Hilary and Sarah prior to founding Veda Environmental</p> -->
+            <!-- </div> -->
+          <!-- </div> -->
         </div>
       </div>
 

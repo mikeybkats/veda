@@ -1,0 +1,17 @@
+
+<cms:template title="Category Images" clonable="1" >
+
+  <cms:editable type='image' name='category_image' show_preview='0' label='Image' />
+
+  <cms:editable
+      name='category_image_thumb'
+      label='Image Thumbnail'
+      desc='Thumbnail of main image'
+      width='95'
+      height='95'
+      show_preview='1'
+      assoc_field='category_image'
+      type='thumbnail'
+c />
+
+</cms:template>
