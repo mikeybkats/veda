@@ -83,7 +83,14 @@ title: Our Work
               <div class="row category-selection-title">
                 <h3 id="categorySelectionTitle"></h3>
               </div>
+              <div class="row category-selection-description">
 
+                <cms:pages masterpage='categories.php'>
+                <span class="category-description" data-category-name="<cms:show k_page_name />">
+                  <cms:show category_description />
+                </span>
+                </cms:pages>
+              </div>
               <div class="category-image-sets">
                 <cms:pages masterpage='categories.php'>
                   <div class="row thumbnail-row hidden" data-category-name="<cms:show k_page_name />">
@@ -96,6 +103,7 @@ title: Our Work
                     </cms:related_pages>
                   </div>
                 </cms:pages>
+              <div class="divider"> </div>
               </div>
 
               <cms:pages masterpage='job.php'>

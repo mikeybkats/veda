@@ -22,13 +22,10 @@ $(document).ready(function(){
     function selectMenuItem(){
       $(urlArray).each(function(index){
         var urlName = urlArray[index];
-        console.log(urlName);
         var idName = idArray[index];
-        // console.log(window.location.href.indexOf(urlName));
         if(window.location.href.indexOf(urlName) > -1) {
           $selection = $(document.getElementById(idName));
           $(document.getElementById(idName)).parents('li').addClass('active');
-          // console.log($selection);
           $selection.click();
         }
       });
@@ -44,10 +41,17 @@ $(document).ready(function(){
     // inputing the table title based on selection
     $('#categorySelectionTitle').text($selection.text());
 
+    if ($selection.text() === 'View All' ||
+        $selection.text() === 'Public' ||
+        $selection.text() === 'Nonprofit') {
+
+      $('.our-work .divider, .our-work .category-selection-description').hide();
+    } else {
+      $('.our-work .divider, .our-work .category-selection-description').show();
+    }
     if ($selection.text() === 'View All'){
       $('#categorySelectionTitle').text('');
     }
-
     // hiding the job based on the selection
     $('.job').each(function(index){
       $job = $(this);
@@ -59,7 +63,13 @@ $(document).ready(function(){
         $job.addClass("hidden")
       }
     });
-
+    $('.category-selection-description .category-description').hide();
+    $('.category-selection-description .category-description').each(function(index, item) {
+      $categoryName = $(item).data('category-name');
+      if ($categoryName === $selection.attr('id')){
+        $(item).show();
+      }
+    })
     // matching the photo row with the selection
     $('.category-image-sets .row').each(function(){
       $categoryName = $(this).data('category-name');
@@ -77,6 +87,7 @@ $(document).ready(function(){
 
   });
 
+  $('.our-work .divider, .our-work .category-selection-description').hide();
   makeIdArray();
   removeSpecialCharacters();
   selectMenuItem();

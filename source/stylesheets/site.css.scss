@@ -33,6 +33,10 @@ a.hero-link:hover {
   color: $cream;
 }
 
+.col-md {
+  flex-basis: inherit;
+}
+
 .hide-for-desktop {
   display: none;
 }
@@ -47,6 +51,10 @@ a.hero-link:hover {
 
 .fill-height {
   height: 100%;
+}
+
+.divider {
+  border-bottom: solid 1px $extraLightGray;
 }
 
 blockquote {
@@ -332,6 +340,7 @@ p.title-description {
     margin-left: 45px;
   }
   .navigation-links {
+    text-align: right;
     margin: 0 0 0 90px;
     a:hover {
       color: $green;
@@ -791,8 +800,8 @@ div .client-grid > div:nth-child(3) {
 }
 
 .client-grid {
-  margin-left: 100px;
-  margin-right: 100px;
+  // margin-left: 100px;
+  // margin-right: 100px;
   margin-top: 115px;
   min-width: 100%;
   display: block;
@@ -839,6 +848,7 @@ div .client-grid > div:nth-child(3) {
     }
 
     a {
+      font-weight: 500;
       font-size: 1em;
     }
     .bold {
@@ -853,11 +863,24 @@ div .client-grid > div:nth-child(3) {
     padding: 140px 0px 140px 0px;
   }
 
-  .category-selection-title {
-    margin-left: 20px;
+  .category-selection-title, .category-selection-description {
+    margin-left: 15px;
     h3 {
-      color: $green;
+      color: $darkGray;
+      margin-bottom: 20px;
     }
+    p {
+      margin: 0 0 30px;
+    }
+  }
+  .category-selection-description {
+    font-size: 16px;
+    a {
+      font-weight: bold;
+    }
+  }
+  .category-image-sets .divider {
+    margin: 30px 0 0 15px;
   }
 }
 
@@ -1442,11 +1465,19 @@ footer {
       max-width: 50%;
     }
   }
-  .case-study-title{
+  .case-study-title {
     min-height: 0px;
   }
-  .case-study-btn-row{
+  .case-study-btn-row {
     margin-bottom: 60px;
+  }
+  .our-work {
+    .category-selection-title, .category-selection-description {
+      margin-left: 0;
+    }
+    .category-image-sets .divider {
+      margin: 30px 0 0 0;
+    }
   }
 }
 
@@ -2048,7 +2079,7 @@ footer {
     border-left: unset;
     margin: 0 auto;
     min-height: 350px;
-    .row.category-selection-title {
+    .row.category-selection-title, .row.category-selection-description {
       display: none;
     }
     .category-image-sets{
