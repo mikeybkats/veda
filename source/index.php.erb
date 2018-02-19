@@ -44,7 +44,7 @@ menu_hover: true
           </ul>
         </div>
       </div>
-      <cms:pages masterpage='featured-case-study.php' >
+      <cms:pages masterpage='featured-case-study.php' custom_field="visible=Visible" >
         <div class="case-study-details">
           <h2 class="featured-project-title">
             <cms:show project_title />
@@ -59,7 +59,7 @@ menu_hover: true
     </div>
 
     <div class="col-md-6 case-study-image-container">
-      <cms:pages masterpage='featured-case-study.php' >
+      <cms:pages masterpage='featured-case-study.php' custom_field="visible=Visible">
         <div class="featured-case-study-image">
           <img src="<cms:show carousel_image />"  />
         </div>

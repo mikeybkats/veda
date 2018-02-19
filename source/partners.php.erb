@@ -1,0 +1,15 @@
+<cms:template title="Partners" clonable="1">
+
+  <cms:editable name="partner_image" type="image" order="1"></cms:editable>
+
+  <cms:editable name="partner_name" type="text" order="2"></cms:editable>
+
+  <cms:editable name="partner_description" type="richtext" order="3"></cms:editable>
+
+</cms:template>
+<cms:if k_user_access_level ge '10' >
+  <p><a target="_blank" href="<cms:admin_link />">EDIT</a></p>
+<cms:else />
+  <h3>You cannot edit!</h3>
+</cms:if>
+

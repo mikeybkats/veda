@@ -33,7 +33,7 @@ title: Our Team
       <div class="team-section bottom-border">
         <div class="row center-md center-xs process">
 
-          <div class="col-md-5 col-xs-12 bio-col">
+          <div class="col-md-6 col-xs-12 bio-col">
             <div class="featured-image">
               <%= image_tag "sara-brace.png" %>
             </div>
@@ -74,7 +74,7 @@ title: Our Team
             </div>
           </div>
 
-          <div class="col-md-5 col-xs-12 bio-col">
+          <div class="col-md-6 col-xs-12 bio-col">
             <div class="featured-image">
               <%= image_tag "hilary-wilkinson.png" %>
             </div>
@@ -115,6 +115,32 @@ title: Our Team
     </div>
 
 </div>
+
+  <div class="row section-border"></div>
+  <div class="row center-md center-xs veda-partners">
+    <div class="col-md-11 col-xs-10 offset-md-1">
+
+      <h3 class="title-left title-h3">Meet Veda's Partners</h3>
+      <p class="title-description pull-left">
+        Veda is proud to work collaboratively with a talented team of facilitators.
+      </p>
+    </div>
+
+        <cms:pages masterpage='partners.php'>
+          <div class="col-md-4">
+          <img src="<cms:show partner_image />" />
+
+          </div>
+          <div class="col-md-8 col-xs-10 description">
+              <h4>
+                  <cms:show partner_name />
+                </h4>
+              <p>
+                <cms:show partner_description />
+            </p>
+          </div>
+        </cms:pages>
+  </div>
 </div>
         <div class="row middle-sm center-sm center-xs fun-fact">
             <div class="container">
