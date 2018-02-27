@@ -1265,6 +1265,7 @@ div .client-grid > div:nth-child(3) {
     color: #777;
     margin: 0 0 80px;
     font-size: 17px;
+    text-align: left;
   }
   h3 {
     font-size: 30px;
@@ -1459,6 +1460,9 @@ footer {
 @media screen and (max-width: 1000px){
 
   .veda-partners {
+    .title-description {
+      text-align: center;
+    }
     h3 {
       text-align: center !important;
     }
