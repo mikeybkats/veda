@@ -18,10 +18,10 @@
 
   <%= stylesheet_link_tag "flexboxgrid.min", "lightbox", "../fonts/font", :site %>
   <%= javascript_include_tag  :all %>
+
 </head>
 
-<body class="<%= page_classes %><%= current_page.data.menu_hover ? ' menu-hover' : '' %>">
-
+<body class="<%= page_classes %><%= current_page.data.menu_hover ? ' menu-hover' : '' %> ">
     <%= partial "header" %>
 
     <%= yield %>
@@ -31,3 +31,4 @@
   </body>
   </html>
   <?php COUCH::invoke(); ?>
+

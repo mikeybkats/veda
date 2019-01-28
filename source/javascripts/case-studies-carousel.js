@@ -12,7 +12,7 @@ var numOfCaseStudies;
 
     rotateCaseStudies(csIndex);
 
-    $('.indicator-list li a').on('click', function(event) {
+    $('.case-study-featured .indicator-list li a').on('click', function(event) {
       event.preventDefault();
       selectActiveCaseStudy(getCaseStudyIndex());
       clearTimeout(csTimeout);
@@ -20,7 +20,7 @@ var numOfCaseStudies;
   })
 
   function getCaseStudyIndex(){
-    var caseStudyIndex = $('.indicator-list li a').get().indexOf(event.currentTarget);
+    var caseStudyIndex = $('.case-study-featured .indicator-list li a').get().indexOf(event.currentTarget);
     if (caseStudyIndex >= 3){
       caseStudyIndex = caseStudyIndex - 3;
     }
@@ -33,12 +33,12 @@ var numOfCaseStudies;
     $('.case-study-details').removeClass('display active');
     $('.featured-case-study-image').removeClass('display active');
     $('.featured-case-study-image').css('margin-left', '0px');
-    $('.indicator-list li a').removeClass('active');
+    $('.case-study-featured .indicator-list li a').removeClass('active');
     $($('.case-study-details')[index]).addClass('display active');
     $($('.case-study-featured .featured-case-study-image')[index]).addClass('display active');
     $($('.case-study-featured .featured-case-study-image')[index]).animate({marginLeft: "-1200px"}, 1000, function(){});
-    $($('.indicator-list li a')[index]).addClass('active');
-    $($('.indicator-col-mobile .indicator-list li a')[index]).addClass('active');
+    $($('.case-study-featured .indicator-list li a')[index]).addClass('active');
+    $($('.case-study-featured .indicator-col-mobile .indicator-list li a')[index]).addClass('active');
   }
 
   function rotateCaseStudies(currentCaseStudyIndex) {

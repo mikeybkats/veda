@@ -12,3 +12,4 @@
 //= require './lightbox.js'
 //= require './lightbox-options.js'
 //= require './page-offset-scroll.js'
+//= require './news-banner.js'

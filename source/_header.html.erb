@@ -1,4 +1,22 @@
-<nav class="navbar">
+<div id="banner" class='news-banner'>
+  <div class="container">
+    <div class="row middle-xs">
+      <div class="col-md-12 middle">
+        <cms:pages masterpage='news-article.php' custom_field='visible=visible'>
+        <!-- All the variables of each page cloned out of this template are available here -->
+
+          <div class="news-item">
+            <a href="<cms:show k_page_link />"><cms:show k_page_title /> </a>
+          </div>
+        </cms:pages>
+
+        <ul class="news-indicator middle-sm indicator-list">
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<nav class="navbar" id="topnavbar">
   <div>
     <i class="fa fa-bars hamburger" aria-hidden="true"></i>
   </div>
@@ -27,3 +45,12 @@
     </div>
   </div>
 </nav>
+
+<%# <script> %>
+<%# $('#topnavbar').affix({ %>
+<%#     offset: { %>
+<%#         top: $('#banner').height() %>
+<%#     } %>
+<%# }); %>
+
+<%# </script> %>

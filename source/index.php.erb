@@ -199,6 +199,8 @@ function onVisibilityChange(el, callback) {
       var visible = isElementInViewport(el);
       if (visible === old_visible){
         $('body').removeClass('menu-hover');
+
+        $('.logo-mobile').css('top',  5 + "px" );
       }
       if (visible != old_visible) {
         old_visible = visible;
@@ -212,6 +214,12 @@ function onVisibilityChange(el, callback) {
 var handler = onVisibilityChange( $hero , function() {
   /* your code go here */
   $('body').addClass('menu-hover');
+
+  if($('body').hasClass('has-news-banner')) {
+
+    var newsBannerHeight = parseInt($('.news-banner').css('height').replace('px', ''), 10)
+      $('.logo-mobile').css('top', newsBannerHeight + 37 + "px" );
+  }
 });
 
 //jQuery
