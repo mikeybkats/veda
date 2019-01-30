@@ -2,11 +2,11 @@
   <div class="container">
     <div class="row middle-xs">
       <div class="col-md-12 middle">
-        <cms:pages masterpage='news-article.php' custom_field='visible=visible'>
+        <cms:pages masterpage='news-article.php' custom_field='visible=visible' orderby='order' order='asc'>
         <!-- All the variables of each page cloned out of this template are available here -->
 
           <div class="news-item">
-            <a href="<cms:show k_page_link />"><cms:show k_page_title /> </a>
+            <a href="news-article.php?pname=<cms:show k_page_name />"><cms:show k_page_title /> </a>
           </div>
         </cms:pages>
 

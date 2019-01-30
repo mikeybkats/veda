@@ -1,4 +1,4 @@
----
+s--
 title: News Article
 ---
 
@@ -7,6 +7,13 @@ title: News Article
   <cms:editable name="article_content" type="richtext" order="1"></cms:editable>
 
   <cms:editable name="visible" type="checkbox" opt_values="Visible"> </cms:editable>
+<cms:editable name="order" type="text"> </cms:editable>
+  <cms:config_list_view>
+    <cms:field 'k_page_title' />
+    <cms:field 'visible' header='Visible' />
+    <cms:field 'order' header='Order' />
+    <cms:field 'k_actions' />
+  </cms:config_list_view>
 </cms:template>
 
 <div class="row news-article-page">
