@@ -1,17 +1,19 @@
 $(document).ready(function() {
 
   var newsItems = $(".news-banner .news-item")
-  var newsItemIndex = 1;
+  var newsItemIndex = 0;
   var newsIndicator = $('.news-banner .news-indicator')
   var cycler;
 
   function hideItems() {
     $(newsItems).removeClass('display');
+    $(newsItems).find('a').css('display', 'none');
     $(newsIndicator.find('a')).removeClass('active')
   }
 
   function showItem(index) {
     $(newsItems[index]).addClass('display');
+    $(newsItems[index]).find('a').css('display', 'inline');
     $(newsIndicator.find('a')[index]).addClass('active')
     if($('body').hasClass('has-news-banner')) {
 
@@ -57,10 +59,12 @@ $(document).ready(function() {
     }
     modifyNewsItems(newsItems);
 
+    hideItems();
+    showItem(newsItemIndex);
     cycler = setInterval(
       function () {
-        cycleNewsItems(newsItems, newsIndicator, newsItemIndex);
         newsItemIndex += 1
+        cycleNewsItems(newsItems, newsIndicator, newsItemIndex);
       }, 6000);
   }
 
