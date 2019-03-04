@@ -120,6 +120,29 @@ title: Our Team
   <div class="row center-md center-xs veda-partners">
     <div class="col-md-11 col-xs-10 offset-md-1">
 
+      <h3 class="title-left title-h3">Employees</h3>
+    </div>
+
+        <cms:pages masterpage='employee.php'>
+          <div class="col-md-4">
+          <img src="<cms:show employee_image />" />
+
+          </div>
+          <div class="col-md-8 col-xs-10 description">
+              <h4>
+                  <cms:show employee_name />
+                </h4>
+              <p>
+                <cms:show employee_description />
+            </p>
+          </div>
+        </cms:pages>
+  </div>
+
+  <div class="row section-border"></div>
+  <div class="row center-md center-xs veda-partners">
+    <div class="col-md-11 col-xs-10 offset-md-1">
+
       <h3 class="title-left title-h3">Meet Veda's Partners</h3>
       <p class="title-description pull-left">
         Veda is proud to work collaboratively with a talented team, including facilitators, research assistants, project support staff, and others.
