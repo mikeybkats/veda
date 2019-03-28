@@ -46,7 +46,6 @@ var numOfCaseStudies;
       if (currentCaseStudyIndex === 2){
         currentCaseStudyIndex = -1;
       }
-      console.log(currentCaseStudyIndex);
       selectActiveCaseStudy((currentCaseStudyIndex + 1) % numOfCaseStudies );
       rotateCaseStudies(currentCaseStudyIndex + 1);
     }, 8000)
