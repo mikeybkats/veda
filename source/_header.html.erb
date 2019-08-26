@@ -33,13 +33,29 @@
         </div>
       </a>
     </div>
+    <cms:capture into='our_work_active_class' 'global'>
+      <cms:if k_template_name=='our-work.php'>active</cms:if>
+    </cms:capture>
+
+    <cms:capture into='services_and_expertise_active_class' 'global'>
+      <cms:if k_template_name=='services-and-expertise.php'>active</cms:if>
+    </cms:capture>
+
+    <cms:capture into='the_veda_way_active_class' 'global'>
+      <cms:if k_template_name=='the-veda-way.php'>active</cms:if>
+    </cms:capture>
+
+    <cms:capture into='our_team_active_class' 'global'>
+      <cms:if k_template_name=='our-team.php'>active</cms:if>
+    </cms:capture>
 
     <div class="col-md-9 navigation-links">
       <ul>
         <li class="home-link"><%= link_to 'Home', '/' %></li>
-        <li><%= link_to 'Our Work', '../our-work.php' %></li>
-        <li><%= link_to 'The Veda Way', '../the-veda-way.php' %></li>
-        <li><%= link_to 'Our Team', '../the-veda-team.php' %></li>
+        <li><a href="../our-work.php" class="<cms:show our_work_active_class/>">Our Work</a></li>
+        <li><a href="../services-and-expertise.php" class="<cms:show services_and_expertise_active_class/>">Services & Expertise</a></li>
+        <li><a href="../the-veda-way.php" class="<cms:show the_veda_way_active_class/>">The Veda Way</a></li>
+        <li><a href="../the-veda-team.php" class="<cms:show our_team_active_class/>">Our Team</a></li>
         <li><%= link_to 'Contact', '#contact' %></li>
       </ul>
     </div>

@@ -3,7 +3,7 @@ $(document).ready(function(){
     var urlArray = [];
 
     function makeIdArray(){
-      $('.work-categories-menu a').each(function(){
+      $('.work-categories-item a').each(function(){
         idArray.push($(this).attr('id'));
       });
     }
@@ -32,10 +32,10 @@ $(document).ready(function(){
     }
 
   // on click highlighting the nav menu item
-  $('.work-categories-menu a').click(function(event){
+  $('.work-categories-item a').click(function(event){
     event.preventDefault();
     $selection = $(event.currentTarget);
-    $('.work-categories-menu a').parents('li').removeClass('active');
+    $('.work-categories-item a').parents('li').removeClass('active');
     $selection.parents('li').addClass('active');
 
     // inputing the table title based on selection

@@ -111,7 +111,24 @@ title: Featured Case Study
                 <div class="row middle-sm middle-xs">
                   <div class="col-md-12 col-xs">
                     <p>
-                      <cms:related_pages 'categories_jobs' limit='5'>
+                      <cms:related_pages 'categories_jobs' limit='1' custom_field="category_section=Service">
+                        Services:
+                        <cms:no_results>
+                        </cms:no_results>
+                      </cms:related_pages>
+                      <cms:related_pages 'categories_jobs' limit='5' custom_field='category_section=Services'  >
+                      <a href="<cms:show category_url />">
+                      <cms:show k_page_title /><cms:if k_count != k_total_records>,</cms:if>
+                      </a>
+                      </cms:related_pages>
+                    </p>
+                    <p>
+                      <cms:related_pages 'categories_jobs' limit='1' custom_field="category_section=Expertise">
+                        Expertise:
+                        <cms:no_results>
+                        </cms:no_results>
+                      </cms:related_pages>
+                      <cms:related_pages 'categories_jobs' limit='5' custom_field='category_section=Expertise'  >
                       <a href="<cms:show category_url />">
                       <cms:show k_page_title /><cms:if k_count != k_total_records>,</cms:if>
                       </a>

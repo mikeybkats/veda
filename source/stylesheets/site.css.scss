@@ -88,7 +88,7 @@ h1 {
 h1.title {
   text-align: center;
   font-weight: 300;
-  font-size: 60px;
+  font-size: 52px;
   margin-bottom: 0px;
   color: $darkGray;
 }
@@ -309,8 +309,8 @@ p.title-description {
   }
   .navigation-links a {
     display: block;
-    min-width: 100px;
     min-height: 60px;
+    padding: 0 8px 0 8px;
   }
   ul {
     list-style: none;
@@ -354,7 +354,7 @@ p.title-description {
     text-align: right;
     margin: 0 0 0 90px;
     a:hover {
-      color: $green;
+      color: $cream;
     }
   }
 }
@@ -367,8 +367,10 @@ p.title-description {
   top: inherit;
   .navigation-links a {
     display: block;
-    min-width: 100px;
     min-height: 60px;
+  }
+  .navigation-links a:hover {
+    color: $green;
   }
   .logo {
     background-image: url("../images/logo-top.svg");
@@ -383,6 +385,9 @@ p.title-description {
   }
   .navigation-links {
     margin: 0 0 0 0px;
+    a {
+      color: $cream;
+    }
   }
 }
 
@@ -393,41 +398,30 @@ p.title-description {
 .navigation-links {
   margin: 0px;
   height: 18px;
+  flex: auto !important;
   ul {
     list-style: none;
     display: inline-flex;
     li {
       max-height: 25px;
-      a {
+      a, a:visited {
         font-size: 14px;
         font-style: normal;
+        color: $green;
         font-weight: 300;
-        color: $cream;
         text-transform: uppercase;
         text-decoration: none;
       }
       a.active {
-        color: $green;
+        color: $cream;
       }
     }
-    li:nth-child(2){
-      padding: 0px 0px 0px 0px;
-      text-align: center;
-    }
-    li:nth-child(3){
-      padding: 0px 0px 0px 10px;
-      text-align: center;
-    }
-    li:nth-child(4){
-      padding: 0px 5px 0px 5px;
-      text-align: center;
-    }
-    li:nth-child(5){
+    li:nth-child(6){
       border-left: 2px solid $mediumGray;
       text-align: left;
       max-width: 60px;
       margin-left: 11px;
-      padding-left: 33px;
+      padding-left: 10px;
       a {
         font-style: italic;
         text-transform: none;
@@ -842,7 +836,7 @@ div .client-grid > div:nth-child(3) {
 }
 
 .case-study-title {
-  min-height: 130px;
+  min-height: 190px;
 }
 
 .our-work {
@@ -873,21 +867,18 @@ div .client-grid > div:nth-child(3) {
     padding-bottom: 105px;
   }
 
-  .veda-quote {
-    padding: 140px 0px 140px 0px;
-  }
-
   .category-selection-title, .category-selection-description {
     margin-left: 15px;
     h3 {
       color: $darkGray;
-      margin-bottom: 20px;
+      margin-bottom: 0px;
     }
     p {
       margin: 0 0 30px;
     }
   }
   .category-selection-description {
+    margin-top: 20px;
     font-size: 16px;
     a {
       font-weight: bold;
@@ -910,6 +901,10 @@ div .client-grid > div:nth-child(3) {
   h1 {
     text-align: center;
   }
+}
+
+.section-container {
+  padding: 140px 0px 140px 0px;
 }
 
 .featured-case-studies-row {
@@ -974,15 +969,23 @@ div .client-grid > div:nth-child(3) {
   padding: 80px 0px 140px 0px;
 }
 
+
+.work-categories-item {
+  margin-bottom: 40px;
+  h4 {
+    padding-left: 10px;
+    font-size: 16px ;
+    font-weight: 400;
+    text-transform: uppercase;
+  }
+}
+
 .work-nav {
   padding: 0px;
   ul {
     padding-left: 0px;
     li:first-child{
       margin-bottom: 40px;
-    }
-    li.Public-status {
-      margin-top: 40px;
     }
     li {
       font-weight: 300;
@@ -1060,9 +1063,6 @@ div .client-grid > div:nth-child(3) {
     margin: 155px 0px;
     margin-top: 70px;
   }
-  .row.process {
-    margin: 155px 0px;
-  }
   .process .col-md-5 {
     max-width: 420px;
   }
@@ -1120,27 +1120,25 @@ div .client-grid > div:nth-child(3) {
     img {
     margin-right: 30px;
     }
-    .on-a-mission-content {
-      padding: 80px 0px;
-    }
     .on-a-mission-description {
       margin-left: 60px;
       padding: 0px;
       padding-right: 40px;
       min-width: 450px;
-      .title-description p {
-          color: $darkGray;
-          font-size: 21px;
-          line-height: 25px !important;
-          text-align: left;
-          font-style: italic;
-          line-height: 20px;
-          font-weight: 300;
-      }
       .body-text {
         margin-top: 70px;
       }
     }
+  }
+
+  .title-description p {
+    color: $darkGray;
+    font-size: 21px;
+    line-height: 25px !important;
+    text-align: left;
+    line-height: 20px;
+    font-weight: 300;
+    text-align: center;
   }
 }
 
@@ -2003,7 +2001,7 @@ footer {
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.5s;
-    margin-bottom: 0px;
+
     &.open {
       transition: max-height 0.5s;
       max-height: 1000px;

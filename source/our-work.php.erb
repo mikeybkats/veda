@@ -1,4 +1,4 @@
----
+d--
 title: Our Work
 ---
 
@@ -8,10 +8,10 @@ title: Our Work
       <div class="row center-md middle-md">
         <div class="col-md-10">
           <div class="row center-sm center-xs">
-            <div class="col-md-8">
+            <div class="col-md-10 ">
               <h1 class="title page-title">
                 <cms:editable name="page_title">
-                  Work, work, work.
+                Work, work, work.
                 </cms:editable>
               </h1>
             </div>
@@ -20,7 +20,7 @@ title: Our Work
             <div class="col-md-12">
               <p class="title-description">
                 <cms:editable type="text" name="page_description">
-                  Veda has been helping shape policy, communication and education in our environment for over two decades. The results speak for themselves.
+                Veda has been helping shape policy, communication and education in our environment for over two decades. The results speak for themselves.
                 </cms:editable>
               </p>
             </div>
@@ -31,26 +31,26 @@ title: Our Work
 
       <div class="featured-case-studies-row row around-md center-xs">
         <cms:pages masterpage='featured-case-study.php' custom_field="visible=Visible">
-          <div class="col-md-4">
-            <div class="row center-md center-xs">
-              <div class="col-md-12">
-                <a href="featured-case-study.php?pname=<cms:show k_page_name />"><img src="<cms:show featured_image/>" alt="" class="thumb" /></a>
-              </div>
-            </div>
-            <div class="row center-md center-xs middle-xs case-study-title">
-              <div class="col-md-12">
-                <h3>
-                  <cms:show project_title />
-                </h3>
-              </div>
-            </div>
-            <div class="row center-md center-xs case-study-btn-row">
-              <div class="col-md-12">
-                <a href="featured-case-study.php?pname=<cms:show k_page_name />" class="btn btn-primary">See the Case Study</a>
-              </div>
+        <div class="col-md-4">
+          <div class="row center-md center-xs">
+            <div class="col-md-12">
+              <a href="featured-case-study.php?pname=<cms:show k_page_name />"><img src="<cms:show featured_image/>" alt="" class="thumb" /></a>
             </div>
           </div>
-        </cms:pages>
+          <div class="row center-md center-xs top-md middle-xs case-study-title">
+            <div class="col-md-12">
+              <h3>
+                <cms:show project_title />
+              </h3>
+            </div>
+          </div>
+          <div class="row center-md center-xs case-study-btn-row">
+            <div class="col-md-12">
+              <a href="featured-case-study.php?pname=<cms:show k_page_name />" class="btn btn-primary">See the Case Study</a>
+            </div>
+          </div>
+        </div>
+                </cms:pages>
       </div>
 
       <div class="row center-md more-work-section" id="work-examples">
@@ -66,19 +66,32 @@ title: Our Work
                 <p>View All</p>
                 <i class="fa fa-chevron-down" aria-hidden="true"></i>
               </div>
-              <ul class="work-categories-menu">
-                <li class="all active" ><a href="" id="all">View All</a></li>
-
-                <cms:pages masterpage='categories.php'>
+              <div class="work-categories-menu">
+                <ul class="work-categories-item">
+                  <li class="all active" ><a href="" id="all">View All</a></li>
+                </ul>
+                <ul class="work-categories-item">
+                  <h4>Services:</h4>
+                  <cms:pages masterpage='categories.php' custom_field='category_section=Services'>
                   <li><a href="" id="<cms:show k_page_name />"><cms:show k_page_title /></a></li>
-                </cms:pages>
+                      </cms:pages>
+                </ul>
 
-                <li class="Public-status"><a href="" id="Public">Public</a></li>
-                <!-- <li><a href="" id="Private">Private</a></li> -->
-                <li><a href="" id="Nonprofit">Nonprofit</a></li>
-              </ul>
+                <ul class="work-categories-item">
+                  <h4>Expertise:</h4>
+                  <cms:pages masterpage='categories.php' custom_field='category_section=Expertise'>
+                  <li><a href="" id="<cms:show k_page_name />"><cms:show k_page_title /></a></li>
+                      </cms:pages>
+                </ul>
+                <ul class="work-categories-item">
+                  <h4>Other:</h4>
+                  <li class="Public-status"><a href="" id="Public">Public</a></li>
+                  <!-- <li><a href="" id="Private">Private</a></li> -->
+                  <li><a href="" id="Nonprofit">Nonprofit</a></li>
+                </ul>
+                </ul>
+              </div>
             </div>
-
             <div class="content-col col-md-9 col-sm-6 col-xs-12">
               <div class="row category-selection-title">
                 <h3 id="categorySelectionTitle"></h3>
@@ -89,48 +102,69 @@ title: Our Work
                 <span class="category-description" data-category-name="<cms:show k_page_name />">
                   <cms:show category_description />
                 </span>
-                </cms:pages>
+                  </cms:pages>
               </div>
               <div class="category-image-sets">
                 <cms:pages masterpage='categories.php'>
-                  <div class="row thumbnail-row hidden" data-category-name="<cms:show k_page_name />">
-                    <cms:related_pages 'categories_category_images' limit='6' orderby="page_name" order="asc" >
-                      <div class="col-md-2">
-                        <a href="<cms:show category_image />" data-lightbox="image" class="image-container">
-                        <img src="<cms:thumbnail category_image width="95" height="95"/>" />
-                        <div class="zoom-icon"></div></a>
-                      </div>
-                    </cms:related_pages>
+                <div class="row thumbnail-row hidden" data-category-name="<cms:show k_page_name />">
+                  <cms:related_pages 'categories_category_images' limit='6' orderby="page_name" order="asc" >
+                  <div class="col-md-2">
+                    <a href="<cms:show category_image />" data-lightbox="image" class="image-container">
+                      <img src="<cms:thumbnail category_image width="95" height="95"/>" />
+                      <div class="zoom-icon"></div></a>
                   </div>
-                </cms:pages>
-              <div class="divider"> </div>
+                      </cms:related_pages>
+                </div>
+                      </cms:pages>
+                      <div class="divider"> </div>
               </div>
 
               <cms:pages masterpage='job.php'>
-                <div class="row job " data-tag="<cms:related_pages 'categories_jobs' limit='5'><cms:show k_page_name /></cms:related_pages> <cms:each business_status as='cat'><cms:show cat /></cms:each>
-                      ">
+              <div class="row job " data-tag="<cms:related_pages 'categories_jobs' limit='5'><cms:show k_page_name /></cms:related_pages> <cms:each business_status as='cat'><cms:show cat /></cms:each>
+              ">
 
-                  <div class="col-md-12">
-                    <h3><cms:show job_title /></h3>
-                    <p><span class="bold">CLIENT:</span> <cms:show client /></p>
-                    <p><span class="bold">YEAR: </span><cms:show year /></p>
-                    <p><span class="bold">VEDA PROVIDED: </span>
-                      <cms:related_pages 'categories_jobs' limit='5'>
-                        <a href="<cms:show category_url />">
-                        <cms:show k_page_title /><cms:if k_count != k_total_records>,</cms:if>
-                        </a>
+              <div class="col-md-12">
+                <h3><cms:show job_title /></h3>
+                <p><span class="bold">CLIENT:</span> <cms:show client /></p>
+                <p><span class="bold">YEAR: </span><cms:show year /></p>
+                <p>
+                  <cms:related_pages 'categories_jobs' limit='1' custom_field="category_section=Service">
+                  <span class="bold">SERVICES:</span>
+                  <cms:no_results>
+                  </cms:no_results>
+                  </cms:related_pages>
+                  <cms:related_pages 'categories_jobs' limit='5' custom_field="category_section=Service">
+                  <a href="<cms:show category_url />">
+                    <cms:show k_page_title /><cms:if k_count != k_total_records>,</cms:if>
+                  </a>
+                  <cms:no_results>
+                  -
+                  </cms:no_results>
+                    </cms:related_pages>
+                </p>
+                <p>
+
+                  <cms:related_pages 'categories_jobs' limit='1' custom_field="category_section=Expertise">
+                  <span class="bold">EXPERTISE:</span>
+                  <cms:no_results>
+                  </cms:no_results>
+                  </cms:related_pages>
+                  <cms:related_pages 'categories_jobs' limit='5' custom_field="category_section=Expertise">
+                  <a href="<cms:show category_url />">
+                    <cms:show k_page_title /><cms:if k_count != k_total_records>,</cms:if>
+                  </a>
                     </cms:related_pages>
 
-                    </p>
-                  </div>
-                </div>
-              </cms:pages>
+                </p>
+              </div>
+              </div>
+                    </cms:pages>
             </div>
           </div>
           <!-- <div class="row morework&#45;row"> -->
-            <!-- <div class="col&#45;md left"> -->
-              <!-- <p class="">*Projects carried out by Hilary and Sarah prior to founding Veda Environmental</p> -->
-            <!-- </div> -->
+          <!-- <div class="col&#45;md left"> -->
+          <!-- <p class="">*Projects carried out by Hilary and Sarah prior to founding Veda Environmental</p> -->
+          <!-- </div> -->
           <!-- </div> -->
         </div>
       </div>
