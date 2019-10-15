@@ -1,0 +1,49 @@
+---
+title: Services
+---
+
+<div class="row center-md the-veda-way">
+  <div class="col-md-12 col-sm-12 container">
+    <div class="row center-md services-section" id="services">
+
+      <div class="row center-md">
+        <div class="col-md-12 col-xs-12">
+          <h1 class="title">
+            Services
+          </h1>
+        </div>
+      </div>
+      <cms:pages masterpage='services.php' custom_field="service_section=Services" orderby="service_order" order="asc">
+        <div class="col-md-12 col-xs-12" >
+          <div class="row center-md middle-md service" id="<cms:show k_page_name />">
+            <div class="col-sm-2 ">
+              <img src="<cms:show service_image />" %>
+            </div>
+            <div class="col-sm-10 col-xs-12">
+              <h4><cms:show k_page_title /></h4>
+              <p>
+                <cms:show service_description />
+              </p>
+              <a class="examples" href="/our-work.php?service=<cms:php>echo(str_replace('_', '-','<cms:show k_page_name />'));</cms:php>#work-examples">See some examples</a>
+            </div>
+          </div>
+        </div>
+      </cms:pages>
+    </div>
+  </div>
+</div>
+
+
+<cms:template title="Services and Expertise" clonable="1" routable='1' label="Services and Expertise">
+
+  <cms:editable name='service_order' label="Order" type='text'></cms:editable>
+  <cms:editable name="service_section" label="Section" type="dropdown" opt_values="Services|Expertise|Other" />
+  <cms:editable type="richtext" name="service_description" label="Description">
+   Our trainings and one-on-one coaching are based on over two decades of experience of simplifying the message. We can help you convey technical information in a straightforward and comprehensive way, giving your project an opportunity for greater impact. We offer 1-, 2- and 3-day sessions custom designed to your organization’s unique needs and circumstances.
+  </cms:editable>
+  <cms:editable name='service_image' label='Icon' type='file' />
+  <cms:editable type='relation' name='services_service_images' label="Images" masterpage="service_images.php" orderby="page_name"/>
+
+</cms:template>
+
+

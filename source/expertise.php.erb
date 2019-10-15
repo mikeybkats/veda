@@ -1,0 +1,37 @@
+---
+title: Expertise
+---
+
+<div class="row center-md the-veda-way">
+  <div class="col-md-12 col-sm-12 container">
+    <div class="row center-md services-section" id="services">
+
+      <div class="row center-md">
+        <div class="col-md-12 col-xs-12">
+          <h1 class="title">
+            Expertise
+          </h1>
+        </div>
+      </div>
+      <cms:pages masterpage='services.php' custom_field="service_section=Expertise" orderby="service_order" order="asc">
+        <div class="col-md-12 col-xs-12" >
+          <div class="row center-md middle-md service" id="<cms:show k_page_name />">
+            <div class="col-sm-2 ">
+              <img src="<cms:show service_image />" %>
+            </div>
+            <div class="col-sm-10 col-xs-12">
+              <h4><cms:show k_page_title /></h4>
+              <p>
+                <cms:show service_description />
+              </p>
+              <a class="examples" href="/our-work.php?service=<cms:php>echo(str_replace('_', '-','<cms:show k_page_name />'));</cms:php>#work-examples">See some examples</a>
+            </div>
+          </div>
+        </div>
+      </cms:pages>
+
+    </div>
+  </div>
+</div>
+<cms:template hidden="1">
+</cms:template>

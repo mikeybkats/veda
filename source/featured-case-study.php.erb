@@ -15,7 +15,7 @@ title: Featured Case Study
 
   <cms:editable name="project_client" type="text" order="5"></cms:editable>
 
-  <cms:editable name='categories_jobs' type='relation' order="6" masterpage="categories.php"/>
+  <cms:editable name='services_jobs' type='relation' order="6" masterpage="services.php"/>
 
   <cms:editable name="situation" type="richtext" order="7"></cms:editable>
 
@@ -111,25 +111,25 @@ title: Featured Case Study
                 <div class="row middle-sm middle-xs">
                   <div class="col-md-12 col-xs">
                     <p>
-                      <cms:related_pages 'categories_jobs' limit='1' custom_field="category_section=Service">
+                      <cms:related_pages 'services_jobs' limit='1' custom_field="service_section=Service">
                         Services:
                         <cms:no_results>
                         </cms:no_results>
                       </cms:related_pages>
-                      <cms:related_pages 'categories_jobs' limit='5' custom_field='category_section=Services'  >
-                      <a href="<cms:show category_url />">
+                      <cms:related_pages 'services_jobs' limit='5' custom_field='service_section=Services'  >
+                      <a class="examples" href="/our-work.php?service=<cms:php>echo(str_replace('_', '-','<cms:show k_page_name />'));</cms:php>#work-examples">
                       <cms:show k_page_title /><cms:if k_count != k_total_records>,</cms:if>
                       </a>
                       </cms:related_pages>
                     </p>
                     <p>
-                      <cms:related_pages 'categories_jobs' limit='1' custom_field="category_section=Expertise">
+                      <cms:related_pages 'services_jobs' limit='1' custom_field="service_section=Expertise">
                         Expertise:
                         <cms:no_results>
                         </cms:no_results>
                       </cms:related_pages>
-                      <cms:related_pages 'categories_jobs' limit='5' custom_field='category_section=Expertise'  >
-                      <a href="<cms:show category_url />">
+                      <cms:related_pages 'services_jobs' limit='5' custom_field='service_section=Expertise'  >
+                        <a class="examples" href="/our-work.php?service=<cms:php>echo(str_replace('_', '-','<cms:show k_page_name />'));</cms:php>#work-examples">
                       <cms:show k_page_title /><cms:if k_count != k_total_records>,</cms:if>
                       </a>
                       </cms:related_pages>

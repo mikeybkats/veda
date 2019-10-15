@@ -416,7 +416,7 @@ p.title-description {
         color: $cream;
       }
     }
-    li:nth-child(6){
+    li:nth-child(7){
       border-left: 2px solid $mediumGray;
       text-align: left;
       max-width: 60px;
@@ -1037,7 +1037,7 @@ div .client-grid > div:nth-child(3) {
       padding: 35px 0px;
       img {
         max-width: 70%;
-        max-height: 70%;
+        max-height: 120px;
       }
     }
     a {
@@ -1720,7 +1720,7 @@ footer {
         padding: 0px;
         margin: 0px;
       }
-      li:nth-child(5){
+      li:nth-child(7){
         border-left: none;
         padding: 0px;
         padding-top: 20px;
